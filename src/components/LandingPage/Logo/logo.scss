@@ -1,0 +1,19 @@
+@import "../../../scss/variables/variables.scss";
+
+.logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  transform: scale(0.6);
+  //   margin-top: 20%;
+
+  .logotype {
+    position: absolute;
+    top: calc(50% - #{$logotypeHeight}/ 2);
+  }
+
+  .back-arrow {
+    position: absolute;
+  }
+}
+

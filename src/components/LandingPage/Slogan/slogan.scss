@@ -1,0 +1,7 @@
+@import "../../../scss/mixins/mixins.scss";
+
+.slogan {
+  color: white;
+  
+  @include headingExtraLarge();
+}

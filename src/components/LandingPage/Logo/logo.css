@@ -1,0 +1,21 @@
+.logo-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
+}
+
+.logo-container .logotype {
+  position: absolute;
+  top: calc(50% - 90px/ 2);
+}
+
+.logo-container .back-arrow {
+  position: absolute;
+}
+/*# sourceMappingURL=logo.css.map */

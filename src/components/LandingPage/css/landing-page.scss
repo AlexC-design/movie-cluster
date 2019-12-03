@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family: "Lato";
+}
+
+.landing-page-container {
+  background-color: gray;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
