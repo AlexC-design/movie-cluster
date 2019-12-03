@@ -3,6 +3,7 @@ import Logo from "./Logo/Logo";
 import "./css/landing-page.css";
 import CTAButton from "./CTAButton/CTAButton";
 import Slogan from "./Slogan/Slogan";
+import MovieList from "../MovieList/MovieList";
 
 const LandingPage = () => {
   return (
@@ -10,6 +11,7 @@ const LandingPage = () => {
       <Logo contentShape="logotype" size="large" />
       <Slogan />
       <CTAButton />
+      <MovieList />
     </div>
   );
 };

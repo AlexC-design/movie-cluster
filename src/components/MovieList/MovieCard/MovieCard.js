@@ -1,14 +1,21 @@
 import React from "react";
 import MovieImage from "./MovieImage/MovieImage";
 import MovieDetails from "./MovieDetails/MovieDetails";
+import { connect } from "react-redux";
+import { fetchNowPlaying } from "../../../actions";
 
-const MovieCard = () => {
+const MovieCard = props => {
   return (
     <div className="movie-card-container">
+      <button onClick={props.fetchNowPlaying}>TEST</button>
       <MovieImage />
       <MovieDetails />
     </div>
   );
 };
 
-export default MovieCard;
+const mapStateToProps = state => {
+  return { nowPlaying: state.nowPlaying };
+};
+
+export default connect(mapStateToProps, { fetchNowPlaying })(MovieCard);
