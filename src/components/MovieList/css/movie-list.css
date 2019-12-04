@@ -1,4 +1,53 @@
 .movie-list-container {
   padding-top: 20%;
 }
+
+.simplebar-component {
+  width: 99%;
+  -webkit-animation: fadein 0.5s ease-in-out;
+          animation: fadein 0.5s ease-in-out;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.simplebar-component .simplebar-scrollbar {
+  right: 0.8px;
+  width: 5px;
+}
+
+.simplebar-component .simplebar-track {
+  position: absolute;
+  width: 6px;
+  top: 10vh;
+  height: 85vh;
+  background: black;
+  border-radius: 10px;
+  padding: auto 0;
+}
+
+.simplebar-component .simplebar-scrollbar:before {
+  background: #ef8555;
+  opacity: 100%;
+}
+
+.simplebar-component .simplebar-scrollbar.simplebar-visible:before {
+  opacity: 100%;
+  background: #ef8555;
+}
 /*# sourceMappingURL=movie-list.css.map */

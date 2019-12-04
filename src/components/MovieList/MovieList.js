@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import MovieCard from "./MovieCard/MovieCard";
 import { fetchNowPlaying } from "../../actions";
+import SimpleBar from "simplebar-react";
 
 import "./css/movie-list.css";
 
@@ -26,10 +27,12 @@ const MovieList = ({ fetchNowPlaying, nowPlaying }) => {
 
   if (nowPlaying.results)
     return (
-      <div className="movie-list-container">
-        {renderMovieCards(nowPlaying.results)}
-        {console.log(nowPlaying.results)}
-      </div>
+      <SimpleBar className="simplebar-component" style={{ height: "100vh", autoHide: false }}>
+        <div className="movie-list-container">
+          {renderMovieCards(nowPlaying.results)}
+          {console.log(nowPlaying.results)}
+        </div>
+      </SimpleBar>
     );
   else return <div>Loading</div>;
 };
