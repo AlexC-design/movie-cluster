@@ -1,17 +1,11 @@
 import React from "react";
 
-import LandingPage from "./components/LandingPage/LandingPage";
+import MainScreen from "./components/MainScreen/MainScreen";
 
 function App() {
-  // const getMovies = async () => {
-  //   const response = await axios.get("movie/top_rated");
-
-  //   console.log(response);
-  // };
-
   return (
     <div>
-      <LandingPage />
+      <MainScreen />
     </div>
   );
 }

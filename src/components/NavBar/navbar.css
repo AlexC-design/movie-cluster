@@ -1,0 +1,53 @@
+.navbar-container ul {
+  position: fixed;
+  right: 2%;
+  top: 30px;
+  width: 90%;
+  margin: 0;
+  padding: 15px 0;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.navbar-container ul .navbar-link {
+  padding-right: 6em;
+}
+
+.navbar-container.revealed ul {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: all 0.2s 0.2s ease-in-out;
+  transition: all 0.2s 0.2s ease-in-out;
+}
+
+.navbar-container.revealed ul .navbar-link {
+  opacity: 100%;
+  -webkit-transition: opacity 0.5s 0.4s ease-in-out;
+  transition: opacity 0.5s 0.4s ease-in-out;
+}
+
+.navbar-container.hidden ul {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: all 0.2s 0.2s ease-in-out;
+  transition: all 0.2s 0.2s ease-in-out;
+}
+
+.navbar-container.hidden ul .navbar-link {
+  opacity: 0%;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+/*# sourceMappingURL=navbar.css.map */

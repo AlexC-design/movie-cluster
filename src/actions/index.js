@@ -8,3 +8,11 @@ export const fetchNowPlaying = () => async dispatch => {
     payload: response.data
   });
 };
+
+export const getCurrentPath = history => {
+  console.log(history.location.pathname);
+  return {
+    type: "GET_CURRENT_PATH",
+    payload: history.location.pathname
+  };
+};
