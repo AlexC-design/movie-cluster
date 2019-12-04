@@ -3,11 +3,12 @@ import MovieImage from "./MovieImage/MovieImage";
 import MovieDetails from "./MovieDetails/MovieDetails";
 import { connect } from "react-redux";
 import { fetchNowPlaying } from "../../../actions";
+import "./css/movie-card.css";
 
 const MovieCard = props => {
   return (
     <div className="movie-card-container">
-      <button onClick={props.fetchNowPlaying}>TEST</button>
+      <div>movie card id: {props.movieId}</div>
       <MovieImage />
       <MovieDetails />
     </div>

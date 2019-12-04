@@ -16,7 +16,7 @@
 }
 
 .logo-container.small {
-  position: absolute;
+  position: fixed;
   top: calc(0px - 392px / 2 + 50px);
   left: calc(0px - 392px / 2 + 7%);
   cursor: pointer;

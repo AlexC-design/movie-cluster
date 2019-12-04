@@ -13,7 +13,7 @@
   transition: all 0.2s 0.4s ease-in-out;
 
   &.small {
-    position: absolute;
+    position: fixed;
     top: calc(0px - #{$defaultLogoHeight} / 2 + 50px);
     left: calc(0px - #{$defaultLogoHeight} / 2 + 7%);
     cursor: pointer;

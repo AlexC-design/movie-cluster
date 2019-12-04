@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,qBAAqB,CAAC;EAClB,WAAW,EAAE,GAAG;CACnB",
+    "sources": [
+        "movie-list.scss"
+    ],
+    "names": [],
+    "file": "movie-list.css"
+}

@@ -1,10 +1,15 @@
 body {
   margin: 0;
   font-family: "Lato";
+  overflow: hidden;
 }
 
-.main-screen {
+.main-screen .main-screen-bg {
+  position: fixed;
+  top: 0;
   height: 100vh;
+  width: 100vw;
   background-color: gray;
+  z-index: -10;
 }
 /*# sourceMappingURL=main-screen.css.map */

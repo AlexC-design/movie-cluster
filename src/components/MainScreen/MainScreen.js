@@ -32,6 +32,7 @@ const MainScreen = () => {
         <Route path="/" exact component={LandingPage} />
         <Route path="/now-playing" exact component={NowPlayingPage} />
       </Router>
+      <div className='main-screen-bg' />
     </div>
   );
 };
