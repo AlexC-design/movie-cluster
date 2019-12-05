@@ -12,10 +12,18 @@ const NavBar = props => {
   return (
     <div className={`navbar-container ${navBarStatus}`}>
       <ul>
-        <Link className={`navbar-link ${pathCheck("/now-playing")}`}>
+        <Link
+          to="/now-playing"
+          className={`navbar-link ${pathCheck("/now-playing")}`}
+        >
           Now Playing
         </Link>
-        <li className="navbar-link">Top Rated</li>
+        <Link
+          to="/top-rated"
+          className={`navbar-link ${pathCheck("/top-rated")}`}
+        >
+          Top Rated
+        </Link>
         <li className="navbar-link">Popular</li>
         <li className="navbar-link">Genre</li>
         <li className="navbar-link">Search</li>

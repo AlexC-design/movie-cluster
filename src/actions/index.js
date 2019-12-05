@@ -2,10 +2,20 @@ import axios from "../axios";
 
 export const fetchNowPlaying = () => async dispatch => {
   const response = await axios.get("/movie/now_playing");
-  console.log("fetching movies");
+  console.log("fetching now playing");
   
   dispatch({
     type: "FETCH_NOW_PLAYING",
+    payload: response.data
+  });
+};
+
+export const fetchTopRated = () => async dispatch => {
+  const response = await axios.get("/movie/top_rated");
+  console.log("fetching top rated");
+  
+  dispatch({
+    type: "FETCH_TOP_RATED",
     payload: response.data
   });
 };

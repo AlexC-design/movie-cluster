@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import MainScreen from "./components/MainScreen/MainScreen";
-import { fetchConfig, fetchNowPlaying } from "./actions";
+import { fetchConfig, fetchNowPlaying, fetchTopRated } from "./actions";
 
-const App = ({ fetchConfig, fetchNowPlaying }) => {
+const App = ({ fetchConfig, fetchNowPlaying, fetchTopRated }) => {
   useEffect(() => {
     fetchConfig();
     fetchNowPlaying();
+    fetchTopRated();
   }, [fetchConfig, fetchNowPlaying]);
 
   return (
@@ -17,4 +18,6 @@ const App = ({ fetchConfig, fetchNowPlaying }) => {
   );
 };
 
-export default connect(null, { fetchConfig, fetchNowPlaying })(App);
+export default connect(null, { fetchConfig, fetchNowPlaying, fetchTopRated })(
+  App
+);

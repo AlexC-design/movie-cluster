@@ -23,8 +23,11 @@
   text-decoration: none;
   padding: 0.5em 2em;
   margin: 0 0.5em;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  text-shadow: none;
+}
+
+.navbar-container ul .navbar-link:hover {
+  text-shadow: 0 0 5px #ffe195;
 }
 
 .navbar-container ul .navbar-link.active {

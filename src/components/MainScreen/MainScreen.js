@@ -9,6 +9,7 @@ import history from "../../history";
 
 import "./main-screen.css";
 import MainScreenBg from "./MainScreenBg";
+import TopRatedPage from "../TopRatedPage/TopRatedPage";
 
 const MainScreen = () => {
   const [pageStatus, setPageStatus] = useState(`${history.location.pathname}`);
@@ -32,6 +33,7 @@ const MainScreen = () => {
         </Link>
         <Route path="/" exact component={LandingPage} />
         <Route path="/now-playing" exact component={NowPlayingPage} />
+        <Route path="/top-rated" exact component={TopRatedPage} />
       </Router>
       <MainScreenBg pageStatus={pageStatus} />
     </div>

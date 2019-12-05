@@ -20,13 +20,17 @@
       text-decoration: none;
       padding: 0.5em 2em;
       margin: 0 0.5em;
-
-      transition: all 1s ease-in-out;
+      text-shadow: none;
+      
+      &:hover{
+        text-shadow: 0 0 5px #ffe195;
+        }
 
       &.active {
         font-weight: bolder;
         text-shadow: 0 0 5px #ffe195, 0 0 10px #ffb800;
-      }
+        }
+      
     }
   }
 
