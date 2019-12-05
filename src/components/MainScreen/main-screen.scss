@@ -14,7 +14,7 @@ body {
     width: 100vw;
     z-index: -10;
 
-    transition: all 1s ease-in-out;
+    transition: background 1s ease-in-out;
 
     &.home {
       background: #60246c;
@@ -32,8 +32,6 @@ body {
     height: 100vh;
     width: 100vw;
     z-index: -9;
-
-    transition: all 2s ease-out;
 
     &.home {
       opacity: 20%;

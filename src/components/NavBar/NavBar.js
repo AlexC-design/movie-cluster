@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getCurrentPath } from "../../actions";
 import "./navbar.css";
@@ -6,10 +7,14 @@ import "./navbar.css";
 const NavBar = props => {
   const navBarStatus = props.pageStatus === "/" ? "hidden" : "revealed";
 
+  const pathCheck = path => (props.pageStatus === path ? "active" : "inactive");
+
   return (
     <div className={`navbar-container ${navBarStatus}`}>
       <ul>
-        <li className="navbar-link">Now Playing</li>
+        <Link className={`navbar-link ${pathCheck("/now-playing")}`}>
+          Now Playing
+        </Link>
         <li className="navbar-link">Top Rated</li>
         <li className="navbar-link">Popular</li>
         <li className="navbar-link">Genre</li>
