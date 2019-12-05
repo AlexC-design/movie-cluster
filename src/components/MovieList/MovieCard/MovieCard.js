@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import MovieImage from "./MovieImage/MovieImage";
 import MovieDetails from "./MovieDetails/MovieDetails";
-import { connect } from "react-redux";
 import "./css/movie-card.css";
 
 const MovieCard = ({ movieId, index }) => {
-  useEffect(() => {}, []);
 
   return (
     <div className="movie-card-container" key={`id:${movieId}`}>
@@ -18,8 +16,4 @@ const MovieCard = ({ movieId, index }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return { nowPlaying: state.nowPlaying };
-};
-
-export default connect(mapStateToProps)(MovieCard);
+export default MovieCard;
