@@ -1,6 +1,7 @@
-export default (state = "", action) => {
+export default (state = {}, action) => {
+  console.log(action.type);
   switch (action.type) {
-    case "GET_CURRENT_PATH":
+    case "FETCH_IMAGES":
       return action.payload;
     default:
       return state;

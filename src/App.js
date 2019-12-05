@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 
 import MainScreen from "./components/MainScreen/MainScreen";
+import { fetchConfig } from "./actions";
 
-function App() {
+const App = ({ fetchConfig }) => {
+  useEffect(() => {}, []);
+  fetchConfig();
   return (
     <div>
       <MainScreen />
     </div>
   );
-}
+};
 
-export default App;
+export default connect(null, { fetchConfig })(App);

@@ -9,10 +9,28 @@ export const fetchNowPlaying = () => async dispatch => {
   });
 };
 
+export const fetchImages = id => async dispatch => {
+  const response = await axios.get(`/movie/${id}/images`);
+  console.log(response);
+  dispatch({
+    type: "FETCH_IMAGES",
+    payload: response.data
+  });
+};
+
+export const fetchConfig = () => async dispatch => {
+  const response = await axios.get(`/configuration`);
+  console.log(response);
+  dispatch({
+    type: "FETCH_CONFIG",
+    payload: response.data
+  });
+};
+
 export const getCurrentPath = history => {
-  console.log(history.location.pathname);
   return {
     type: "GET_CURRENT_PATH",
     payload: history.location.pathname
   };
 };
+
