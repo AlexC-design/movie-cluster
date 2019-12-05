@@ -1,0 +1,34 @@
+@import "../../../../../scss/variables/variables.scss";
+@import "../../../../../scss/mixins/mixins.scss";
+@import "../../../../../scss/functions/functions.scss";
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  margin: 0.5em 0 1em;
+
+  .rating-bar {
+    width: 80%;
+    height: 4px;
+    position: relative;
+    background: color(dark);
+    border-radius: 25px;
+    padding: 3.5px;
+
+    span {
+      display: block;
+      height: 100%;
+      border-radius: 25px;
+      background-color: color(accent3);
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  .rating-percentage {
+    @include titleNormal;
+
+    font-weight: bolder;
+    padding-left: 1em;
+  }
+}

@@ -1,0 +1,25 @@
+@import "../../../../scss/variables/variables.scss";
+
+.movie-image-container {
+  position: relative;
+
+  .movie-card-title {
+    position: absolute;
+    bottom: 0;
+    left: 1em;
+    color: white;
+  }
+
+  .movie-card-image-container {
+    .movie-card-image {
+      display: block;
+      width: $imageWidth;
+      height: $imageHeight;
+      border: 2px solid orange;
+      box-shadow: inset 0 0 20px rgba(63, 44, 4, 0.534);
+      border-radius: 20px;
+    }
+  }
+
+
+}

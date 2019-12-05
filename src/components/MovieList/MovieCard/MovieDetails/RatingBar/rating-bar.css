@@ -1,0 +1,35 @@
+.rating-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5em 0 1em;
+}
+
+.rating-container .rating-bar {
+  width: 80%;
+  height: 4px;
+  position: relative;
+  background: #13021C;
+  border-radius: 25px;
+  padding: 3.5px;
+}
+
+.rating-container .rating-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 25px;
+  background-color: #6fe6f6;
+  position: relative;
+  overflow: hidden;
+}
+
+.rating-container .rating-percentage {
+  font-size: 1.5em;
+  font-weight: 400;
+  font-weight: bolder;
+  padding-left: 1em;
+}
+/*# sourceMappingURL=rating-bar.css.map */

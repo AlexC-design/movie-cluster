@@ -4,13 +4,16 @@ import MovieDetails from "./MovieDetails/MovieDetails";
 import { connect } from "react-redux";
 import "./css/movie-card.css";
 
-const MovieCard = ({ nowPlaying, movieId, index }) => {
+const MovieCard = ({ movieId, index }) => {
   useEffect(() => {}, []);
 
   return (
-    <div className={`movie-card-container`} key={`id:${movieId}`}>
-      <MovieImage key={`${movieId}-image-${index}`} index={index} />
-      <MovieDetails key={`${movieId}-details-${index}`} />
+    <div className="movie-card-container" key={`id:${movieId}`}>
+      <MovieImage index={index} key={`${movieId}-image-${index}`} />
+      <MovieDetails
+        index={index}
+        key={`${movieId}-details-${index}`}
+      />
     </div>
   );
 };

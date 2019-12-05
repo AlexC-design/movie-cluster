@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,wBAAwB,CAAC;EACvB,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,aAAa;EAE9B,OAAO,EAAE,GAAG;EACZ,KAAK,ECTM,KAAK;EDUhB,MAAM,EAAE,iBAA2B;EACnC,SAAS,ECXE,KAAK;EDYhB,UAAU,EAAE,iBAA2B;EAEvC,aAAa,EAAE,aAAa;EAC5B,UAAU,EAAE,iCAAiC;EAC7C,KAAK,EAAE,KAAK;CAkBb;;AAhCD,AAgBE,wBAhBsB,CAgBtB,aAAa,CAAC;EInBd,SAAS,EAAE,KAAK;EAChB,WAAW,EAAE,GAAG;EJoBd,WAAW,EAAE,GAAG;CAGjB;;AArBH,AAuBE,wBAvBsB,CAuBtB,gBAAgB,CAAC;EACf,UAAU,EAAE,QAAQ;EACpB,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,GAAG;EACd,aAAa,EAAE,IAAI;EACnB,KAAK,EAAE,KAAK;EACZ,gBAAgB,ECzBT,OAAO;ED0Bd,OAAO,EAAE,OAAO;CACjB",
+    "sources": [
+        "movie-details.scss",
+        "../../../../scss/variables/variables.scss",
+        "../../../../scss/functions/functions.scss",
+        "../../../../scss/variables/variables.scss",
+        "../../../../scss/mixins/mixins.scss"
+    ],
+    "names": [],
+    "file": "movie-details.css"
+}

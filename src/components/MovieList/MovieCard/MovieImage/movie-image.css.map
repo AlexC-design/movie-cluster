@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,sBAAsB,CAAC;EACrB,QAAQ,EAAE,QAAQ;CAqBnB;;AAtBD,AAGE,sBAHoB,CAGpB,iBAAiB,CAAC;EAChB,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,CAAC;EACT,IAAI,EAAE,GAAG;EACT,KAAK,EAAE,KAAK;CACb;;AARH,AAWI,sBAXkB,CAUpB,2BAA2B,CACzB,iBAAiB,CAAC;EAChB,OAAO,EAAE,KAAK;EACd,KAAK,ECbE,KAAK;EDcZ,MAAM,ECbE,KAAK;EDcb,MAAM,EAAE,gBAAgB;EACxB,UAAU,EAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,sBAAsB;EACjD,aAAa,EAAE,IAAI;CACpB",
+    "sources": [
+        "movie-image.scss",
+        "../../../../scss/variables/variables.scss"
+    ],
+    "names": [],
+    "file": "movie-image.css"
+}
