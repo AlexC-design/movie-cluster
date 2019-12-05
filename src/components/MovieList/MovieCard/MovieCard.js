@@ -8,10 +8,9 @@ const MovieCard = ({ nowPlaying, movieId, index }) => {
   useEffect(() => {}, []);
 
   return (
-    <div className="movie-card-container">
-      <div>movie card id: {movieId}</div>
-      <MovieImage index={index} />
-      <MovieDetails />
+    <div className={`movie-card-container`} key={`id:${movieId}`}>
+      <MovieImage key={`${movieId}-image-${index}`} index={index} />
+      <MovieDetails key={`${movieId}-details-${index}`} />
     </div>
   );
 };

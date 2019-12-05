@@ -1,25 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import MovieCard from "./MovieCard/MovieCard";
-import { fetchNowPlaying, fetchImages } from "../../actions";
 import SimpleBar from "simplebar-react";
 
 import "./css/movie-list.css";
 
-const MovieList = ({ fetchNowPlaying, fetchImages, nowPlaying }) => {
-  useEffect(() => {
-    fetchNowPlaying();
-    fetchImages(330457);
-  }, []);
+const MovieList = ({ nowPlaying }) => {
 
   function renderMovieCards(movieList) {
     return movieList.map((movie, index) => {
-      return (
-        <div>
-          <MovieCard movieId={movie.id} index={index} />
-        </div>
-      );
+      return <MovieCard movieId={movie.id} key={movie.id} index={index} />;
     });
   }
 
@@ -41,6 +32,6 @@ const mapStateToProps = state => {
   return { nowPlaying: state.nowPlaying };
 };
 
-export default connect(mapStateToProps, { fetchNowPlaying, fetchImages })(
+export default connect(mapStateToProps)(
   MovieList
 );
