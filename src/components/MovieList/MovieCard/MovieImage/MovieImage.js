@@ -2,7 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import "./movie-image.css";
 
-const MovieImage = ({ backdropSizes, backdropPath, movieTitle, baseUrl }) => {
+const MovieImage = ({fetchedMovies, index, backdropSizes, baseUrl}) => {
+
+  const backdropPath = fetchedMovies.results[index].backdrop_path;
+  const movieTitle = fetchedMovies.results[index].original_title;
+
   const imageUrl = `${baseUrl}${
     backdropSizes[backdropSizes.length - 3]
   }${backdropPath}`;
@@ -21,14 +25,10 @@ const MovieImage = ({ backdropSizes, backdropPath, movieTitle, baseUrl }) => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => {
-  const { index } = ownProps;
-
+const mapStateToProps = state => {
   return {
-    backdropPath: state.nowPlaying.results[index].backdrop_path,
     backdropSizes: state.config.images.backdrop_sizes,
-    baseUrl: state.config.images.base_url,
-    movieTitle: state.nowPlaying.results[index].original_title
+    baseUrl: state.config.images.base_url
   };
 };
 
