@@ -7,15 +7,39 @@ body {
 }
 
 .main-screen {
-
-
-
   .main-screen-bg {
     position: fixed;
     top: 0;
     height: 100vh;
     width: 100vw;
-    background-color: gray;
     z-index: -10;
+
+    transition: all 1s ease-in-out;
+
+    &.home {
+      background: #60246c;
+    }
+    &.not-home {
+      background: #3d2242;
+    }
+  }
+
+  .gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#be375f, rgba(96, 36, 108, 0));
+    height: 100vh;
+    width: 100vw;
+    z-index: -9;
+
+    transition: all 2s ease-out;
+
+    &.home {
+      opacity: 20%;
+    }
+    &.not-home {
+      opacity: 20%;
+    }
   }
 }

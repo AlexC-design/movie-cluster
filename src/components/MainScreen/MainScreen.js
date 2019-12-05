@@ -8,6 +8,7 @@ import NowPlayingPage from "../NowPlayingPage/NowPlayingPage";
 import history from "../../history";
 
 import "./main-screen.css";
+import MainScreenBg from "./MainScreenBg";
 
 const MainScreen = () => {
   const [pageStatus, setPageStatus] = useState(`${history.location.pathname}`);
@@ -32,7 +33,7 @@ const MainScreen = () => {
         <Route path="/" exact component={LandingPage} />
         <Route path="/now-playing" exact component={NowPlayingPage} />
       </Router>
-      <div className='main-screen-bg' />
+      <MainScreenBg pageStatus={pageStatus} />
     </div>
   );
 };

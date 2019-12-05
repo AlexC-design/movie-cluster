@@ -10,7 +10,37 @@ body {
   top: 0;
   height: 100vh;
   width: 100vw;
-  background-color: gray;
   z-index: -10;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.main-screen .main-screen-bg.home {
+  background: #60246c;
+}
+
+.main-screen .main-screen-bg.not-home {
+  background: #3d2242;
+}
+
+.main-screen .gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#be375f), to(rgba(96, 36, 108, 0)));
+  background: linear-gradient(#be375f, rgba(96, 36, 108, 0));
+  height: 100vh;
+  width: 100vw;
+  z-index: -9;
+  -webkit-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+}
+
+.main-screen .gradient.home {
+  opacity: 20%;
+}
+
+.main-screen .gradient.not-home {
+  opacity: 20%;
 }
 /*# sourceMappingURL=main-screen.css.map */
