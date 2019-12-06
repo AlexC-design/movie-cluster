@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import MovieList from "../MovieList/MovieList";
+import { fetchPage } from "../../actions";
 
-const TopRatedPage = ({ topRated }) => {
+const TopRatedPage = ({ currentPage, fetchPage }) => {
+  useEffect(() => {
+    fetchPage(1, "top_rated");
+  }, []);
+
   return (
     <div>
-      <MovieList fetchedMovies={topRated} />
+      <MovieList fetchedMovies={currentPage} />
     </div>
   );
 };
 
 const mapStateToProps = state => {
-  return { topRated: state.topRated };
+  return { currentPage: state.currentPage };
 };
 
-export default connect(mapStateToProps)(TopRatedPage);
+export default connect(mapStateToProps, { fetchPage })(TopRatedPage);

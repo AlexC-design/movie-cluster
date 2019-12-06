@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import MovieList from "../MovieList/MovieList";
+import { fetchPage } from "../../actions";
 
-const PopularPage = ({ popular }) => {
+const PopularPage = ({ currentPage, fetchPage }) => {
+  useEffect(() => {
+    fetchPage(1, "popular");
+  }, []);
+
   return (
     <div>
-      <MovieList fetchedMovies={popular} />
+      <MovieList fetchedMovies={currentPage} />
     </div>
   );
 };
 
 const mapStateToProps = state => {
-  return { popular: state.popular };
+  return { currentPage: state.currentPage };
 };
 
-export default connect(mapStateToProps)(PopularPage);
+export default connect(mapStateToProps, { fetchPage })(PopularPage);

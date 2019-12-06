@@ -1,35 +1,5 @@
 import axios from "../axios";
 
-export const fetchNowPlaying = () => async dispatch => {
-  const response = await axios.get("/movie/now_playing");
-  console.log("fetching now playing");
-  
-  dispatch({
-    type: "FETCH_NOW_PLAYING",
-    payload: response.data
-  });
-};
-
-export const fetchTopRated = () => async dispatch => {
-  const response = await axios.get("/movie/top_rated");
-  console.log("fetching top rated");
-  
-  dispatch({
-    type: "FETCH_TOP_RATED",
-    payload: response.data
-  });
-};
-
-export const fetchPopular = () => async dispatch => {
-  const response = await axios.get("/movie/popular");
-  console.log("fetching popular");
-  
-  dispatch({
-    type: "FETCH_POPULAR",
-    payload: response.data
-  });
-};
-
 export const fetchImages = id => async dispatch => {
   const response = await axios.get(`/movie/${id}/images`);
   console.log("fetching images");
@@ -46,6 +16,19 @@ export const fetchConfig = () => async dispatch => {
 
   dispatch({
     type: "FETCH_CONFIG",
+    payload: response.data
+  });
+};
+
+export const fetchPage = (page, listType) => async dispatch => {
+  const response = await axios.get(`/movie/${listType}`, {
+    params: { page }
+  });
+  console.log("fetching page");
+  console.log(response.data);
+
+  dispatch({
+    type: "FETCH_PAGE",
     payload: response.data
   });
 };

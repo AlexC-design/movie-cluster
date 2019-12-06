@@ -2,6 +2,7 @@ import React from "react";
 
 import MovieCard from "./MovieCard/MovieCard";
 import SimpleBar from "simplebar-react";
+import PageList from "../PageList/PageList";
 
 import "./css/movie-list.css";
 
@@ -28,6 +29,7 @@ const MovieList = ({ fetchedMovies }) => {
         <div className="movie-list-container">
           {renderMovieCards(fetchedMovies.results)}
         </div>
+        <PageList moviesType={fetchedMovies} />
       </SimpleBar>
     );
   } else return <div>Loading</div>;
