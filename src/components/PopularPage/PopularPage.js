@@ -3,14 +3,14 @@ import { connect } from "react-redux";
 import MovieList from "../MovieList/MovieList";
 import { fetchPage } from "../../actions";
 
-const PopularPage = ({ currentPage, fetchPage }) => {
+const PopularPage = ({ fetchPage }) => {
   useEffect(() => {
     fetchPage(1, "popular");
   }, []);
 
   return (
     <div>
-      <MovieList fetchedMovies={currentPage} />
+      <MovieList />
     </div>
   );
 };

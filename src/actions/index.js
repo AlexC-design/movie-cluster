@@ -25,12 +25,13 @@ export const fetchPage = (page, listType) => async dispatch => {
     params: { page }
   });
   console.log("fetching page");
-
   dispatch({
     type: "FETCH_PAGE",
     payload: response.data
   });
 };
+
+// export const fetchGenreList
 
 export const getCurrentPath = history => {
   console.log("getting path");
