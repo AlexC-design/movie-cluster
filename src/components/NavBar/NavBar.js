@@ -24,9 +24,16 @@ const NavBar = props => {
         >
           Top Rated
         </Link>
-        <li className="navbar-link">Popular</li>
-        <li className="navbar-link">Genre</li>
-        <li className="navbar-link">Search</li>
+
+        <Link to="/popular" className={`navbar-link ${pathCheck("/popular")}`}>
+          Popular
+        </Link>
+        <Link to="/genre" className={`navbar-link ${pathCheck("/genre")}`}>
+          Genre
+        </Link>
+        <Link to="/search" className={`navbar-link ${pathCheck("/search")}`}>
+          Search
+        </Link>
       </ul>
     </div>
   );

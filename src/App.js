@@ -14,6 +14,7 @@ const App = ({ fetchConfig, fetchNowPlaying, fetchTopRated, fetchPopular }) => {
     fetchConfig();
     fetchNowPlaying();
     fetchTopRated();
+    fetchPopular();
   }, [fetchConfig, fetchNowPlaying]);
 
   return (
