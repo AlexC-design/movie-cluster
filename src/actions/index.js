@@ -20,6 +20,16 @@ export const fetchTopRated = () => async dispatch => {
   });
 };
 
+export const fetchPopular = () => async dispatch => {
+  const response = await axios.get("/movie/popular");
+  console.log("fetching popular");
+  
+  dispatch({
+    type: "FETCH_POPULAR",
+    payload: response.data
+  });
+};
+
 export const fetchImages = id => async dispatch => {
   const response = await axios.get(`/movie/${id}/images`);
   console.log("fetching images");

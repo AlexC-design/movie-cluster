@@ -2,13 +2,12 @@
   background-color: #f5ec6d;
   border: none;
   color: #60246c;
+  font-size: 1em;
   padding: 20px 80px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   margin: 10px auto 10%;
   border-radius: 50px;
-  font-size: 18px;
-  font-weight: 500;
 }
 /*# sourceMappingURL=cta-button.css.map */
