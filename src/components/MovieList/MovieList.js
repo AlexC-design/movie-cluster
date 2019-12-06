@@ -1,25 +1,12 @@
 import React from "react";
 
-import MovieCard from "./MovieCard/MovieCard";
 import SimpleBar from "simplebar-react";
 import PageList from "../PageList/PageList";
+import { renderMovieCards } from "./renderMovieCards";
 
 import "./css/movie-list.css";
 
 const MovieList = ({ fetchedMovies }) => {
-  function renderMovieCards(movieList) {
-    return movieList.map((movie, index) => {
-      return (
-        <MovieCard
-          fetchedMovies={fetchedMovies}
-          movieId={movie.id}
-          key={movie.id}
-          index={index}
-        />
-      );
-    });
-  }
-
   if (fetchedMovies.results) {
     return (
       <SimpleBar
@@ -27,7 +14,7 @@ const MovieList = ({ fetchedMovies }) => {
         style={{ height: "100vh", autoHide: false }}
       >
         <div className="movie-list-container">
-          {renderMovieCards(fetchedMovies.results)}
+          {renderMovieCards(fetchedMovies)}
         </div>
         <PageList moviesType={fetchedMovies} />
       </SimpleBar>
