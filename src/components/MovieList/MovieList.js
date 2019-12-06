@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import SimpleBar from "simplebar-react";
 import PageList from "../PageList/PageList";
@@ -6,20 +7,24 @@ import { renderMovieCards } from "./renderMovieCards";
 
 import "./css/movie-list.css";
 
-const MovieList = ({ fetchedMovies }) => {
-  if (fetchedMovies.results) {
+const MovieList = ({ listOfMovies }) => {
+  if (listOfMovies) {
     return (
       <SimpleBar
         className="simplebar-component"
         style={{ height: "100vh", autoHide: false }}
       >
         <div className="movie-list-container">
-          {renderMovieCards(fetchedMovies)}
+          {renderMovieCards(listOfMovies)}
         </div>
-        <PageList moviesType={fetchedMovies} />
+        <PageList />
       </SimpleBar>
     );
   } else return <div>Loading</div>;
 };
 
-export default MovieList;
+const mapStateToProps = state => {
+  return { listOfMovies: state.currentPage.results };
+};
+
+export default connect(mapStateToProps)(MovieList);

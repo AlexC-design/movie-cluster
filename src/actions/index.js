@@ -25,7 +25,6 @@ export const fetchPage = (page, listType) => async dispatch => {
     params: { page }
   });
   console.log("fetching page");
-  console.log(response.data);
 
   dispatch({
     type: "FETCH_PAGE",
