@@ -35,10 +35,11 @@ export const fetchGenreMovies = id => async dispatch => {
   const response = await axios.get(`/discover/movie`, {
     params: { with_genres: `${id}` }
   });
-  console.log("fetching images");
+  console.log(`fetching genre movies - id=${id}`);
+  console.log(response.data);
 
   dispatch({
-    type: "FETCH_IMAGES",
+    type: "FETCH_GENRE_MOVIES",
     payload: response.data
   });
 };

@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import GenreCard from "./GenreCard/GenreCard";
-import { fetchGenreList } from "../../actions";
+import { fetchGenreList, fetchGenreMovies } from "../../actions";
 import "./css/genre-page.css";
 
-const GenrePage = ({ fetchGenreList, genres }) => {
+const GenrePage = ({ fetchGenreList, fetchGenreMovies, genres }) => {
+  const genreImages = {};
   useEffect(() => {
     fetchGenreList();
-    console.log(genres);
+
+    if (genres.length) genreImages.first = fetchGenreMovies(genres[0].id);
+    console.log({ genreImages });
   }, [genres.length]);
 
   if (genres) {
@@ -27,4 +30,6 @@ const mapStateToProps = state => {
   return { genres: state.genres };
 };
 
-export default connect(mapStateToProps, { fetchGenreList })(GenrePage);
+export default connect(mapStateToProps, { fetchGenreList, fetchGenreMovies })(
+  GenrePage
+);
