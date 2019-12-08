@@ -1,16 +1,25 @@
+@import "../../../scss/mixins/mixins.scss";
+
 .movie-list-container {
   padding-top: 5%;
+
+  @include desktop-mid {
+    padding-top: 10%;
+  }
 }
 
 .simplebar-component {
   width: 99%;
-    animation: fadein 0.5s ease-in-out;
+  animation: fadein 0.5s ease-in-out;
 
-    @keyframes fadein {
-        from {opacity: 0%;}
-        to {opacity: 100%;}
+  @keyframes fadein {
+    from {
+      opacity: 0%;
     }
-
+    to {
+      opacity: 100%;
+    }
+  }
 
   .simplebar-scrollbar {
     right: 0.8px;

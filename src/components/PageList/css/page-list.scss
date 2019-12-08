@@ -29,12 +29,15 @@
       background: color(accent2);
     }
 
-    &:focus {
+    &:focus{
+      outline: none;
+    }
+
+    &.selected {
       box-sizing: border-box;
       border: 2px solid white;
       color: white;
       text-shadow: 0 0 5px #ffe195;
-      outline: 0;
       font-weight: bold;
       background: color(accent1);
     }

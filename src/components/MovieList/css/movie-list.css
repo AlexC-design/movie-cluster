@@ -2,6 +2,12 @@
   padding-top: 5%;
 }
 
+@media (max-width: 1600px) {
+  .movie-list-container {
+    padding-top: 10%;
+  }
+}
+
 .simplebar-component {
   width: 99%;
   -webkit-animation: fadein 0.5s ease-in-out;

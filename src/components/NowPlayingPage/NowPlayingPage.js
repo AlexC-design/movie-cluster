@@ -15,5 +15,4 @@ const NowPlayingPage = ({ fetchPage }) => {
   );
 };
 
-
 export default connect(null, { fetchPage })(NowPlayingPage);

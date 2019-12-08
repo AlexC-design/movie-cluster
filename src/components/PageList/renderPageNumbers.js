@@ -2,6 +2,7 @@ import React from "react";
 import history from "../../history";
 
 export const renderPageNumbers = (numberOfPages, fetchPage) => {
+
   const historyToPageType = {
     "/now-playing": "now_playing",
     "/popular": "popular",
@@ -23,9 +24,7 @@ export const renderPageNumbers = (numberOfPages, fetchPage) => {
             index + 1 === 1 || index + 1 === numberOfPages ? "revealed" : ""
           }`}
         >{`${index + 1}`}</button>
-        {index === 0 && (
-          <div className="three-dots start"> ... </div>
-        )}
+        {index === 0 && <div className="three-dots start"> ... </div>}
       </>
     );
   });

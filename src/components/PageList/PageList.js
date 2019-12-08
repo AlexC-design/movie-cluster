@@ -6,6 +6,11 @@ import "./css/page-list.css";
 
 const PageList = ({ numberOfPages, currentPageNumber, fetchPage }) => {
   useEffect(() => {
+    console.log('mounted or updated');
+    //focusing button 1 on page load
+    document.querySelector(`.page-${currentPageNumber}`).className +=
+      " selected";
+
     //hide all buttons except first and last and reveal three dots
     document.querySelectorAll(`.three-dots`).forEach((dots, _) => {
       dots.className += " revealed";
@@ -13,7 +18,6 @@ const PageList = ({ numberOfPages, currentPageNumber, fetchPage }) => {
 
     document.querySelectorAll(`.page-button`).forEach((button, index) => {
       if (index > 0 && index !== numberOfPages - 1) {
-        console.log("hid " + (index + 1));
         button.classList.remove("revealed");
       }
     });
@@ -42,6 +46,12 @@ const PageList = ({ numberOfPages, currentPageNumber, fetchPage }) => {
         }
       }
     }
+
+    return () => {
+      document
+        .querySelector(`.page-${currentPageNumber}`)
+        .classList.remove("selected");
+    };
   });
 
   return (
