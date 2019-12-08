@@ -37,14 +37,14 @@
   }
 }
 
-.movie-details-container .release-date {
+.movie-details-container .movie-details .release-date {
   font-size: 1.5em;
   font-weight: 400;
   font-weight: 500;
 }
 
 @media (max-width: 1600px) {
-  .movie-details-container .release-date {
+  .movie-details-container .movie-details .release-date {
     font-size: 1.2em;
   }
 }

@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import "./movie-details.css";
 import RatingBar from "./RatingBar/RatingBar";
 
 const MovieDetails = ({ overview, rating, releaseDate }) => {
+  useEffect(() => {
+    //cropping long descriptions
+    const divs = document.getElementsByClassName("overview");
+
+    for (let i = 0; i < divs.length; i++) {
+      if (divs[i].innerHTML.length > 300) {
+        divs[i].innerHTML = divs[i].innerHTML.substring(0, 300);
+        divs[i].innerHTML += `...`;
+      }
+    }
+  }, []);
+
   return (
     <div className="movie-details-container">
       <div className="movie-details">
