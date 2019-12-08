@@ -9,8 +9,8 @@ const MovieDetails = ({ overview, rating, releaseDate }) => {
     const divs = document.getElementsByClassName("overview");
 
     for (let i = 0; i < divs.length; i++) {
-      if (divs[i].innerHTML.length > 300) {
-        divs[i].innerHTML = divs[i].innerHTML.substring(0, 300);
+      if (divs[i].innerHTML.length > 350) {
+        divs[i].innerHTML = divs[i].innerHTML.substring(0, 350);
         divs[i].innerHTML += `...`;
       }
     }

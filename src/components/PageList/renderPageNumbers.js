@@ -8,13 +8,25 @@ export const renderPageNumbers = (numberOfPages, fetchPage) => {
     "/top-rated": "top_rated"
   };
 
-  return new Array(numberOfPages).fill(0).map((_, index) => (
-    <button
-      onClick={() => {
-        fetchPage(index + 1, historyToPageType[history.location.pathname]);
-      }}
-      key={`${index + 1}`}
-      className="page-button"
-    >{`${index + 1}`}</button>
-  ));
+  return new Array(numberOfPages).fill(0).map((_, index) => {
+    return (
+      <>
+        {index === numberOfPages - 2 && (
+          <div className="three-dots end"> ... </div>
+        )}
+        <button
+          onClick={() => {
+            fetchPage(index + 1, historyToPageType[history.location.pathname]);
+          }}
+          key={`${index + 1}`}
+          className={`page-button page-${index + 1} ${
+            index + 1 === 1 || index + 1 === numberOfPages ? "revealed" : ""
+          }`}
+        >{`${index + 1}`}</button>
+        {index === 0 && (
+          <div className="three-dots start"> ... </div>
+        )}
+      </>
+    );
+  });
 };

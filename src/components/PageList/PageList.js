@@ -1,10 +1,49 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { renderPageNumbers } from "./renderPageNumbers";
 import { fetchPage } from "../../actions";
 import "./css/page-list.css";
 
-const PageList = ({ numberOfPages, fetchPage }) => {
+const PageList = ({ numberOfPages, currentPageNumber, fetchPage }) => {
+  useEffect(() => {
+    //hide all buttons except first and last and reveal three dots
+    document.querySelectorAll(`.three-dots`).forEach((dots, _) => {
+      dots.className += " revealed";
+    });
+
+    document.querySelectorAll(`.page-button`).forEach((button, index) => {
+      if (index > 0 && index !== numberOfPages - 1) {
+        console.log("hid " + (index + 1));
+        button.classList.remove("revealed");
+      }
+    });
+
+    //for pages in the beginning hide the beginning dots and show the buttons
+    if (currentPageNumber < 6) {
+      document.querySelector(`.three-dots.start`).classList.remove("revealed");
+
+      for (let i = 2; i <= 9; i++) {
+        if (i > 0) {
+          document.querySelector(`.page-${i}`).className += " revealed";
+        }
+      }
+    } else if (currentPageNumber > numberOfPages - 5) {
+      //for pages at the end hide the end dots and show the buttons
+      document.querySelector(`.three-dots.end`).classList.remove("revealed");
+
+      for (let i = numberOfPages; i >= numberOfPages - 8; i--) {
+        document.querySelector(`.page-${i}`).className += " revealed";
+      }
+    } else {
+      // for pages in the middle don't hide the dots and show the buttons
+      for (let i = currentPageNumber - 3; i <= currentPageNumber + 3; i++) {
+        if (i > 0) {
+          document.querySelector(`.page-${i}`).className += " revealed";
+        }
+      }
+    }
+  });
+
   return (
     <div className="page-numbers-container">
       {renderPageNumbers(numberOfPages, fetchPage)}
@@ -13,7 +52,10 @@ const PageList = ({ numberOfPages, fetchPage }) => {
 };
 
 const mapStateToProps = state => {
-  return { numberOfPages: state.currentPage.total_pages };
+  return {
+    numberOfPages: state.currentPage.total_pages,
+    currentPageNumber: state.currentPage.page
+  };
 };
 
 // const mapDispatchToProps = dispatch => {

@@ -1,8 +1,15 @@
 .page-numbers-container {
-  padding: 5em 10em;
+  padding: 5em 5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.page-button {
+.page-numbers-container .page-button {
+  display: none;
   border: none;
   color: white;
   font-size: 1.3em;
@@ -14,15 +21,19 @@
   background: linear-gradient(#60246c, #9c284b);
 }
 
-.page-button:hover {
+.page-numbers-container .page-button.revealed {
+  display: initial;
+}
+
+.page-numbers-container .page-button:hover {
   background: #ef8555;
 }
 
-.page-button:active {
+.page-numbers-container .page-button:active {
   background: #f5ec6d;
 }
 
-.page-button:focus {
+.page-numbers-container .page-button:focus {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 2px solid white;
@@ -31,5 +42,16 @@
   outline: 0;
   font-weight: bold;
   background: #ef8555;
+}
+
+.page-numbers-container .three-dots {
+  display: none;
+  color: white;
+  padding: 0 20px;
+  font-size: 50px;
+}
+
+.page-numbers-container .three-dots.revealed {
+  display: inline;
 }
 /*# sourceMappingURL=page-list.css.map */
