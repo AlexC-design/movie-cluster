@@ -28,8 +28,8 @@ const NavBar = props => {
         <Link to="/popular" className={`navbar-link ${pathCheck("/popular")}`}>
           Popular
         </Link>
-        <Link to="/genre" className={`navbar-link ${pathCheck("/genre")}`}>
-          Genre
+        <Link to="/genres" className={`navbar-link ${pathCheck("/genres")}`}>
+          Genres
         </Link>
         <Link to="/search" className={`navbar-link ${pathCheck("/search")}`}>
           Search

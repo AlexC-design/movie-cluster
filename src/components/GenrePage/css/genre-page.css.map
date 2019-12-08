@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,sBAAsB,CAAC;EACrB,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,cAAc;EACrC,aAAa,EAAE,MAAM;EACrB,OAAO,EAAE,MAAM;EACf,MAAM,EAAE,IAAI;CASb;;AAdD,AAOE,sBAPoB,CAOpB,WAAW,CAAC;EACV,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,KAAK;EACjB,MAAM,EAAE,eAAe;EACvB,aAAa,EAAE,IAAI;CACpB",
+    "sources": [
+        "genre-page.scss"
+    ],
+    "names": [],
+    "file": "genre-page.css"
+}

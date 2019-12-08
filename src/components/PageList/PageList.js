@@ -6,7 +6,6 @@ import "./css/page-list.css";
 
 const PageList = ({ numberOfPages, currentPageNumber, fetchPage }) => {
   useEffect(() => {
-    console.log('mounted or updated');
     //focusing button 1 on page load
     document.querySelector(`.page-${currentPageNumber}`).className +=
       " selected";
