@@ -8,6 +8,12 @@
   margin: 0.5em 0 1em;
 }
 
+@media (max-width: 1600px) {
+  .rating-container {
+    margin: 0.5em 0 0.5em;
+  }
+}
+
 .rating-container .rating-bar {
   width: 80%;
   height: 4px;
@@ -15,6 +21,12 @@
   background: #13021C;
   border-radius: 25px;
   padding: 3.5px;
+}
+
+@media (max-width: 1600px) {
+  .rating-container .rating-bar {
+    width: 60%;
+  }
 }
 
 .rating-container .rating-bar span {
@@ -31,5 +43,11 @@
   font-weight: 400;
   font-weight: bolder;
   padding-left: 1em;
+}
+
+@media (max-width: 1600px) {
+  .rating-container .rating-percentage {
+    font-size: 1.2em;
+  }
 }
 /*# sourceMappingURL=rating-bar.css.map */

@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,uBAAuB,CAAC;EACtB,OAAO,EAAE,QAAQ;CAClB;;AAED,AAAA,YAAY,CAAC;EACX,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,IAAI;EACZ,aAAa,EAAE,IAAI;EACnB,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,iCAAiC;CAkB9C;;AA1BD,AAUE,YAVU,AAUT,MAAM,CAAC;EACN,UAAU,ECVH,OAAO;CDWf;;AAZH,AAcE,YAdU,AAcT,OAAO,CAAC;EACP,UAAU,ECbH,OAAO;CDcf;;AAhBH,AAiBE,YAjBU,AAiBT,MAAM,CAAC;EACN,UAAU,EAAE,UAAU;EACtB,MAAM,EAAE,eAAe;EACvB,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,eAAe;EAC5B,OAAO,EAAE,CAAC;EACV,WAAW,EAAE,IAAI;EACjB,UAAU,ECvBH,OAAO;CDwBf",
+    "sources": [
+        "page-list.scss",
+        "../../../scss/variables/variables.scss",
+        "../../../scss/functions/functions.scss",
+        "../../../scss/variables/variables.scss"
+    ],
+    "names": [],
+    "file": "page-list.css"
+}

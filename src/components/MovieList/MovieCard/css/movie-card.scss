@@ -1,7 +1,16 @@
+@import "../../../../scss/mixins/mixins.scss";
+
 .movie-card-container {
   padding: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  max-width: 90%;
+  margin: auto;
+
+  @include tablet-landscape {
+    flex-direction: column;
+  }
+
 }

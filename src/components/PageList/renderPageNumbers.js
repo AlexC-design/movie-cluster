@@ -14,7 +14,7 @@ export const renderPageNumbers = (numberOfPages, fetchPage) => {
         fetchPage(index + 1, historyToPageType[history.location.pathname]);
       }}
       key={`${index + 1}`}
-      className="page-button button"
+      className="page-button"
     >{`${index + 1}`}</button>
   ));
 };

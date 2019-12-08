@@ -2,11 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import { renderPageNumbers } from "./renderPageNumbers";
 import { fetchPage } from "../../actions";
+import "./css/page-list.css";
 
 const PageList = ({ numberOfPages, fetchPage }) => {
   return (
     <div className="page-numbers-container">
-      <div>{renderPageNumbers(numberOfPages, fetchPage)}</div>
+      {renderPageNumbers(numberOfPages, fetchPage)}
     </div>
   );
 };

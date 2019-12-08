@@ -7,6 +7,10 @@
   align-items: center;
   margin: 0.5em 0 1em;
 
+  @include desktop-mid {
+    margin: 0.5em 0 0.5em;
+  }
+
   .rating-bar {
     width: 80%;
     height: 4px;
@@ -14,6 +18,10 @@
     background: color(dark);
     border-radius: 25px;
     padding: 3.5px;
+
+    @include desktop-mid {
+      width: 60%;
+    }
 
     span {
       display: block;
@@ -30,5 +38,9 @@
 
     font-weight: bolder;
     padding-left: 1em;
+
+    @include desktop-mid {
+      font-size: 1.2em;
+    }
   }
 }

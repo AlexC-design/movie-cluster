@@ -12,3 +12,17 @@
   font-size: 3em;
   font-weight: 800;
 }
+
+// --- MEDIA QUERYS ---
+
+@mixin desktop-mid {
+  @media (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}

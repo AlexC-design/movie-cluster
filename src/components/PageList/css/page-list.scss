@@ -1,0 +1,34 @@
+@import "../../../scss/variables/variables.scss";
+@import "../../../scss/functions/functions.scss";
+
+.page-numbers-container {
+  padding: 5em 10em;
+}
+
+.page-button {
+  border: none;
+  color: white;
+  font-size: 1.3em;
+  margin: 10px;
+  border-radius: 10px;
+  height: 2.2em;
+  width: 2.2em;
+  background: linear-gradient(#60246c, #9c284b);
+
+  &:hover {
+    background: color(accent1);
+  }
+
+  &:active {
+    background: color(accent2);
+  }
+  &:focus {
+    box-sizing: border-box;
+    border: 2px solid white;
+    color: white;
+    text-shadow: 0 0 5px #ffe195;
+    outline: 0;
+    font-weight: bold;
+    background: color(accent1);
+  }
+}

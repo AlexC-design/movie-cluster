@@ -4,13 +4,14 @@ import "./movie-image.css";
 import get from "get-value";
 
 const MovieImage = ({ backdropSizes, baseUrl, backdropPath, movieTitle }) => {
-  
   const imageUrl = `${baseUrl}${
     backdropSizes[backdropSizes.length - 3]
   }${backdropPath}`;
 
   const imageStyling = {
-    background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${imageUrl})`
+    background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${imageUrl})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover"
   };
 
   return (
