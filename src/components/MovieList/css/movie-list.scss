@@ -9,7 +9,7 @@
 }
 
 .simplebar-component {
-  width: 99%;
+  width: 100%;
   animation: fadein 0.5s ease-in-out;
 
   @keyframes fadein {
@@ -34,7 +34,7 @@
     height: 85vh;
     background: black;
     border-radius: 10px;
-    padding: auto 0;
+    // padding: auto 0;
   }
 
   .simplebar-scrollbar:before {
@@ -44,5 +44,13 @@
   .simplebar-scrollbar.simplebar-visible:before {
     opacity: 100%;
     background: #ef8555;
+  }
+
+  .simplebar-horizontal {
+    display: none;
+  }
+
+  .simplebar-content {
+    overflow-x: hidden;
   }
 }

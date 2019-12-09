@@ -1,0 +1,29 @@
+.hero-section-container .slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero-section-container .slider .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0 0px 20px 20px #000000;
+          box-shadow: inset 0 0px 20px 20px #000000;
+  top: 0;
+  left: 0;
+}
+
+.hero-section-container .slider .slider-image {
+  position: absolute;
+  margin: 0 auto;
+  width: 100vw;
+}
+
+.hero-section-container .slider img {
+  width: 100%;
+}
+/*# sourceMappingURL=movie-page.css.map */

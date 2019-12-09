@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import "./movie-details.css";
 import RatingBar from "./RatingBar/RatingBar";
 
-const MovieDetails = ({ overview, rating, releaseDate }) => {
+const MovieDetails = ({ overview, rating, releaseDate, id }) => {
   useEffect(() => {
     //cropping long descriptions
     const divs = document.getElementsByClassName("overview");
@@ -27,7 +27,7 @@ const MovieDetails = ({ overview, rating, releaseDate }) => {
         <RatingBar rating={rating} />
         <div className="overview">{overview}</div>
       </div>
-      <Link className="button-link" to="/movie">
+      <Link className="button-link" to={`/movie/${id}`}>
         <button className="see-more-button">See More</button>
       </Link>
     </div>

@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Router, Route, Link } from "react-router-dom";
+import history from "../../history";
 
 import NavBar from "../NavBar/NavBar";
 import Logo from "../LandingPage/Logo/Logo";
 import LandingPage from "../LandingPage/LandingPage";
 import NowPlayingPage from "../NowPlayingPage/NowPlayingPage";
-import history from "../../history";
-
-import "./main-screen.css";
-import MainScreenBg from "./MainScreenBg";
 import TopRatedPage from "../TopRatedPage/TopRatedPage";
 import PopularPage from "../PopularPage/PopularPage";
 import GenrePage from "../GenrePage/GenrePage";
+import GenreMoviesPage from "../GenrePage/GenreMoviesPage/GenreMoviesPage";
 import MoviePage from "../MoviePage/MoviePage";
+import MainScreenBg from "./MainScreenBg";
+import "./main-screen.css";
 
 const MainScreen = () => {
   const [pageStatus, setPageStatus] = useState(`${history.location.pathname}`);
@@ -39,7 +39,8 @@ const MainScreen = () => {
         <Route path="/top-rated" exact component={TopRatedPage} />
         <Route path="/popular" exact component={PopularPage} />
         <Route path="/genres" exact component={GenrePage} />
-        <Route path="/movie" exact component={MoviePage} />
+        <Route path="/genres/:id" exact component={GenreMoviesPage} />
+        <Route path="/movie/:id" exact component={MoviePage} />
       </Router>
       <MainScreenBg pageStatus={pageStatus} />
     </div>

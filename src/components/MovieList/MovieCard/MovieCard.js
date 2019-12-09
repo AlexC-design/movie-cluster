@@ -8,10 +8,12 @@ const MovieCard = ({ movieId, index }) => {
     <div className="movie-card-container" key={`id:${movieId}`}>
       <MovieImage
         index={index}
+        id={movieId}
         key={`${movieId}-image-${index}`}
       />
       <MovieDetails
         index={index}
+        id={movieId}
         key={`${movieId}-details-${index}`}
       />
     </div>

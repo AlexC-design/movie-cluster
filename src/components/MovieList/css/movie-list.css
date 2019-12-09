@@ -9,7 +9,7 @@
 }
 
 .simplebar-component {
-  width: 99%;
+  width: 100%;
   -webkit-animation: fadein 0.5s ease-in-out;
           animation: fadein 0.5s ease-in-out;
 }
@@ -44,7 +44,6 @@
   height: 85vh;
   background: black;
   border-radius: 10px;
-  padding: auto 0;
 }
 
 .simplebar-component .simplebar-scrollbar:before {
@@ -55,5 +54,13 @@
 .simplebar-component .simplebar-scrollbar.simplebar-visible:before {
   opacity: 100%;
   background: #ef8555;
+}
+
+.simplebar-component .simplebar-horizontal {
+  display: none;
+}
+
+.simplebar-component .simplebar-content {
+  overflow-x: hidden;
 }
 /*# sourceMappingURL=movie-list.css.map */

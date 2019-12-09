@@ -18,6 +18,10 @@ body {
   background: #60246c;
 }
 
+.main-screen .main-screen-bg.movie {
+  background: black;
+}
+
 .main-screen .main-screen-bg.not-home {
   background: #3d2242;
 }
@@ -35,6 +39,10 @@ body {
 
 .main-screen .gradient.home {
   opacity: 20%;
+}
+
+.main-screen .gradient.movie {
+  opacity: 0%;
 }
 
 .main-screen .gradient.not-home {

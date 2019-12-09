@@ -4,7 +4,13 @@ import { connect } from "react-redux";
 import "./movie-image.css";
 import get from "get-value";
 
-const MovieImage = ({ backdropSizes, baseUrl, backdropPath, movieTitle }) => {
+const MovieImage = ({
+  backdropSizes,
+  baseUrl,
+  backdropPath,
+  movieTitle,
+  id
+}) => {
   const imageUrl = `${baseUrl}${
     backdropSizes[backdropSizes.length - 3]
   }${backdropPath}`;
@@ -16,7 +22,7 @@ const MovieImage = ({ backdropSizes, baseUrl, backdropPath, movieTitle }) => {
   };
 
   return (
-    <Link to="/movie">
+    <Link to={`/movie/${id}`}>
       <div className="movie-image-container">
         <h1 className="movie-card-title">{movieTitle}</h1>
         <div className="movie-card-image-container">

@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const GenreCard = () => {
+const GenreCard = ({ genre }) => {
   return (
     <div className="genre-card">
-      <div>Genre CARD</div>
+      <Link to={`/genres/${genre.id}`}>
+        <div className="genre-name">{genre.name}</div>
+      </Link>
     </div>
   );
 };

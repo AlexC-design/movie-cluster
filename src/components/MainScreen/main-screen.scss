@@ -19,6 +19,9 @@ body {
     &.home {
       background: #60246c;
     }
+    &.movie {
+      background: black;
+    }
     &.not-home {
       background: #3d2242;
     }
@@ -35,6 +38,9 @@ body {
 
     &.home {
       opacity: 20%;
+    }
+    &.movie{
+      opacity: 0%;
     }
     &.not-home {
       opacity: 20%;
