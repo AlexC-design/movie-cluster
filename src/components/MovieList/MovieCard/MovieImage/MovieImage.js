@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "./movie-image.css";
 import get from "get-value";
@@ -15,12 +16,14 @@ const MovieImage = ({ backdropSizes, baseUrl, backdropPath, movieTitle }) => {
   };
 
   return (
-    <div className="movie-image-container">
-      <h1 className="movie-card-title">{movieTitle}</h1>
-      <div className="movie-card-image-container">
-        <div className="movie-card-image" style={imageStyling} />
+    <Link to="/movie">
+      <div className="movie-image-container">
+        <h1 className="movie-card-title">{movieTitle}</h1>
+        <div className="movie-card-image-container">
+          <div className="movie-card-image" style={imageStyling} />
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
@@ -28,11 +31,6 @@ const mapStateToProps = (state, ownProps) => {
   const { index } = ownProps;
 
   return {
-    // backdropPath: get(
-    //   get(state, "currentPage.results", [])[index],
-    //   "backdrop_path",
-    //   ""
-    // ),
     backdropPath: get(state, `currentPage.results.${index}.backdrop_path`, ""),
     movieTitle: get(state, `currentPage.results.${index}.original_title`, ""),
     backdropSizes: get(state, "config.images.backdrop_sizes", ""),

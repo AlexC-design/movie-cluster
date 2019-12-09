@@ -12,6 +12,7 @@ import MainScreenBg from "./MainScreenBg";
 import TopRatedPage from "../TopRatedPage/TopRatedPage";
 import PopularPage from "../PopularPage/PopularPage";
 import GenrePage from "../GenrePage/GenrePage";
+import MoviePage from "../MoviePage/MoviePage";
 
 const MainScreen = () => {
   const [pageStatus, setPageStatus] = useState(`${history.location.pathname}`);
@@ -38,6 +39,7 @@ const MainScreen = () => {
         <Route path="/top-rated" exact component={TopRatedPage} />
         <Route path="/popular" exact component={PopularPage} />
         <Route path="/genres" exact component={GenrePage} />
+        <Route path="/movie" exact component={MoviePage} />
       </Router>
       <MainScreenBg pageStatus={pageStatus} />
     </div>

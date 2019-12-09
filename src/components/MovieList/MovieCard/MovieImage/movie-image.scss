@@ -1,4 +1,5 @@
 @import "../../../../scss/variables/variables.scss";
+@import "../../../../scss/functions/functions.scss";
 @import "../../../../scss/mixins/mixins.scss";
 
 .movie-image-container {
@@ -21,17 +22,20 @@
     .movie-card-image {
       width: $imageWidth;
       height: $imageHeight;
-      border: 2px solid orange;
+      border: 2px solid color(accent1);
       box-shadow: inset 0 0 20px rgba(63, 44, 4, 0.534);
       border-radius: 20px;
 
-      transition: all 1s ease-in-out;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        border: 2px solid color(accent3);
+      }
 
       @include desktop-mid {
         width: calc(#{$imageWidth} * 0.8);
       }
       @include tablet-landscape {
-      
       }
     }
   }

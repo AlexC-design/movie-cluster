@@ -26,12 +26,16 @@
 .movie-image-container .movie-card-image-container .movie-card-image {
   width: 780px;
   height: 439px;
-  border: 2px solid orange;
+  border: 2px solid #ef8555;
   -webkit-box-shadow: inset 0 0 20px rgba(63, 44, 4, 0.534);
           box-shadow: inset 0 0 20px rgba(63, 44, 4, 0.534);
   border-radius: 20px;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.movie-image-container .movie-card-image-container .movie-card-image:hover {
+  border: 2px solid #6fe6f6;
 }
 
 @media (max-width: 1600px) {

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "./movie-details.css";
 import RatingBar from "./RatingBar/RatingBar";
@@ -26,7 +27,9 @@ const MovieDetails = ({ overview, rating, releaseDate }) => {
         <RatingBar rating={rating} />
         <div className="overview">{overview}</div>
       </div>
-      <button className="see-more-button">See More</button>
+      <Link className="button-link" to="/movie">
+        <button className="see-more-button">See More</button>
+      </Link>
     </div>
   );
 };
