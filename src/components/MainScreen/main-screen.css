@@ -19,7 +19,7 @@ body {
 }
 
 .main-screen .main-screen-bg.movie {
-  background: black;
+  background: #3d2242;
 }
 
 .main-screen .main-screen-bg.not-home {
@@ -42,7 +42,7 @@ body {
 }
 
 .main-screen .gradient.movie {
-  opacity: 0%;
+  opacity: 20%;
 }
 
 .main-screen .gradient.not-home {

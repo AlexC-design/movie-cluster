@@ -1,15 +1,5 @@
 import axios from "../axios";
 
-export const fetchImages = id => async dispatch => {
-  const response = await axios.get(`/movie/${id}/images`);
-  console.log("fetching images");
-
-  dispatch({
-    type: "FETCH_IMAGES",
-    payload: response.data
-  });
-};
-
 export const fetchConfig = () => async dispatch => {
   const response = await axios.get(`/configuration`);
   console.log("fetching config");
@@ -63,6 +53,16 @@ export const fetchGenreList = () => async dispatch => {
   });
 };
 
+export const fetchMovieDetails = id => async dispatch => {
+  const response = await axios.get(`/movie/${id}`);
+  console.log(`fetching details for movie id-${id}`);
+
+  dispatch({
+    type: "FETCH_MOVIE_DETAILS",
+    payload: response.data
+  });
+};
+
 export const fetchMovieImages = id => async dispatch => {
   const response = await axios.get(`/movie/${id}/images`);
   console.log(`fetching images for movie id-${id}`);
@@ -71,13 +71,4 @@ export const fetchMovieImages = id => async dispatch => {
     type: "FETCH_MOVIE_IMAGES",
     payload: response.data
   });
-};
-
-export const getCurrentPath = history => {
-  console.log("getting path");
-
-  return {
-    type: "GET_CURRENT_PATH",
-    payload: history.location.pathname
-  };
 };

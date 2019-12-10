@@ -1,28 +1,70 @@
-body {
-}
+@import "../../../scss/functions/functions.scss";
+@import "../../../scss/variables/variables.scss";
 
 // --- HERO SECTION ---
 
 .hero-section-container {
+  height: 100%;
+
   .slider {
     display: flex;
     justify-content: center;
+    height: 56.5vw;
 
-    .shadow {
-      position: absolute;
-      width: 100%;
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      background-image: linear-gradient(
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0),
+        black
+      );
       height: 100%;
-      box-shadow: inset 0 0px 20px 20px #000000;
-      top: 0;
-      left: 0;
+      width: 100%;
     }
+
     .slider-image {
+      opacity: 0;
       position: absolute;
       margin: 0 auto;
       width: 100vw;
+
+      transition: opacity 1s ease-in-out;
     }
     img {
       width: 100%;
+    }
+  }
+}
+
+// --- DETAILS SECTION ---
+
+.details-section-container {
+  color: white;
+  height: 100vh;
+
+  .circular-rating-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .rating-percentage {
+      position: absolute;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    svg {
+      transform: rotate(-90deg);
+      circle {
+        fill: none;
+        stroke: color(accent3);
+        stroke-width: 1em;
+        stroke-linecap: round;
+      }
     }
   }
 }

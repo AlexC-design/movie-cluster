@@ -17,22 +17,46 @@ import "./main-screen.css";
 const MainScreen = () => {
   const [pageStatus, setPageStatus] = useState(`${history.location.pathname}`);
   const [logoSize, setLogoSize] = useState(
-    `${history.location.pathname === "/" ? "large" : "small"}`
+    `${
+      history.location.pathname.includes("/movie")
+        ? "extra-small"
+        : history.location.pathname === "/"
+        ? "large"
+        : "small"
+    }`
+  );
+  const [logoContent, setLogoContent] = useState(
+    `${
+      history.location.pathname.includes("/movie") ? "back-arrow" : "logotype"
+    }`
   );
 
   useEffect(() => {
+    console.log(history);
     history.listen((location, action) => {
       setPageStatus(location.pathname);
-      setLogoSize(location.pathname === "/" ? "large" : "small");
+      setLogoSize(
+        location.pathname.includes("/movie")
+          ? "extra-small"
+          : location.pathname === "/"
+          ? "large"
+          : "small"
+      );
+      setLogoContent(
+        location.pathname.includes("/movie") ? "back-arrow" : "logotype"
+      );
     });
-  }, []);
+  }, [history]);
 
   return (
     <div className="main-screen">
       <Router history={history}>
         <NavBar pageStatus={pageStatus} />
-        <Link to="/">
-          <Logo contentShape="logotype" size={logoSize} />
+        <Link
+          to={logoContent === "back-arrow" ? null : "/"}
+          onClick={logoContent === "back-arrow" ? history.goBack : null}
+        >
+          <Logo contentShape={logoContent} size={logoSize} />
         </Link>
         <Route path="/" exact component={LandingPage} />
         <Route path="/now-playing" exact component={NowPlayingPage} />

@@ -23,12 +23,23 @@
     transition: all 0.2s ease-in-out;
   }
 
+  &.extra-small {
+    position: fixed;
+    top: calc(0px - #{$defaultLogoHeight} / 2 + 50px);
+    left: calc(0px - #{$defaultLogoHeight} / 2 + 7%);
+    cursor: pointer;
+
+    transform: scale(0.1);
+    transition: all 0.2s 0.4s ease-in-out;
+  }
+
   .logotype {
     position: absolute;
     top: calc(50% - #{$logotypeHeight}/ 2);
   }
 
   .back-arrow {
+    transform: scale(0.7);
     position: absolute;
   }
 }

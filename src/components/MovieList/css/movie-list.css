@@ -44,6 +44,7 @@
   height: 85vh;
   background: black;
   border-radius: 10px;
+  margin: auto 2% auto 0;
 }
 
 .simplebar-component .simplebar-scrollbar:before {

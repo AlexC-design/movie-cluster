@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchMovieDetails } from "../../actions";
+
 import SimpleBar from "simplebar-react";
 import HeroSection from "./MoviePageSections/HeroSection/HeroSection";
+import DetailsSection from "./MoviePageSections/DetailsSection/DetailsSection";
+
 import "./css/movie-page.css";
 
-const MoviePage = props => {
+const MoviePage = ({ match, fetchMovieDetails }) => {
+  const { id } = match.params;
+
+  useEffect(() => {
+    fetchMovieDetails(id);
+  });
+
   return (
     <SimpleBar
       className="simplebar-component"
       style={{ height: "100vh", autoHide: false }}
     >
-      {" "}
-      <HeroSection id={props.match.params.id} />
+      <HeroSection id={id} />
+      <DetailsSection />
     </SimpleBar>
   );
 };
 
-export default MoviePage;
+export default connect(null, { fetchMovieDetails })(MoviePage);

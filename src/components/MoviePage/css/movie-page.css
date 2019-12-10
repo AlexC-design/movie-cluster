@@ -1,3 +1,7 @@
+.hero-section-container {
+  height: 100%;
+}
+
 .hero-section-container .slider {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5,25 +9,65 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 56.5vw;
 }
 
-.hero-section-container .slider .shadow {
-  position: absolute;
-  width: 100%;
+.hero-section-container .slider::after {
+  content: "";
+  display: block;
+  position: relative;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), color-stop(rgba(0, 0, 0, 0)), to(black));
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), black);
   height: 100%;
-  -webkit-box-shadow: inset 0 0px 20px 20px #000000;
-          box-shadow: inset 0 0px 20px 20px #000000;
-  top: 0;
-  left: 0;
+  width: 100%;
 }
 
 .hero-section-container .slider .slider-image {
+  opacity: 0;
   position: absolute;
   margin: 0 auto;
   width: 100vw;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .hero-section-container .slider img {
   width: 100%;
+}
+
+.details-section-container {
+  color: white;
+  height: 100vh;
+}
+
+.details-section-container .circular-rating-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details-section-container .circular-rating-container .rating-percentage {
+  position: absolute;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.details-section-container .circular-rating-container svg {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.details-section-container .circular-rating-container svg circle {
+  fill: none;
+  stroke: #6fe6f6;
+  stroke-width: 1em;
+  stroke-linecap: round;
 }
 /*# sourceMappingURL=movie-page.css.map */
