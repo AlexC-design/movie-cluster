@@ -128,7 +128,7 @@ html {
 
 // --- TRAILERS SECTION ---
 
-$videoWidth: 500px;
+$videoWidth: 750px;
 $videoHeight: calc(#{$videoWidth} * 0.6);
 
 .trailers-section-container {
@@ -141,8 +141,43 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
   }
 
   .buttons {
-    text-align: center;
-    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    height: 50px;
+    margin: 2em auto;
+
+    .arrow-button {
+      position: relative;
+
+      &.reversed {
+        transform: scaleX(-1);
+      }
+
+      &:hover .back-arrow-inverted {
+        opacity: 100%;
+      }
+
+      &:hover .back-arrow {
+        opacity: 0%;
+      }
+
+      img {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+
+        transition: all 0.1s ease-out;
+      }
+
+      .back-arrow {
+        opacity: 100%;
+      }
+
+      .back-arrow-inverted {
+        opacity: 0%;
+      }
+    }
   }
 
   .trailers-slider {

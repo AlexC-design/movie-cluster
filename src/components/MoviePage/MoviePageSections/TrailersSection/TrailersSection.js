@@ -4,6 +4,9 @@ import { fetchMovieVideos } from "../../../../actions";
 import TrailerCard from "./TrailerCard";
 import get from "get-value";
 
+import backArrow from '../../../../assets/images/Logo/back-arrow.svg'
+import backArrowInverted from '../../../../assets/images/Logo/back-arrow-inverted-blue.svg'
+
 const TrailersSection = ({ fetchMovieVideos, id, videoList }) => {
   const [selectedTrailer, setSelectedTrailer] = useState(0);
   const trailers = document.querySelectorAll(".trailer-video");
@@ -41,8 +44,22 @@ const TrailersSection = ({ fetchMovieVideos, id, videoList }) => {
         <h1 className="title">Trailers</h1>
 
         <div className="buttons">
-          <img onClick={() => prev(trailers)}>left</img>
-          <img onClick={() => next(trailers)}>right</button>
+          <div className='arrow-button' onClick={() => prev(trailers)}>
+            <img className="back-arrow" src={backArrow} alt="back arrow" />
+            <img
+              className="back-arrow-inverted"
+              src={backArrowInverted}
+              alt="back arrow"
+            />
+          </div>
+          <div className='arrow-button reversed' onClick={() => next(trailers)}>
+            <img className="back-arrow" src={backArrow} alt="back arrow" />
+            <img
+              className="back-arrow-inverted"
+              src={backArrowInverted}
+              alt="back arrow"
+            />
+          </div>
         </div>
 
         <div className="trailers-slider">
@@ -50,7 +67,9 @@ const TrailersSection = ({ fetchMovieVideos, id, videoList }) => {
             className="trailers-wrapper"
             style={{
               transform: `translateX(-${selectedTrailer *
-                (trailers.length ? trailers[selectedTrailer].offsetWidth : 504)}px)`
+                (trailers.length
+                  ? trailers[selectedTrailer].offsetWidth
+                  : 504)}px)`
             }}
           >
             {videoList.map((video, _) => {
