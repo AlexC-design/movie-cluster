@@ -2,7 +2,7 @@
   padding-top: 5%;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1500px) {
   .movie-list-container {
     padding-top: 10%;
   }
@@ -63,5 +63,6 @@
 
 .simplebar-component .simplebar-content {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 /*# sourceMappingURL=movie-list.css.map */

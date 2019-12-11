@@ -38,7 +38,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     backdropPath: get(state, `currentPage.results.${index}.backdrop_path`, ""),
-    movieTitle: get(state, `currentPage.results.${index}.original_title`, ""),
+    movieTitle: get(state, `currentPage.results.${index}.title`, ""),
     backdropSizes: get(state, "config.images.backdrop_sizes", ""),
     baseUrl: get(state, "config.images.base_url", "")
   };

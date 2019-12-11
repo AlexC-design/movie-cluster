@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { fetchMovieImages } from "../../../../actions";
 import get from "get-value";
 
-const HeroSection = ({ id, fetchMovieImages, backdrops, baseUrl }) => {
+const HeroSection = ({ id, fetchMovieImages, backdrops, baseUrl, movieTitle }) => {
   const imageUrl = path => {
     return `${baseUrl}/original${path}`;
   };
@@ -34,7 +34,7 @@ const HeroSection = ({ id, fetchMovieImages, backdrops, baseUrl }) => {
   if (backdrops) {
     return (
       <div className="hero-section-container">
-        <div className="movie-title"></div>
+        <div className="movie-title">{movieTitle}</div>
         <div className="slider">
           {backdrops.map((image, index) => {
             if (image.width > 1919)
@@ -54,7 +54,9 @@ const HeroSection = ({ id, fetchMovieImages, backdrops, baseUrl }) => {
 const mapStateToProps = state => {
   return {
     backdrops: get(state, "movieImages.backdrops", ""),
-    baseUrl: get(state, "config.images.base_url", "")
+    baseUrl: get(state, "config.images.base_url", ""),
+    movieTitle: get(state, "movieDetails.title", "Title loading...")
+    
   };
 };
 

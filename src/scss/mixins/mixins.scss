@@ -16,7 +16,7 @@
 // --- MEDIA QUERYS ---
 
 @mixin desktop-mid {
-  @media (max-width: 1600px) {
+  @media (max-width: 1500px) {
     @content;
   }
 }

@@ -72,3 +72,13 @@ export const fetchMovieImages = id => async dispatch => {
     payload: response.data
   });
 };
+
+export const fetchMovieVideos = id => async dispatch => {
+  const response = await axios.get(`/movie/${id}/videos`);
+  console.log(`fetching movies for movie id-${id}`);
+
+  dispatch({
+    type: "FETCH_MOVIE_VIDEOS",
+    payload: response.data
+  });
+};

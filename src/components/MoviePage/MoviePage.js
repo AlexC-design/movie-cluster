@@ -7,6 +7,7 @@ import HeroSection from "./MoviePageSections/HeroSection/HeroSection";
 import DetailsSection from "./MoviePageSections/DetailsSection/DetailsSection";
 
 import "./css/movie-page.css";
+import TrailersSection from "./MoviePageSections/TrailersSection/TrailersSection";
 
 const MoviePage = ({ match, fetchMovieDetails }) => {
   const { id } = match.params;
@@ -22,6 +23,7 @@ const MoviePage = ({ match, fetchMovieDetails }) => {
     >
       <HeroSection id={id} />
       <DetailsSection />
+      <TrailersSection id={id} />
     </SimpleBar>
   );
 };

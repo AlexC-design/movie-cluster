@@ -32,7 +32,7 @@ const MainScreen = () => {
   );
 
   useEffect(() => {
-    console.log(history);
+    
     history.listen((location, action) => {
       setPageStatus(location.pathname);
       setLogoSize(

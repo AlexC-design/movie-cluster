@@ -1,5 +1,22 @@
+body {
+  overflow: hidden;
+}
+
+html {
+  overflow: hidden;
+}
+
 .hero-section-container {
   height: 100%;
+}
+
+.hero-section-container .movie-title {
+  position: absolute;
+  color: white;
+  font-size: 3em;
+  top: 56.5vw;
+  left: 5%;
+  z-index: 1;
 }
 
 .hero-section-container .slider {
@@ -25,7 +42,6 @@
 .hero-section-container .slider .slider-image {
   opacity: 0;
   position: absolute;
-  margin: 0 auto;
   width: 100vw;
   -webkit-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
@@ -35,12 +51,77 @@
   width: 100%;
 }
 
-.details-section-container {
-  color: white;
-  height: 100vh;
+.details-section-background {
+  background: -webkit-gradient(linear, left top, left bottom, from(black), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(black, rgba(0, 0, 0, 0));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.details-section-container .circular-rating-container {
+.details-section-background .details-section-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  padding: 10em 0 1em;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.details-section-background .details-section-container .description-container {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.details-section-background .details-section-container .description-container .genre-names {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 1.5em;
+}
+
+.details-section-background .details-section-container .description-container .genre-names .just-genre-names {
+  font-weight: 200;
+}
+
+.details-section-background .details-section-container .description-container h1 {
+  padding-bottom: 0.8em;
+}
+
+.details-section-background .details-section-container .description-container .description {
+  padding-right: 100px;
+}
+
+.details-section-background .details-section-container .rating-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.details-section-background .details-section-container .rating-section .circular-rating-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -53,21 +134,72 @@
           align-items: center;
 }
 
-.details-section-container .circular-rating-container .rating-percentage {
+.details-section-background .details-section-container .rating-section .circular-rating-container .rating-percentage {
   position: absolute;
   font-size: 2em;
   font-weight: bold;
 }
 
-.details-section-container .circular-rating-container svg {
+.details-section-background .details-section-container .rating-section .circular-rating-container svg {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
 
-.details-section-container .circular-rating-container svg circle {
+.details-section-background .details-section-container .rating-section .circular-rating-container svg circle {
   fill: none;
   stroke: #6fe6f6;
   stroke-width: 1em;
   stroke-linecap: round;
+}
+
+.trailers-section-container {
+  position: relative;
+  height: calc(calc(500px * 0.6)* 4);
+  color: white;
+}
+
+.trailers-section-container .title {
+  text-align: center;
+}
+
+.trailers-section-container .buttons {
+  text-align: center;
+  padding: 1em;
+}
+
+.trailers-section-container .trailers-slider {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.trailers-section-container .trailers-slider .trailers-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: absolute;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.trailers-section-container .trailers-slider .trailers-wrapper .trailer-video {
+  width: 500px;
+  height: calc(500px * 0.6);
+  opacity: 20%;
+  border: solid 2px #ef8555;
+  border-radius: 20px;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.trailers-section-container .trailers-slider .trailers-wrapper .trailer-video.selected {
+  opacity: 100%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 /*# sourceMappingURL=movie-page.css.map */

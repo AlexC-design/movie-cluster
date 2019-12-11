@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import SimpleBar from "simplebar-react";
+
 import { connect } from "react-redux";
 import GenreCard from "./GenreCard/GenreCard";
 import { fetchGenreList, fetchPage } from "../../actions";
 import "./css/genre-page.css";
 
-const GenrePage = ({ fetchGenreList, fetchPage, genres }) => {
+const GenrePage = ({ fetchGenreList, genres }) => {
   useEffect(() => {
     fetchGenreList();
 
@@ -14,11 +15,16 @@ const GenrePage = ({ fetchGenreList, fetchPage, genres }) => {
 
   if (genres) {
     return (
-      <div className="genre-cards-container">
-        {genres.map((genre, _) => {
-          return <GenreCard genre={genre} />;
-        })}
-      </div>
+      <SimpleBar
+        className="simplebar-component"
+        style={{ height: "100vh", autoHide: false }}
+      >
+        <div className="genre-cards-container">
+          {genres.map((genre, _) => {
+            return <GenreCard genre={genre} />;
+          })}
+        </div>
+      </SimpleBar>
     );
   } else {
     return <div>Loading...</div>;
