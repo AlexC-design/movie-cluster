@@ -154,7 +154,7 @@ html {
 
 .trailers-section-container {
   position: relative;
-  height: calc(calc(750px * 0.6)* 4);
+  height: calc(calc(750px * 0.6) * 1.7);
   color: white;
 }
 
@@ -246,5 +246,87 @@ html {
   opacity: 100%;
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.actors-section {
+  color: white;
+  max-width: 80%;
+  margin: 0 auto;
+  overflow-y: hidden;
+  -webkit-transition: height 1s ease-out;
+  transition: height 1s ease-out;
+}
+
+.actors-section h1 {
+  padding-bottom: 2em;
+}
+
+.actors-section .actors-cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+.actors-section .actors-cards .actor-card {
+  text-align: center;
+}
+
+.actors-section .actors-cards .actor-card .actor-image {
+  border: 2px solid #ef8555;
+  border-radius: 20px;
+  min-height: 282px;
+  max-width: 189px;
+}
+
+.actors-section .actors-cards .actor-card .actor-name {
+  margin: 1em auto 0;
+}
+
+.actors-section .actors-cards .actor-card .character-name {
+  opacity: 50%;
+  margin: 0.5em auto 3em;
+}
+
+.see-more-section-wrapper {
+  margin: 0 auto;
+  width: 80px;
+  cursor: pointer;
+}
+
+.see-more-section-wrapper:hover p {
+  opacity: 100%;
+}
+
+.see-more-section-wrapper p {
+  opacity: 50%;
+  margin: 0;
+  color: white;
+  text-align: center;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+
+.see-more-section-wrapper .see-more-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.see-more-section-wrapper .see-more-section img {
+  width: 80px;
+  height: 40px;
+}
+
+.similar-movies-section {
+  height: 100vh;
+  background-color: red;
 }
 /*# sourceMappingURL=movie-page.css.map */

@@ -133,7 +133,7 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
 
 .trailers-section-container {
   position: relative;
-  height: calc(#{$videoHeight}* 4);
+  height: calc(#{$videoHeight} * 1.7);
   color: white;
 
   .title {
@@ -166,8 +166,6 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
       &:active .back-arrow-inverted {
         transform: scale(1.1);
       }
-
-
 
       img {
         position: absolute;
@@ -217,4 +215,80 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
       }
     }
   }
+}
+
+// --- ACTORS SECTION ---
+
+.actors-section {
+  color: white;
+  max-width: 80%;
+  margin: 0 auto;
+  overflow-y: hidden;
+
+  transition: height 1s ease-out;
+
+  h1 {
+    padding-bottom: 2em;
+  }
+
+  .actors-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    .actor-card {
+      text-align: center;
+
+      .actor-image {
+        border: 2px solid color(accent1);
+        border-radius: 20px;
+        min-height: 282px;
+        max-width: 189px;
+      }
+
+      .actor-name {
+        margin: 1em auto 0;
+      }
+
+      .character-name {
+        opacity: 50%;
+        margin: 0.5em auto 3em;
+      }
+    }
+  }
+}
+
+.see-more-section-wrapper {
+  margin: 0 auto;
+  width: 80px;
+  cursor: pointer;
+
+  &:hover p {
+    opacity: 100%;
+  }
+
+  p {
+    opacity: 50%;
+    margin: 0;
+    color: white;
+    text-align: center;
+
+    transition: opacity 0.3s ease-out;
+  }
+
+  .see-more-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    img {
+      width: 80px;
+      height: 40px;
+    }
+  }
+}
+// --- SIMILAR MOVIES SECTION ---
+
+.similar-movies-section {
+  height: 100vh;
+  background-color: red;
 }

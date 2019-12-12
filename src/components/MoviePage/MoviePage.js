@@ -8,6 +8,8 @@ import DetailsSection from "./MoviePageSections/DetailsSection/DetailsSection";
 
 import "./css/movie-page.css";
 import TrailersSection from "./MoviePageSections/TrailersSection/TrailersSection";
+import ActorsSection from "./MoviePageSections/ActorsSection/ActorsSection";
+import SimilarMoviesSection from "./MoviePageSections/SimilarMoviesSection/SimilarMoviesSection";
 
 const MoviePage = ({ match, fetchMovieDetails }) => {
   const { id } = match.params;
@@ -24,6 +26,8 @@ const MoviePage = ({ match, fetchMovieDetails }) => {
       <HeroSection id={id} />
       <DetailsSection />
       <TrailersSection id={id} />
+      <ActorsSection id={id} />
+      <SimilarMoviesSection />
     </SimpleBar>
   );
 };

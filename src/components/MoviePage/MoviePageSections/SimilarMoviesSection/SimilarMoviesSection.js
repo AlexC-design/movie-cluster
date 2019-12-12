@@ -2,8 +2,8 @@ import React from 'react';
 
 const SimilarMoviesSection = () => {
     return (
-        <div>
-            
+        <div className='similar-movies-section'>
+            <div> Similar Movies </div>
         </div>
     );
 }
