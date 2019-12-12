@@ -24,7 +24,7 @@ const DetailsSection = ({ description, genres }) => {
             {/* <span style={{display:'inline-block', width:'100px'}}></span> */}
             <p className="just-genre-names">
               {genres
-                ? genres.map(genre => <span>&emsp;{genre.name}</span>)
+                ? genres.map(genre => <span key={genre.name}>&emsp;{genre.name}</span>)
                 : "loading"}
             </p>
           </div>

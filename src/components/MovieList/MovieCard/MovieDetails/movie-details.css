@@ -22,7 +22,7 @@
   color: white;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1500px) {
   .movie-details-container {
     padding: 1em 1.2em;
   }
@@ -43,7 +43,7 @@
   font-weight: 500;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1500px) {
   .movie-details-container .movie-details .release-date {
     font-size: 1.2em;
   }

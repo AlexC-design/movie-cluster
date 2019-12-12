@@ -11,7 +11,7 @@ const GenrePage = ({ fetchGenreList, genres }) => {
     fetchGenreList();
 
     // if (genres.length) fetchPage(1, "genres", genres[0].id);
-  }, [genres.length]);
+  });
 
   if (genres) {
     return (

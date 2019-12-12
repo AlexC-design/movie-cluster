@@ -39,7 +39,7 @@ const HeroSection = ({ id, fetchMovieImages, backdrops, baseUrl, movieTitle }) =
           {backdrops.map((image, index) => {
             if (image.width > 1919)
               return (
-                <div className={`slider-image index-${index}`}>
+                <div className={`slider-image index-${index}`} key={index}>
                   <img src={`${imageUrl(image.file_path)}`} />
                   <div className="shadow" />
                 </div>

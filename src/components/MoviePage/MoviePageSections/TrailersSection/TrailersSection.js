@@ -4,8 +4,8 @@ import { fetchMovieVideos } from "../../../../actions";
 import TrailerCard from "./TrailerCard";
 import get from "get-value";
 
-import backArrow from '../../../../assets/images/Logo/back-arrow.svg'
-import backArrowInverted from '../../../../assets/images/Logo/back-arrow-inverted-blue.svg'
+import backArrow from "../../../../assets/images/Logo/back-arrow.svg";
+import backArrowInverted from "../../../../assets/images/Logo/back-arrow-inverted-blue.svg";
 
 const TrailersSection = ({ fetchMovieVideos, id, videoList }) => {
   const [selectedTrailer, setSelectedTrailer] = useState(0);
@@ -44,7 +44,7 @@ const TrailersSection = ({ fetchMovieVideos, id, videoList }) => {
         <h1 className="title">Trailers</h1>
 
         <div className="buttons">
-          <div className='arrow-button' onClick={() => prev(trailers)}>
+          <div className="arrow-button" onClick={() => prev(trailers)}>
             <img className="back-arrow" src={backArrow} alt="back arrow" />
             <img
               className="back-arrow-inverted"
@@ -52,7 +52,7 @@ const TrailersSection = ({ fetchMovieVideos, id, videoList }) => {
               alt="back arrow"
             />
           </div>
-          <div className='arrow-button reversed' onClick={() => next(trailers)}>
+          <div className="arrow-button reversed" onClick={() => next(trailers)}>
             <img className="back-arrow" src={backArrow} alt="back arrow" />
             <img
               className="back-arrow-inverted"
@@ -74,7 +74,7 @@ const TrailersSection = ({ fetchMovieVideos, id, videoList }) => {
           >
             {videoList.map((video, _) => {
               return video.site === "YouTube" && video.type !== "Featurette" ? (
-                <TrailerCard videoId={video.key} />
+                <TrailerCard key={video.key} videoId={video.key} />
               ) : null;
             })}
           </div>

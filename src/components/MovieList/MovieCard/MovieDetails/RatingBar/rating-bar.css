@@ -8,7 +8,7 @@
   margin: 0.5em 0 1em;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1500px) {
   .rating-container {
     margin: 0.5em 0 0.5em;
   }
@@ -23,7 +23,7 @@
   padding: 3.5px;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1500px) {
   .rating-container .rating-bar {
     width: 60%;
   }
@@ -45,7 +45,7 @@
   padding-left: 1em;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1500px) {
   .rating-container .rating-percentage {
     font-size: 1.2em;
   }

@@ -7,7 +7,7 @@ import { fetchConfig } from "./actions";
 const App = ({ fetchConfig }) => {
   useEffect(() => {
     fetchConfig();
-  }, []);
+  });
 
   return (
     <div>
