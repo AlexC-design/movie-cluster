@@ -46,14 +46,14 @@ const MainScreen = () => {
         location.pathname.includes("/movie") ? "back-arrow" : "logotype"
       );
     });
-  }, [history]);
+  }, []);
 
   return (
     <div className="main-screen">
       <Router history={history}>
         <NavBar pageStatus={pageStatus} />
         <Link
-          to={logoContent === "back-arrow" ? null : "/"}
+          to={logoContent === "back-arrow" ? history.location.pathname : "/"}
           onClick={logoContent === "back-arrow" ? history.goBack : null}
         >
           <Logo contentShape={logoContent} size={logoSize} />

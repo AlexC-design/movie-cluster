@@ -73,6 +73,15 @@ export const fetchMovieImages = id => async dispatch => {
   });
 };
 
+export const clearMovieImages = () => dispatch => {
+  console.log(`clearing movie images`);
+
+  dispatch({
+    type: "FETCH_MOVIE_IMAGES",
+    payload: {}
+  });
+};
+
 export const fetchMovieVideos = id => async dispatch => {
   const response = await axios.get(`/movie/${id}/videos`);
   console.log(`fetching movies for movie id-${id}`);
@@ -90,5 +99,30 @@ export const fetchMovieCredits = id => async dispatch => {
   dispatch({
     type: "FETCH_MOVIE_CREDITS",
     payload: response.data
+  });
+};
+
+export const fetchImagesFromGenre = idList => dispatch => {
+  var genresImages = {};
+
+  idList.map(async (id, index) => {
+    const response = await axios.get(`/discover/movie`, {
+      params: { with_genres: `${id}` }
+    });
+    console.log(`fetching images from genre id-${id}`);
+
+    const movies = response.data.results;
+    var movieImages = [];
+
+    for (let i = 0; i < 5; i++) {
+      movieImages.push(movies[i].poster_path);
+    }
+
+    genresImages[id] = movieImages;
+  });
+
+  dispatch({
+    type: "FETCH_GENRE_IMAGES",
+    payload: genresImages
   });
 };

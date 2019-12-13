@@ -7,7 +7,7 @@ const ActorCard = ({ name, imagePath, baseUrl, character }) => {
 
   return (
     <div className="actor-card">
-      <img className="actor-image" src={imageUrl} alt="actor image" />
+      <img className="actor-image" src={imageUrl} alt="actor portrait" />
       <div className="actor-name">{name}</div>
       <div className="character-name">{character}</div>
     </div>

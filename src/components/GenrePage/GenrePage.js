@@ -3,17 +3,33 @@ import SimpleBar from "simplebar-react";
 
 import { connect } from "react-redux";
 import GenreCard from "./GenreCard/GenreCard";
-import { fetchGenreList, fetchPage } from "../../actions";
+import { fetchGenreList, fetchPage, fetchImagesFromGenre } from "../../actions";
 import "./css/genre-page.css";
 
-const GenrePage = ({ fetchGenreList, genres }) => {
+const GenrePage = ({
+  fetchGenreList,
+  genres,
+  fetchImagesFromGenre,
+  genresImages
+}) => {
   useEffect(() => {
+    console.log("mount", genres.length);
+
     fetchGenreList();
+  }, []);
 
-    // if (genres.length) fetchPage(1, "genres", genres[0].id);
-  });
+  useEffect(() => {
+    console.log("update", genres.length);
+    if (genres.length) {
+      fetchImagesFromGenre(genres.map(genre => genre.id));
+    }
 
-  if (genres) {
+    console.log("genres images", genresImages);
+    console.log(genresImages[12]);
+    console.log("lengths", Object.keys(genresImages).length, genres.length);
+  }, [genres.length, Object.keys(genresImages).length]);
+
+  if (genres && Object.keys(genresImages).length === genres.length) {
     return (
       <SimpleBar
         className="simplebar-component"
@@ -21,7 +37,7 @@ const GenrePage = ({ fetchGenreList, genres }) => {
       >
         <div className="genre-cards-container">
           {genres.map((genre, _) => {
-            return <GenreCard genre={genre} />;
+            return <GenreCard images={genresImages[genre.id]} genre={genre} />;
           })}
         </div>
       </SimpleBar>
@@ -32,10 +48,14 @@ const GenrePage = ({ fetchGenreList, genres }) => {
 };
 
 const mapStateToProps = state => {
-  return { genres: state.genres };
+  return {
+    genres: state.genres,
+    genresImages: state.genresImages
+  };
 };
 
 export default connect(mapStateToProps, {
   fetchGenreList,
-  fetchPage
+  fetchPage,
+  fetchImagesFromGenre
 })(GenrePage);

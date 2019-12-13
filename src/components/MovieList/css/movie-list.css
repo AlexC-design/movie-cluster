@@ -32,14 +32,9 @@
   }
 }
 
-.simplebar-component .simplebar-scrollbar {
-  right: 0.8px;
-  width: 5px;
-}
-
-.simplebar-component .simplebar-track {
+.simplebar-component .simplebar-track.simplebar-vertical {
   position: absolute;
-  width: 6px;
+  width: 8px;
   top: 10vh;
   height: 85vh;
   background: black;
@@ -47,17 +42,17 @@
   margin: auto 2% auto 0;
 }
 
-.simplebar-component .simplebar-scrollbar:before {
+.simplebar-component .simplebar-track.simplebar-vertical .simplebar-scrollbar {
+  right: 1px;
+  width: 6px;
+}
+
+.simplebar-component .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
   background: #ef8555;
   opacity: 100%;
 }
 
-.simplebar-component .simplebar-scrollbar.simplebar-visible:before {
-  opacity: 100%;
-  background: #ef8555;
-}
-
-.simplebar-component .simplebar-horizontal {
+.simplebar-component .simplebar-track.simplebar-horizontal {
   display: none;
 }
 

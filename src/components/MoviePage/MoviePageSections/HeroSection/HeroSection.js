@@ -1,19 +1,31 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchMovieImages } from "../../../../actions";
+import { fetchMovieImages, clearMovieImages } from "../../../../actions";
 import get from "get-value";
 
-const HeroSection = ({ id, fetchMovieImages, backdrops, baseUrl, movieTitle }) => {
+const HeroSection = ({
+  id,
+  fetchMovieImages,
+  backdrops,
+  baseUrl,
+  movieTitle,
+  clearMovieImages
+}) => {
   const imageUrl = path => {
     return `${baseUrl}/original${path}`;
   };
 
+
+
   useEffect(() => {
     fetchMovieImages(id);
+
+    let setTimeoutId;
 
     if (backdrops.length) {
       const images = document.querySelectorAll(".slider-image");
       var index = 0;
+
       const slide = () => {
         if (index === images.length) index = 0;
 
@@ -21,12 +33,13 @@ const HeroSection = ({ id, fetchMovieImages, backdrops, baseUrl, movieTitle }) =
           "0%";
         images[index].style.opacity = "100%";
         index++;
-        setTimeout(slide, 3000);
+        setTimeoutId = setTimeout(slide, 3000);
       };
       slide();
 
       return () => {
-        // fetchMovieImages(null); - clear movieImages on unmount
+        clearMovieImages();
+        clearTimeout(setTimeoutId)
       };
     }
   }, [backdrops.length]);
@@ -56,8 +69,9 @@ const mapStateToProps = state => {
     backdrops: get(state, "movieImages.backdrops", ""),
     baseUrl: get(state, "config.images.base_url", ""),
     movieTitle: get(state, "movieDetails.title", "Title loading...")
-    
   };
 };
 
-export default connect(mapStateToProps, { fetchMovieImages })(HeroSection);
+export default connect(mapStateToProps, { fetchMovieImages, clearMovieImages })(
+  HeroSection
+);

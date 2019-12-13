@@ -326,7 +326,34 @@ html {
 }
 
 .similar-movies-section {
-  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 20vh;
+  width: 100vw;
+  margin-bottom: 1000px;
   background-color: red;
+}
+
+.similar-movies-section .trailers-slider {
+  position: relative;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.similar-movies-section .trailers-slider .trailers-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: absolute;
 }
 /*# sourceMappingURL=movie-page.css.map */

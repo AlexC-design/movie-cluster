@@ -289,6 +289,81 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
 // --- SIMILAR MOVIES SECTION ---
 
 .similar-movies-section {
-  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  display: flex;
+  flex-direction: row;
+
+  height: 20vh;
+  width: 100vw;
+  margin-bottom: 1000px;
   background-color: red;
+
+  .trailers-slider {
+    position: relative;
+    max-width: $videoWidth;
+    margin: 0 auto;
+
+    .trailers-wrapper {
+      display: flex;
+      flex: 1;
+      position: absolute;
+    }
+  }
 }
+
+//   .simplebar-component-horizontal {
+
+//     width: 100%;
+//     animation: fadein 0.5s ease-in-out;
+
+//     @keyframes fadein {
+//       from {
+//         opacity: 0%;
+//       }
+//       to {
+//         opacity: 100%;
+//       }
+//     }
+
+//     .simplebar-track.simplebar-vertical {
+//       display: none;
+//     }
+
+//     .simplebar-track.simplebar-horizontal {
+//       // border: 1px solid #ef8555;
+//       visibility: visible !important;
+//       position: absolute;
+//       width: 85vw;
+//       bottom: 10vh;
+//       height: 6px;
+//       background: black;
+//       border-radius: 10px;
+//       margin: 0 auto 0 0;
+
+//       .simplebar-scrollbar {
+//         display: block !important;
+//         height: 3px;
+//         border-radius: 50px;
+//         background: #ef8555;
+
+//         &:before {
+//           display: none;
+//         }
+
+//         &:after {
+//           display: none;
+//         }
+//       }
+
+//       .simplebar-visible {
+//         display: none;
+//       }
+//     }
+
+//     .simplebar-horizontal {
+//       display: block;
+//     }
+//   }
+// }

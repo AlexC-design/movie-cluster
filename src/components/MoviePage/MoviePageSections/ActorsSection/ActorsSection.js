@@ -11,7 +11,7 @@ const ActorsSection = ({ fetchMovieCredits, id, movieCast }) => {
   const [sectionState, setSectionState] = useState("contracted");
 
   const expandSection = () => {
-    console.log(movieCast.length);
+    
 
     if (sectionState === "contracted") {
       setSectionState("expanded");

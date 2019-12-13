@@ -21,34 +21,54 @@
     }
   }
 
-  .simplebar-scrollbar {
-    right: 0.8px;
-    width: 5px;
-  }
-
-  .simplebar-track {
+  .simplebar-track.simplebar-vertical {
     // border: 1px solid #ef8555;
     position: absolute;
-    width: 6px;
+    width: 8px;
     top: 10vh;
     height: 85vh;
     background: black;
     border-radius: 10px;
     margin: auto 2% auto 0;
+
+    .simplebar-scrollbar {
+      right: 1px;
+      width: 6px;
+
+      &:before {
+        background: #ef8555;
+        opacity: 100%;
+      }
+    }
   }
 
-  .simplebar-scrollbar:before {
-    background: #ef8555;
-    opacity: 100%;
-  }
-  .simplebar-scrollbar.simplebar-visible:before {
-    opacity: 100%;
-    background: #ef8555;
-  }
-
-  .simplebar-horizontal {
+  .simplebar-track.simplebar-horizontal {
     display: none;
   }
+
+  //   // border: 1px solid #ef8555;
+  //   position: absolute;
+  //   width: 85vw;
+  //   bottom: 10vh;
+  //   height: 6px;
+  //   background: black;
+  //   border-radius: 10px;
+  //   margin: 0 auto;
+
+  //   .simplebar-scrollbar {
+  //     height: 3px;
+  //     border-radius: 50px;
+  //     background: #ef8555;
+
+  //     &:before {
+  //       display: none;
+  //     }
+  //   }
+  // }
+
+  // .simplebar-horizontal {
+  //   display: block;
+  // }
 
   .simplebar-content {
     overflow-x: hidden;

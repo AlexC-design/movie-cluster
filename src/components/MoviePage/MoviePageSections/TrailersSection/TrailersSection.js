@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { fetchMovieVideos } from "../../../../actions";
+import { fetchMovieVideos, clearMovieImages } from "../../../../actions";
 import TrailerCard from "./TrailerCard";
 import get from "get-value";
 
 import backArrow from "../../../../assets/images/Logo/back-arrow.svg";
 import backArrowInverted from "../../../../assets/images/Logo/back-arrow-inverted-blue.svg";
 
-const TrailersSection = ({ fetchMovieVideos, id, videoList }) => {
+const TrailersSection = ({ fetchMovieVideos, id, videoList, clearMovieImages }) => {
   const [selectedTrailer, setSelectedTrailer] = useState(0);
   const trailers = document.querySelectorAll(".trailer-video");
-
+  
   useEffect(() => {
+    const trailers = document.querySelectorAll(".trailer-video");
     fetchMovieVideos(id);
     if (trailers.length) trailers[selectedTrailer].classList += " selected";
-    console.log({ trailers });
-    if (trailers.length) console.log(trailers[0].offsetWidth);
-  }, [videoList.length, selectedTrailer]);
+    
+  }, [videoList.length, selectedTrailer, fetchMovieVideos, id]);
 
   const next = trailers => {
     if (selectedTrailer < trailers.length - 1) {
@@ -92,4 +92,4 @@ const mapStateToProps = ({ movieVideos }) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchMovieVideos })(TrailersSection);
+export default connect(mapStateToProps, { fetchMovieVideos, clearMovieImages })(TrailersSection);

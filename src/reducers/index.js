@@ -7,11 +7,13 @@ import configurationReducer from "./configurationReducer";
 import movieDetailsReducer from "./movieDetailsReducer";
 import movieVideosReducer from "./movieVideosReducer";
 import movieCreditsReducer from "./movieCreditsReducer";
+import genreImagesReducer from "./genreImagesReducer";
 
 export default combineReducers({
   currentPage: pageReducer,
   genres: genreListReducer,
   genreMovies: genreMoviesReducer,
+  genresImages: genreImagesReducer,
   movieImages: movieImagesReducer,
   movieVideos: movieVideosReducer,
   movieDetails: movieDetailsReducer,

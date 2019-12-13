@@ -9,6 +9,7 @@
 }
 
 .genre-cards-container .genre-card {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,8 +26,16 @@
   height: 300px;
   width: 200px;
   margin-top: 100px;
+}
+
+.genre-cards-container .genre-card img {
   border: solid 2px white;
   border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 300px;
+  width: 200px;
 }
 
 .genre-cards-container .genre-card a {
