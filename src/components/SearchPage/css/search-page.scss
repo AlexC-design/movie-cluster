@@ -1,0 +1,38 @@
+@import "../../../scss/functions/functions.scss";
+@import "../../../scss/mixins/mixins.scss";
+@import "../../../scss/variables/variables.scss";
+
+.search-page-container {
+  .search-section-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .search-logo {
+      width: 200px;
+    }
+
+    .search-bar {
+      margin-top: 10vh;
+      font-size: 1.5em;
+      color: color(accent2);
+      max-width: 50vw;
+      width: 50vw;
+      height: 70px;
+      border-radius: 50px;
+      border: 2px solid color(accent1);
+      opacity: 50%;
+      background: transparent;
+      padding-left: 50px;
+      caret-color: color(accent1);
+
+      &:focus {
+        outline: none;
+        border-color: color(accent1);
+        opacity: 100%;
+      }
+    }
+  }
+}

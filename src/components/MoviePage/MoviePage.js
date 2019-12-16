@@ -13,10 +13,11 @@ import SimilarMoviesSection from "./MoviePageSections/SimilarMoviesSection/Simil
 
 const MoviePage = ({ match, fetchMovieDetails }) => {
   const { id } = match.params;
+  
 
   useEffect(() => {
     fetchMovieDetails(id);
-  });
+  }, []);
 
   return (
     <SimpleBar
@@ -27,7 +28,7 @@ const MoviePage = ({ match, fetchMovieDetails }) => {
       <DetailsSection />
       <TrailersSection id={id} />
       <ActorsSection id={id} />
-      <SimilarMoviesSection />
+      <SimilarMoviesSection id={id} />
     </SimpleBar>
   );
 };

@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { renderPageNumbers } from "./renderPageNumbers";
-import { fetchPage } from "../../actions";
+import { fetchPage, searchMovies } from "../../actions";
 import "./css/page-list.css";
 
-const PageList = ({ numberOfPages, currentPageNumber, fetchPage }) => {
+const PageList = ({
+  numberOfPages,
+  currentPageNumber,
+  fetchPage,
+  searchMovies
+}) => {
   useEffect(() => {
     //focusing button 1 on page load
     document.querySelector(`.page-${currentPageNumber}`).className +=
@@ -21,29 +26,43 @@ const PageList = ({ numberOfPages, currentPageNumber, fetchPage }) => {
       }
     });
 
-    //for pages in the beginning hide the beginning dots and show the buttons
-    if (currentPageNumber < 6) {
-      document.querySelector(`.three-dots.start`).classList.remove("revealed");
+    if (numberOfPages > 11) {
+      
+      //for pages in the beginning hide the beginning dots and show the buttons
+      if (currentPageNumber < 6) {
+        document
+          .querySelector(`.three-dots.start`)
+          .classList.remove("revealed");
 
-      for (let i = 2; i <= 9; i++) {
-        if (i > 0) {
+        for (let i = 2; i <= 9; i++) {
+          if (i > 0) {
+            document.querySelector(`.page-${i}`).className += " revealed";
+          }
+        }
+      } else if (currentPageNumber > numberOfPages - 5) {
+        //for pages at the end hide the end dots and show the buttons
+        document.querySelector(`.three-dots.end`).classList.remove("revealed");
+
+        for (let i = numberOfPages; i >= numberOfPages - 8; i--) {
           document.querySelector(`.page-${i}`).className += " revealed";
         }
-      }
-    } else if (currentPageNumber > numberOfPages - 5) {
-      //for pages at the end hide the end dots and show the buttons
-      document.querySelector(`.three-dots.end`).classList.remove("revealed");
-
-      for (let i = numberOfPages; i >= numberOfPages - 8; i--) {
-        document.querySelector(`.page-${i}`).className += " revealed";
+      } else {
+        // for pages in the middle don't hide the dots and show the buttons
+        for (let i = currentPageNumber - 3; i <= currentPageNumber + 3; i++) {
+          if (i > 0) {
+            document.querySelector(`.page-${i}`).className += " revealed";
+          }
+        }
       }
     } else {
-      // for pages in the middle don't hide the dots and show the buttons
-      for (let i = currentPageNumber - 3; i <= currentPageNumber + 3; i++) {
-        if (i > 0) {
-          document.querySelector(`.page-${i}`).className += " revealed";
-        }
-      }
+      // hide dots, show buttons
+      document.querySelectorAll(`.three-dots`).forEach((dots, _) => {
+        dots.classList.remove("revealed");
+      });
+
+      document.querySelectorAll(`.page-button`).forEach((button, index) => {
+        button.className += "revealed";
+      });
     }
 
     return () => {
@@ -55,7 +74,7 @@ const PageList = ({ numberOfPages, currentPageNumber, fetchPage }) => {
 
   return (
     <div className="page-numbers-container">
-      {renderPageNumbers(numberOfPages, fetchPage)}
+      {renderPageNumbers(numberOfPages, fetchPage, searchMovies)}
     </div>
   );
 };
@@ -74,4 +93,4 @@ const mapStateToProps = state => {
 //   };
 // };
 
-export default connect(mapStateToProps, { fetchPage })(PageList);
+export default connect(mapStateToProps, { fetchPage, searchMovies })(PageList);

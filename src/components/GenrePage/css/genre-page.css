@@ -6,6 +6,22 @@
   justify-items: center;
   padding: 5% 10%;
   margin: auto;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+@media (max-width: 1500px) {
+  .genre-cards-container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    padding: 5% 8%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .genre-cards-container {
+    padding: 5% 4%;
+  }
 }
 
 .genre-cards-container .genre-card {

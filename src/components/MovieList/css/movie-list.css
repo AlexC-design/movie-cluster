@@ -9,6 +9,7 @@
 }
 
 .simplebar-component {
+  height: 100vh;
   width: 100%;
   -webkit-animation: fadein 0.5s ease-in-out;
           animation: fadein 0.5s ease-in-out;

@@ -7,6 +7,7 @@ import configurationReducer from "./configurationReducer";
 import movieDetailsReducer from "./movieDetailsReducer";
 import movieVideosReducer from "./movieVideosReducer";
 import movieCreditsReducer from "./movieCreditsReducer";
+import similarMoviesReducer from "./similarMoviesReducer";
 import genreImagesReducer from "./genreImagesReducer";
 
 export default combineReducers({
@@ -18,5 +19,6 @@ export default combineReducers({
   movieVideos: movieVideosReducer,
   movieDetails: movieDetailsReducer,
   movieCredits: movieCreditsReducer,
+  similarMovies: similarMoviesReducer,
   config: configurationReducer
 });

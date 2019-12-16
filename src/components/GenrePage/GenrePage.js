@@ -29,7 +29,7 @@ const GenrePage = ({
     console.log("lengths", Object.keys(genresImages).length, genres.length);
   }, [genres.length, Object.keys(genresImages).length]);
 
-  if (genres && Object.keys(genresImages).length === genres.length) {
+  if (genres) {
     return (
       <SimpleBar
         className="simplebar-component"

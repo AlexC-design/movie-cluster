@@ -1,0 +1,303 @@
+.test-page-container {
+  position: relative;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.test-page-container .branch-root-first {
+  position: relative;
+  width: 0;
+  height: 0;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.test-page-container .branch-root-first .poster1 {
+  z-index: 2;
+  position: absolute;
+  top: calc(-108px);
+  right: calc(-128px);
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-animation-name: wiggle;
+          animation-name: wiggle;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes wiggle {
+  from {
+    -webkit-transform: rotate(-500deg) scale(0.1);
+            transform: rotate(-500deg) scale(0.1);
+  }
+  to {
+    -webkit-transform: rotate(5deg) scale(1);
+            transform: rotate(5deg) scale(1);
+  }
+}
+
+@keyframes wiggle {
+  from {
+    -webkit-transform: rotate(-500deg) scale(0.1);
+            transform: rotate(-500deg) scale(0.1);
+  }
+  to {
+    -webkit-transform: rotate(5deg) scale(1);
+            transform: rotate(5deg) scale(1);
+  }
+}
+
+.test-page-container .branch-root-first .poster2 {
+  z-index: 2;
+  position: absolute;
+  top: calc(-108px);
+  right: calc(-128px);
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-animation-name: wiggle;
+          animation-name: wiggle;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@keyframes wiggle {
+  from {
+    -webkit-transform: rotate(-1000deg) scale(0.1);
+            transform: rotate(-1000deg) scale(0.1);
+  }
+  to {
+    -webkit-transform: rotate(10deg) scale(1);
+            transform: rotate(10deg) scale(1);
+  }
+}
+
+.test-page-container .branch-root-first .poster3 {
+  z-index: 2;
+  position: absolute;
+  top: calc(-108px);
+  right: calc(-128px);
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-animation-name: wiggle;
+          animation-name: wiggle;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@keyframes wiggle {
+  from {
+    -webkit-transform: rotate(-1500deg) scale(0.1);
+            transform: rotate(-1500deg) scale(0.1);
+  }
+  to {
+    -webkit-transform: rotate(15deg) scale(1);
+            transform: rotate(15deg) scale(1);
+  }
+}
+
+.test-page-container .branch-root-second {
+  position: relative;
+  width: 0;
+  height: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.test-page-container .branch-root-second .poster4 {
+  z-index: 2;
+  position: absolute;
+  top: calc(-108px);
+  right: calc(-128px);
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-animation-name: wiggle;
+          animation-name: wiggle;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@keyframes wiggle {
+  from {
+    -webkit-transform: rotate(-1955deg) scale(0.1);
+            transform: rotate(-1955deg) scale(0.1);
+  }
+  to {
+    -webkit-transform: rotate(65deg) scale(1);
+            transform: rotate(65deg) scale(1);
+  }
+}
+
+.test-page-container .branch-root-second .poster5 {
+  z-index: 2;
+  position: absolute;
+  top: calc(-108px);
+  right: calc(-128px);
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-animation-name: wiggle;
+          animation-name: wiggle;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@keyframes wiggle {
+  from {
+    -webkit-transform: rotate(-2455deg) scale(0.1);
+            transform: rotate(-2455deg) scale(0.1);
+  }
+  to {
+    -webkit-transform: rotate(70deg) scale(1);
+            transform: rotate(70deg) scale(1);
+  }
+}
+
+.test-page-container .branch-root-third {
+  position: relative;
+  width: 0;
+  height: 0;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.test-page-container .branch-root-third .poster4 {
+  z-index: 2;
+  position: absolute;
+  top: calc(-108px);
+  right: calc(-128px);
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-animation-name: wiggle;
+          animation-name: wiggle;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@keyframes wiggle {
+  from {
+    -webkit-transform: rotate(-1995deg) scale(0.1);
+            transform: rotate(-1995deg) scale(0.1);
+  }
+  to {
+    -webkit-transform: rotate(25deg) scale(1);
+            transform: rotate(25deg) scale(1);
+  }
+}
+
+.test-page-container .branch-root-third .poster5 {
+  z-index: 2;
+  position: absolute;
+  top: calc(-108px);
+  right: calc(-128px);
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-animation-name: wiggle;
+          animation-name: wiggle;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@keyframes wiggle {
+  from {
+    -webkit-transform: rotate(-2495deg) scale(0.1);
+            transform: rotate(-2495deg) scale(0.1);
+  }
+  to {
+    -webkit-transform: rotate(30deg) scale(1);
+            transform: rotate(30deg) scale(1);
+  }
+}
+
+.test-page-container .line {
+  position: absolute;
+  right: -400px;
+  width: 400px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50px;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-animation-name: wiggle;
+          animation-name: wiggle;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@keyframes wiggle {
+  from {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  to {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+/*# sourceMappingURL=test-image.css.map */

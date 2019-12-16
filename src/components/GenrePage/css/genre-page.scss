@@ -1,9 +1,23 @@
+@import "../../../scss/variables/variables.scss";
+@import "../../../scss/mixins/mixins.scss";
+@import "../../../scss/functions/functions.scss";
+
 .genre-cards-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   padding: 5% 10%;
   margin: auto;
+
+  transition: all 0.2s ease-out;
+
+  @include desktop-mid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5% 8%;
+  }
+  @include tablet-landscape {
+    padding: 5% 4%;
+  }
 
   .genre-card {
     position: relative;

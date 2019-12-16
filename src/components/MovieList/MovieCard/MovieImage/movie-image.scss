@@ -33,9 +33,12 @@
       }
 
       @include desktop-mid {
+        border-radius: 20px 0 0 20px;
         width: calc(#{$imageWidth} * 0.8);
+        height: calc(#{$imageHeight} * 0.8);
       }
       @include tablet-landscape {
+        border-radius: 20px;
       }
     }
   }

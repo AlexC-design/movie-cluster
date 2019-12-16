@@ -40,7 +40,15 @@
 
 @media (max-width: 1500px) {
   .movie-image-container .movie-card-image-container .movie-card-image {
+    border-radius: 20px 0 0 20px;
     width: calc(780px * 0.8);
+    height: calc(439px * 0.8);
+  }
+}
+
+@media (max-width: 1200px) {
+  .movie-image-container .movie-card-image-container .movie-card-image {
+    border-radius: 20px;
   }
 }
 /*# sourceMappingURL=movie-image.css.map */

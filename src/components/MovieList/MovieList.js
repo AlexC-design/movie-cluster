@@ -12,7 +12,7 @@ const MovieList = ({ listOfMovies }) => {
     return (
       <SimpleBar
         className="simplebar-component"
-        style={{ height: "100vh", autoHide: false }}
+        style={{ autoHide: false }}
       >
         <div className="movie-list-container">
           {renderMovieCards(listOfMovies)}

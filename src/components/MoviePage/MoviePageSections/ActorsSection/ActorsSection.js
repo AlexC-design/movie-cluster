@@ -11,15 +11,13 @@ const ActorsSection = ({ fetchMovieCredits, id, movieCast }) => {
   const [sectionState, setSectionState] = useState("contracted");
 
   const expandSection = () => {
-    
-
     if (sectionState === "contracted") {
       setSectionState("expanded");
       setSectionHeight(
-        120 +
+        48 +
           document.getElementById("actors-text").offsetHeight +
           document.querySelector(".actor-card").offsetHeight *
-            (document.querySelectorAll(".actor-card").length / 4)
+            Math.ceil(document.querySelectorAll(".actor-card").length / 4)
       );
     } else {
       setSectionState("contracted");
@@ -71,7 +69,15 @@ const ActorsSection = ({ fetchMovieCredits, id, movieCast }) => {
         <div onClick={expandSection} className="see-more-section-wrapper">
           <p>{sectionState === "contracted" ? "See More" : "See Less"}</p>
           <div className="see-more-section">
-            <img src={downArrow} alt="arrow" style={sectionState === "expanded" ? { transform: 'scaleY(-1)' } : { transform: 'scaleY(1)' }}/>
+            <img
+              src={downArrow}
+              alt="arrow"
+              style={
+                sectionState === "expanded"
+                  ? { transform: "scaleY(-1)" }
+                  : { transform: "scaleY(1)" }
+              }
+            />
           </div>
         </div>
       </div>

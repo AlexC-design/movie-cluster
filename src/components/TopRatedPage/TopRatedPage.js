@@ -15,8 +15,4 @@ const TopRatedPage = ({ fetchPage }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return { currentPage: state.currentPage };
-};
-
-export default connect(mapStateToProps, { fetchPage })(TopRatedPage);
+export default connect(null, { fetchPage })(TopRatedPage);

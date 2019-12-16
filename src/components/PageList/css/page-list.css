@@ -9,6 +9,7 @@
 }
 
 .page-numbers-container .page-button {
+  cursor: pointer;
   display: none;
   border: none;
   color: white;

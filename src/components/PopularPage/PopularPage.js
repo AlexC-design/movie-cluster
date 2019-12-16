@@ -15,8 +15,4 @@ const PopularPage = ({ fetchPage }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return { currentPage: state.currentPage };
-};
-
-export default connect(mapStateToProps, { fetchPage })(PopularPage);
+export default connect(null, { fetchPage })(PopularPage);

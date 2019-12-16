@@ -1,5 +1,6 @@
 @import "../../../scss/functions/functions.scss";
 @import "../../../scss/variables/variables.scss";
+@import "../../../scss/mixins/mixins.scss";
 
 // --- HERO SECTION ---
 
@@ -288,82 +289,67 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
 }
 // --- SIMILAR MOVIES SECTION ---
 
-.similar-movies-section {
-  overflow-x: scroll;
-  overflow-y: hidden;
+.similar-movies-title {
+  padding-top: 2em;
+  margin-bottom: 0;
+  padding-left: 10%;
+  color: white;
+}
 
-  display: flex;
-  flex-direction: row;
+.similar-movies-container {
+  transform: translateX(-$imageHeight * 1.2);
+  height: 500px;
 
-  height: 20vh;
-  width: 100vw;
-  margin-bottom: 1000px;
-  background-color: red;
+  .similar-movies-section {
+    height: 100vw;
+    width: calc(#{$imageHeight} * 1.2);
+    overflow-y: auto;
+    overflow-x: hidden;
 
-  .trailers-slider {
-    position: relative;
-    max-width: $videoWidth;
-    margin: 0 auto;
+    padding: 1em 0;
 
-    .trailers-wrapper {
-      display: flex;
-      flex: 1;
-      position: absolute;
+    transform-origin: right top;
+    transform: rotate(-90deg);
+
+    -ms-overflow-style: none; //IE 10+
+    scrollbar-width: none; //FireFox
+
+    //Safari/Chrome
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .similar-movie-container {
+      width: calc(#{$imageWidth}* 0.8);
+      height: calc(#{$imageHeight}* 0.8);
+      transform: rotate(90deg) translateX(-$imageWidth/2)
+        translateY(-$imageHeight/3.2) scale(0.8);
+      transform-origin: left bottom;
+      margin-bottom: calc(#{$imageWidth}/ 3);
+      padding: 0 4em;
+
+      &:hover {
+        .similar-movie-image {
+          border-color: color(accent3);
+        }
+      }
+
+      .similar-movie-title {
+        color: white;
+        position: absolute;
+        bottom: 0;
+        left: 15%;
+      }
+
+      .similar-movie-image {
+        border: 2px solid color(accent1);
+        border-radius: 20px;
+
+        width: calc(#{$imageWidth}* 0.8);
+        height: calc(#{$imageHeight}* 0.8);
+
+        transition: all 0.2s ease-out;
+      }
     }
   }
 }
-
-//   .simplebar-component-horizontal {
-
-//     width: 100%;
-//     animation: fadein 0.5s ease-in-out;
-
-//     @keyframes fadein {
-//       from {
-//         opacity: 0%;
-//       }
-//       to {
-//         opacity: 100%;
-//       }
-//     }
-
-//     .simplebar-track.simplebar-vertical {
-//       display: none;
-//     }
-
-//     .simplebar-track.simplebar-horizontal {
-//       // border: 1px solid #ef8555;
-//       visibility: visible !important;
-//       position: absolute;
-//       width: 85vw;
-//       bottom: 10vh;
-//       height: 6px;
-//       background: black;
-//       border-radius: 10px;
-//       margin: 0 auto 0 0;
-
-//       .simplebar-scrollbar {
-//         display: block !important;
-//         height: 3px;
-//         border-radius: 50px;
-//         background: #ef8555;
-
-//         &:before {
-//           display: none;
-//         }
-
-//         &:after {
-//           display: none;
-//         }
-//       }
-
-//       .simplebar-visible {
-//         display: none;
-//       }
-//     }
-
-//     .simplebar-horizontal {
-//       display: block;
-//     }
-//   }
-// }

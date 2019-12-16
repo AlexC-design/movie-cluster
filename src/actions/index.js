@@ -31,6 +31,18 @@ export const fetchPage = (page, listType, id) => async dispatch => {
   });
 };
 
+export const searchMovies = (page, query) => async dispatch => {
+  const response = await axios.get(`/search/movie`, {
+    params: { page, query }
+  });
+  console.log(`searching movies for ${query}`);
+
+  dispatch({
+    type: "FETCH_PAGE",
+    payload: response.data
+  });
+};
+
 export const fetchGenreMovies = id => async dispatch => {
   const response = await axios.get(`/discover/movie`, {
     params: { with_genres: `${id}` }
@@ -73,11 +85,26 @@ export const fetchMovieImages = id => async dispatch => {
   });
 };
 
-export const clearMovieImages = () => dispatch => {
-  console.log(`clearing movie images`);
+export const fetchSimilarMovies = id => async dispatch => {
+  const response = await axios.get(`/movie/${id}/similar`);
+  console.log(`fetching similar movies for movie id-${id}`);
 
   dispatch({
+    type: "FETCH_SIMILAR_MOVIES",
+    payload: response.data
+  });
+};
+
+export const clearMovieImages = () => dispatch => {
+  dispatch({
     type: "FETCH_MOVIE_IMAGES",
+    payload: {}
+  });
+};
+
+export const clearPage = () => dispatch => {
+  dispatch({
+    type: "FETCH_PAGE",
     payload: {}
   });
 };

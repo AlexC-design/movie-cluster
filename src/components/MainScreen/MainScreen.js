@@ -9,10 +9,13 @@ import NowPlayingPage from "../NowPlayingPage/NowPlayingPage";
 import TopRatedPage from "../TopRatedPage/TopRatedPage";
 import PopularPage from "../PopularPage/PopularPage";
 import GenrePage from "../GenrePage/GenrePage";
+import TestPage from "../TestPage/TestPage";
 import GenreMoviesPage from "../GenrePage/GenreMoviesPage/GenreMoviesPage";
 import MoviePage from "../MoviePage/MoviePage";
 import MainScreenBg from "./MainScreenBg";
 import "./main-screen.css";
+import SearchPage from "../SearchPage/SearchPage";
+import SearchResultsPage from "../SearchPage/SearchResultsPage";
 
 const MainScreen = () => {
   const [pageStatus, setPageStatus] = useState(`${history.location.pathname}`);
@@ -32,7 +35,6 @@ const MainScreen = () => {
   );
 
   useEffect(() => {
-    
     history.listen((location, action) => {
       setPageStatus(location.pathname);
       setLogoSize(
@@ -65,6 +67,9 @@ const MainScreen = () => {
         <Route path="/genres" exact component={GenrePage} />
         <Route path="/genres/:id" exact component={GenreMoviesPage} />
         <Route path="/movie/:id" exact component={MoviePage} />
+        <Route path="/search" exact component={SearchPage} />
+        <Route path="/search/:id" exact component={SearchResultsPage} />
+        <Route path="/test" exact component={TestPage} />
       </Router>
       <MainScreenBg pageStatus={pageStatus} />
     </div>
