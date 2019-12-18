@@ -9,10 +9,12 @@ import movieVideosReducer from "./movieVideosReducer";
 import movieCreditsReducer from "./movieCreditsReducer";
 import similarMoviesReducer from "./similarMoviesReducer";
 import genreImagesReducer from "./genreImagesReducer";
+import lastLocationReducer from "./lastLocationReducer";
 
 export default combineReducers({
   currentPage: pageReducer,
   genres: genreListReducer,
+  lastLocation: lastLocationReducer,
   genreMovies: genreMoviesReducer,
   genresImages: genreImagesReducer,
   movieImages: movieImagesReducer,

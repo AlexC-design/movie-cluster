@@ -10,7 +10,7 @@ import "./css/movie-list.css";
 
 const MovieList = ({ listOfMovies, genres }) => {
   useEffect(() => {
-    console.log(history.location.pathname);
+    
   });
 
   const historyToPageTitle = {
@@ -23,7 +23,7 @@ const MovieList = ({ listOfMovies, genres }) => {
     if (path.includes("/genres")) {
       return genres.map(genre => {
         if (genre.id === parseInt(path.replace("/genres/", ""), 10)) {
-          console.log(genre.name);
+          
           return `${genre.name} Movies`;
         }
       });

@@ -15,8 +15,6 @@ const HeroSection = ({
     return `${baseUrl}/original${path}`;
   };
 
-
-
   useEffect(() => {
     fetchMovieImages(id);
 
@@ -39,10 +37,10 @@ const HeroSection = ({
 
       return () => {
         clearMovieImages();
-        clearTimeout(setTimeoutId)
+        clearTimeout(setTimeoutId);
       };
     }
-  }, [backdrops.length]);
+  }, [backdrops.length, id]);
 
   if (backdrops) {
     return (

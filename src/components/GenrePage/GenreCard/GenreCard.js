@@ -20,7 +20,7 @@ const GenreCard = ({ images, genre }) => {
   useEffect(() => {
     var direction = Math.floor(Math.random() * 4) + 1;
 
-    var timeout = Math.floor(Math.random() * 10000) + 1000;
+    var timeout = Math.floor(Math.random() * 5000) + 1000;
 
     setTimeout(() => {
       setPosition([indexToPosition[0], indexToPosition[0]]);
@@ -29,7 +29,7 @@ const GenreCard = ({ images, genre }) => {
     setTimeout(() => {
       setImage1(Math.floor(Math.random() * 20));
       direction = Math.floor(Math.random() * 4) + 1;
-      timeout = Math.floor(Math.random() * 10000) + 1000;
+      timeout = 5000;
     }, timeout * 1.5);
 
     setTimeout(() => {

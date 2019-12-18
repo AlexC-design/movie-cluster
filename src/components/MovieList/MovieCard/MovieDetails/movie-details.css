@@ -1,4 +1,4 @@
-.movie-details-container {
+.movie-card-container .movie-details-container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -23,13 +23,13 @@
 }
 
 @media (max-width: 1500px) {
-  .movie-details-container {
+  .movie-card-container .movie-details-container {
     padding: 1em 1.2em;
   }
 }
 
 @media (max-width: 1200px) {
-  .movie-details-container {
+  .movie-card-container .movie-details-container {
     width: calc(780px * 0.8);
     height: auto;
     border-radius: 20px;
@@ -37,25 +37,30 @@
   }
 }
 
-.movie-details-container .movie-details .release-date {
+.movie-card-container .movie-details-container .movie-details .no-rating {
+  margin: 10px 0;
+  opacity: 80%;
+}
+
+.movie-card-container .movie-details-container .movie-details .release-date {
   font-size: 1.5em;
   font-weight: 400;
   font-weight: 500;
 }
 
 @media (max-width: 1500px) {
-  .movie-details-container .movie-details .release-date {
+  .movie-card-container .movie-details-container .movie-details .release-date {
     font-size: 1.2em;
   }
 }
 
-.movie-details-container .button-link {
+.movie-card-container .movie-details-container .button-link {
   -ms-flex-item-align: start;
       align-self: flex-start;
   cursor: default;
 }
 
-.movie-details-container .button-link .see-more-button {
+.movie-card-container .movie-details-container .button-link .see-more-button {
   cursor: pointer;
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -70,13 +75,13 @@
   transition: all 0.2s ease-in-out;
 }
 
-.movie-details-container .button-link .see-more-button:hover {
+.movie-card-container .movie-details-container .button-link .see-more-button:hover {
   background-color: #e77a4f;
   text-shadow: 0 0 5px #ffedbf, 0 0 7px #ffb800;
 }
 
 @media (max-width: 1200px) {
-  .movie-details-container .button-link .see-more-button {
+  .movie-card-container .movie-details-container .button-link .see-more-button {
     padding: 0.7em 2.7em;
     margin-top: 1em;
   }

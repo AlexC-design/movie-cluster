@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.movie-image-container:hover .movie-card-image-container .movie-card-image {
+  border: 2px solid #6fe6f6;
+}
+
 .movie-image-container .movie-card-title {
   position: absolute;
   bottom: 0;
@@ -39,10 +43,6 @@
   border-radius: 20px;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-}
-
-.movie-image-container .movie-card-image-container .movie-card-image:hover {
-  border: 2px solid #6fe6f6;
 }
 
 @media (max-width: 1500px) {

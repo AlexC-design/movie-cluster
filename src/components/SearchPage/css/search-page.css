@@ -1,3 +1,27 @@
+.search-page-container {
+  opacity: 0%;
+  -webkit-animation: fadein 1s 0.2s ease-in-out forwards;
+          animation: fadein 1s 0.2s ease-in-out forwards;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 .search-page-container .search-section-container {
   height: 100vh;
   display: -webkit-box;

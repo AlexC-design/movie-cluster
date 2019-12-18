@@ -13,13 +13,10 @@ import SimilarMoviesSection from "./MoviePageSections/SimilarMoviesSection/Simil
 
 const MoviePage = ({ match, fetchMovieDetails }) => {
   const { id } = match.params;
-  
-  console.log(' x now running componentDidMount in MoviePage');
 
   useEffect(() => {
-    console.log('now running componentDidMount in MoviePage');
     fetchMovieDetails(id);
-  }, []);
+  }, [id]);
 
   return (
     <SimpleBar
@@ -27,7 +24,7 @@ const MoviePage = ({ match, fetchMovieDetails }) => {
       style={{ height: "100vh", autoHide: false }}
     >
       <HeroSection id={id} />
-      <DetailsSection />
+      <DetailsSection id={id} />
       <TrailersSection id={id} />
       <ActorsSection id={id} />
       <SimilarMoviesSection id={id} />

@@ -13,7 +13,7 @@ const GenrePage = ({
   genresImages
 }) => {
   useEffect(() => {
-    console.log("mount", genres.length);
+    
 
     fetchGenreList();
     fetchImagesFromGenre();

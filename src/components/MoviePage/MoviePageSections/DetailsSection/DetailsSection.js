@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import CircularRating from "./CircularRating";
 
-const DetailsSection = ({ description, genres }) => {
+const DetailsSection = ({ description, genres, id }) => {
+  const [value, setValue] = useState(0); // forceUpdate
+
+  useEffect(() => {
+    console.log("======= USE EFFECT ========", id);
+    setValue(value => ++value); // update the state to force render
+  }, [id]);
+
   return (
     <div className="details-section-background">
       <div className="details-section-container">

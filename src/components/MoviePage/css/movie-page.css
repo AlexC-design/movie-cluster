@@ -8,6 +8,29 @@ html {
 
 .hero-section-container {
   height: 100%;
+  position: relative;
+  z-index: 2;
+  opacity: 0%;
+  -webkit-animation: fadein 1s 1s ease-in-out forwards;
+          animation: fadein 1s 1s ease-in-out forwards;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }
 
 .hero-section-container .movie-title {
@@ -74,6 +97,18 @@ html {
   padding: 10em 0 1em;
   width: 80%;
   margin: 0 auto;
+  opacity: 0%;
+  -webkit-animation: fadein 1s 1.2s ease-in-out forwards;
+          animation: fadein 1s 1.2s ease-in-out forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }
 
 .details-section-background .details-section-container .description-container {
@@ -156,6 +191,18 @@ html {
   position: relative;
   height: calc(calc(750px * 0.6) * 1.7);
   color: white;
+  opacity: 0%;
+  -webkit-animation: fadein 1s 1s ease-out forwards;
+          animation: fadein 1s 1s ease-out forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }
 
 .trailers-section-container .title {
@@ -255,6 +302,18 @@ html {
   overflow-y: hidden;
   -webkit-transition: height 1s ease-out;
   transition: height 1s ease-out;
+  opacity: 0%;
+  -webkit-animation: fadein 1s 1s ease-out forwards;
+          animation: fadein 1s 1s ease-out forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }
 
 .actors-section h1 {

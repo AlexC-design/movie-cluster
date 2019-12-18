@@ -1,7 +1,19 @@
 .landing-page-container {
+  opacity: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+
+  animation: fadein 1s 0.4s ease-in-out forwards;
+
+  @keyframes fadein {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+    }
+  }
 }

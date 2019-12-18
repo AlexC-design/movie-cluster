@@ -5,6 +5,12 @@
 .movie-image-container {
   position: relative;
 
+  &:hover {
+    .movie-card-image-container .movie-card-image {
+      border: 2px solid color(accent3);
+    }
+  }
+
   .movie-card-title {
     position: absolute;
     bottom: 0;
@@ -34,10 +40,6 @@
       border-radius: 20px;
 
       transition: all 0.2s ease-in-out;
-
-      &:hover {
-        border: 2px solid color(accent3);
-      }
 
       @include desktop-mid {
         border-radius: 20px 0 0 20px;

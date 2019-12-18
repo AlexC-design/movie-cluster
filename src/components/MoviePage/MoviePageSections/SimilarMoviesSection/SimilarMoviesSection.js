@@ -1,21 +1,30 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchSimilarMovies, fetchMovieDetails } from "../../../../actions";
-import { Link } from "react-router-dom";
+import { fetchSimilarMovies } from "../../../../actions";
 import get from "get-value";
 import history from "../../../../history";
 
+const scrollToTop = () => {
+  document
+    .querySelector(".similar-movies-section")
+    .scrollTo({ top: 0, behavior: "smooth" });
+
+  document
+    .querySelector(".simplebar-component .simplebar-content-wrapper")
+    .scrollTo({ top: 0, behavior: "smooth" });
+};
+
 const SimilarMoviesSection = ({
   fetchSimilarMovies,
-  fetchMovieDetails,
   similarMoviesList,
   backdropSizes,
+  movieVideos,
   baseUrl,
   id
 }) => {
   useEffect(() => {
     fetchSimilarMovies(id);
-  }, []);
+  }, [movieVideos]);
 
   const imageUrl = backdropPath => {
     return `${baseUrl}${
@@ -34,7 +43,6 @@ const SimilarMoviesSection = ({
   };
 
   if (similarMoviesList) {
-    console.log({ similarMoviesList });
     return (
       <>
         <h1 className="similar-movies-title">Similar Movies </h1>
@@ -45,7 +53,7 @@ const SimilarMoviesSection = ({
                 <div
                   onClick={() => {
                     history.push(`/movie/${movie.id}`);
-                    window.location.reload();
+                    scrollToTop();
                   }}
                 >
                   <div className="similar-movie-container">
@@ -70,8 +78,8 @@ const SimilarMoviesSection = ({
 };
 
 const mapStateToProps = state => {
-  console.log("state similar movies", state.similarMovies);
   return {
+    movieVideos: state.movieVideos,
     similarMoviesList: state.similarMovies.results,
     backdropSizes: get(state, "config.images.backdrop_sizes", ""),
     baseUrl: get(state, "config.images.base_url", "")
@@ -79,6 +87,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, {
-  fetchSimilarMovies,
-  fetchMovieDetails
+  fetchSimilarMovies
 })(SimilarMoviesSection);

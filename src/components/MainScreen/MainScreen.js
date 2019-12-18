@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import { Router, Route, Link } from "react-router-dom";
 import history from "../../history";
+import { saveLastLocation } from "../../actions";
 
 import NavBar from "../NavBar/NavBar";
 import Logo from "../LandingPage/Logo/Logo";
@@ -17,7 +19,7 @@ import "./main-screen.css";
 import SearchPage from "../SearchPage/SearchPage";
 import SearchResultsPage from "../SearchPage/SearchResultsPage";
 
-const MainScreen = () => {
+const MainScreen = ({ lastLocation, saveLastLocation }) => {
   const [pageStatus, setPageStatus] = useState(`${history.location.pathname}`);
   const [logoSize, setLogoSize] = useState(
     `${
@@ -33,28 +35,27 @@ const MainScreen = () => {
       history.location.pathname.includes("/movie") ? "back-arrow" : "logotype"
     }`
   );
-  const [lastLocation, setLastLocation] = useState("/");
 
   useEffect(() => {
     history.listen((location, _) => {
+      if (!location.pathname.includes("/movie"))
+        saveLastLocation(location.pathname);
+
       setPageStatus(location.pathname);
+
+      setLogoSize(
+        location.pathname.includes("/movie")
+          ? "extra-small"
+          : location.pathname === "/"
+          ? "large"
+          : "small"
+      );
+
+      setLogoContent(
+        location.pathname.includes("/movie") ? "back-arrow" : "logotype"
+      );
     });
-
-    if (!history.location.pathname.includes("movie"))
-      setLastLocation(history.location.pathname);
-
-    setLogoSize(
-      history.location.pathname.includes("/movie")
-        ? "extra-small"
-        : history.location.pathname === "/"
-        ? "large"
-        : "small"
-    );
-
-    setLogoContent(
-      history.location.pathname.includes("/movie") ? "back-arrow" : "logotype"
-    );
-  });
+  }, []);
 
   return (
     <div className="main-screen">
@@ -79,4 +80,8 @@ const MainScreen = () => {
   );
 };
 
-export default MainScreen;
+const mapStateToProps = ({ lastLocation }) => {
+  return { lastLocation };
+};
+
+export default connect(mapStateToProps, { saveLastLocation })(MainScreen);

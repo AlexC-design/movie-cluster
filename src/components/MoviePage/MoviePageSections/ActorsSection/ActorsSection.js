@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { fetchMovieCredits } from "../../../../actions";
+import { fetchMovieCredits, clearMovieCredits } from "../../../../actions";
 import get from "get-value";
 import ActorCard from "./ActorCard";
 import downArrow from "../../../../assets/images/down-arrow.svg";
-import horizontalLine from "../../../../assets/images/horizontal-line.svg";
 
-const ActorsSection = ({ fetchMovieCredits, id, movieCast }) => {
+const ActorsSection = ({
+  fetchMovieCredits,
+  id,
+  movieCast,
+  clearMovieCredits
+}) => {
   const [sectionHeight, setSectionHeight] = useState("0");
   const [sectionState, setSectionState] = useState("contracted");
 
@@ -39,7 +43,13 @@ const ActorsSection = ({ fetchMovieCredits, id, movieCast }) => {
           document.querySelector(".actor-card").offsetHeight * 2
       );
     }
-  }, [movieCast.length]);
+  }, [movieCast.length, id]);
+
+  useEffect(() => {
+    return () => {
+      clearMovieCredits();
+    };
+  }, []);
 
   if (movieCast) {
     return (
@@ -91,4 +101,7 @@ const mapStateToProps = ({ movieCredits }) => {
   return { movieCast: get(movieCredits, "cast", "") };
 };
 
-export default connect(mapStateToProps, { fetchMovieCredits })(ActorsSection);
+export default connect(mapStateToProps, {
+  fetchMovieCredits,
+  clearMovieCredits
+})(ActorsSection);

@@ -3,6 +3,19 @@
 @import "../../../scss/variables/variables.scss";
 
 .search-page-container {
+
+  opacity: 0%;
+  animation: fadein 1s 0.2s ease-in-out forwards;
+
+  @keyframes fadein {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+    }
+  }
+
   .search-section-container {
     height: 100vh;
     display: flex;
@@ -38,7 +51,7 @@
     .not-found {
       font-size: 1.2em;
       padding: 2em;
-      color: color(accent3)
+      color: color(accent3);
     }
   }
 }

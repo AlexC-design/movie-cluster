@@ -24,7 +24,8 @@ const MovieDetails = ({ overview, rating, releaseDate, id }) => {
           Release Date &emsp;
           {releaseDate}
         </div>
-        <RatingBar rating={rating} />
+        {!!rating && <RatingBar rating={rating} />}
+        {!rating && <div className="no-rating">No rating found</div>}
         <div className="overview">{overview}</div>
       </div>
       <Link className="button-link" to={`/movie/${id}`}>

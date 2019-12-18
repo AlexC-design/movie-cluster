@@ -1,21 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { fetchMovieVideos } from "../../../../actions";
+import { fetchMovieVideos, clearMovieVideos } from "../../../../actions";
 import TrailerCard from "./TrailerCard";
 import get from "get-value";
 
 import backArrow from "../../../../assets/images/Logo/back-arrow.svg";
 import backArrowInverted from "../../../../assets/images/Logo/back-arrow-inverted-blue.svg";
 
-const TrailersSection = ({ fetchMovieVideos, id, videoList }) => {
+const TrailersSection = ({
+  fetchMovieVideos,
+  clearMovieVideos,
+  id,
+  videoList
+}) => {
   const [selectedTrailer, setSelectedTrailer] = useState(0);
   const trailers = document.querySelectorAll(".trailer-video");
 
   useEffect(() => {
     const trailers = document.querySelectorAll(".trailer-video");
     fetchMovieVideos(id);
+
     if (trailers.length) trailers[selectedTrailer].classList += " selected";
   }, [videoList.length, selectedTrailer, fetchMovieVideos, id]);
+
+  useEffect(() => {
+    return () => {
+      clearMovieVideos();
+    };
+  }, []);
 
   const next = trailers => {
     if (selectedTrailer < trailers.length - 1) {
@@ -72,9 +84,7 @@ const TrailersSection = ({ fetchMovieVideos, id, videoList }) => {
             }}
           >
             {videoList.map((video, _) => {
-              return video.site === "YouTube" && video.type !== "Featurette" ? (
-                <TrailerCard key={video.key} videoId={video.key} />
-              ) : null;
+              return <TrailerCard key={video.key} videoId={video.key} />;
             })}
           </div>
         </div>
@@ -87,8 +97,10 @@ const TrailersSection = ({ fetchMovieVideos, id, videoList }) => {
 
 const mapStateToProps = ({ movieVideos }) => {
   return {
-    videoList: get(movieVideos, "results", "")
+    videoList: movieVideos
   };
 };
 
-export default connect(mapStateToProps, { fetchMovieVideos })(TrailersSection);
+export default connect(mapStateToProps, { fetchMovieVideos, clearMovieVideos })(
+  TrailersSection
+);

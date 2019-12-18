@@ -31,6 +31,14 @@ export const fetchPage = (page, listType, id) => async dispatch => {
   });
 };
 
+export const saveLastLocation = path => dispatch => {
+  console.log("saving last locaction -", path, "-");
+  dispatch({
+    type: "SAVE_LAST_LOCATION",
+    payload: path
+  });
+};
+
 export const searchMovies = (page, query, callback) => async dispatch => {
   const response = await axios.get(`/search/movie`, {
     params: { page, query }
@@ -113,13 +121,42 @@ export const clearPage = () => dispatch => {
   });
 };
 
+export const clearMovieCredits = () => dispatch => {
+  console.log("clearing movie credits");
+
+  dispatch({
+    type: "FETCH_MOVIE_CREDITS",
+    payload: {}
+  });
+};
+
+export const clearMovieVideos = () => dispatch => {
+  console.log("clearing movie videos");
+
+  dispatch({
+    type: "FETCH_MOVIE_VIDEOS",
+    payload: []
+  });
+};
+
 export const fetchMovieVideos = id => async dispatch => {
   const response = await axios.get(`/movie/${id}/videos`);
   console.log(`fetching movies for movie id-${id}`);
 
+  var results = [];
+
+  response.data.results.map(video => {
+    if (
+      video.site === "YouTube" &&
+      (video.type === "Trailer" || video.type === "Teaser")
+    ) {
+      results.push(video);
+    }
+  });
+
   dispatch({
     type: "FETCH_MOVIE_VIDEOS",
-    payload: response.data
+    payload: results
   });
 };
 
@@ -148,8 +185,6 @@ export const fetchImagesFromGenre = () => async dispatch => {
 
       const movies = response.data.results;
 
-      id == 99 ? console.log(response.data.results) : console.log("");
-
       genresImages[id] = movies.map((movie, index) => {
         if (movie.poster_path) {
           return movie.poster_path;
@@ -157,8 +192,6 @@ export const fetchImagesFromGenre = () => async dispatch => {
           return movies[index - 1].poster_path;
         }
       });
-
-      id == 99 ? console.log(genresImages[id]) : console.log("");
     })
   );
 
