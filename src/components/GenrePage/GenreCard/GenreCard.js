@@ -13,7 +13,6 @@ const GenreCard = ({ images, genre }) => {
     "bottom",
     "left"
   ]);
-  const [animationStatus, setAnimationStatus] = useState("finished");
 
   const indexToPosition = {
     0: "middle",
@@ -23,76 +22,46 @@ const GenreCard = ({ images, genre }) => {
     4: "left"
   };
 
-  // Array.prototype.swap = function(x, y) {
-  //   var b = this[x];
-  //   this[x] = this[y];
-  //   this[y] = b;
-  //   return this;
-  // };
-
   let switchArray = [];
 
-  useEffect(() => {
-    console.log(animationStatus);
-  }, [animationStatus]);
+  // useEffect(() => {
+  //   switchArray = [0, 1, 2, 3, 4];
 
-  useEffect(() => {
-    switchArray = [0, 1, 2, 3, 4];
+  //   const direction = Math.floor(Math.random() * 4) + 1;
 
-    const direction = Math.floor(Math.random() * 4) + 1;
-    // const direction = 1;
+  //   setTimeout(() => {
+  //     switchArray[direction] = 0;
+  //     setPosition(
+  //       switchArray.map(position => {
+  //         return indexToPosition[position];
+  //       })
+  //     );
+  //   }, 1000);
 
-    switchArray[0] = direction > 2 ? direction - 2 : direction + 2;
-    switchArray[direction] = 0;
-
-    setTimeout(() => {
-      setAnimationStatus("in progress");
-
-      setPosition(
-        switchArray.map(position => {
-          return indexToPosition[position];
-        })
-      );
-
-      switchArray[0] = direction;
-    }, 2000);
-
-    setTimeout(() => {
-      setPosition(
-        switchArray.map(position => {
-          return indexToPosition[position];
-        })
-      );
-      setAnimationStatus("finished");
-    }, 3000);
-
-    setTimeout(() => {
-      switchArray = [0, 1, 2, 3, 4];
-      setPosition(
-        switchArray.map(position => {
-          return indexToPosition[position];
-        })
-      );
-      setMiddleImage(nextImage);
-      setNextImage(Math.floor(Math.random() * 20));
-    }, 4000);
-  }, [middleImage]);
+  //   setTimeout(() => {
+  //     switchArray[0] = direction;
+  //     setPosition(
+  //       switchArray.map(position => {
+  //         return indexToPosition[position];
+  //       })
+  //     );
+  //   }, 2000);
+  // }, [middleImage]);
 
   return (
     <Link className="genre-card" to={`/genres/${genre.id}`}>
       <div className="images-container">
-        {position.map((_, index) => (
+        <img
+          className={`poster ${position}`}
+          src={`http://image.tmdb.org/t/p/w342${
+            images ? images[middleImage] : "UNDEF"
+          }`}
+        />
+        {position.slice(1, 5).map(position => (
           <img
-            className={`poster ${position[index]}`}
+            className={`poster ${position}`}
             src={`http://image.tmdb.org/t/p/w342${
-              images
-                ? images[
-                    position[index] === "middle" &&
-                    animationStatus === "finished"
-                      ? middleImage
-                      : nextImage
-                  ]
-                : "UNDEF"
+              images ? images[nextImage] : "UNDEF"
             }`}
           />
         ))}

@@ -53,7 +53,6 @@
 
 .genre-cards-container .genre-card .images-container {
   position: relative;
-  overflow: hidden;
   border: solid 2px #ef8555;
   border-radius: 10px;
   min-height: 300px;
