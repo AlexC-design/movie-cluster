@@ -25,10 +25,15 @@ const GenrePage = ({
         className="simplebar-component"
         style={{ height: "100vh", autoHide: false }}
       >
-        <div className="genre-cards-container">
-          {genres.map((genre, _) => {
-            return <GenreCard images={genresImages[genre.id]} genre={genre} />;
-          })}
+        <div className="genre-page-container">
+          <h1 className="genres-title">Genres</h1>
+          <div className="genre-cards-container">
+            {genres.map((genre, _) => {
+              return (
+                <GenreCard images={genresImages[genre.id]} genre={genre} />
+              );
+            })}
+          </div>
         </div>
       </SimpleBar>
     );

@@ -1,4 +1,12 @@
-.genre-cards-container {
+.genre-page-container .genres-title {
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100vw;
+  top: 130px;
+}
+
+.genre-page-container .genre-cards-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
@@ -11,7 +19,7 @@
 }
 
 @media (max-width: 1500px) {
-  .genre-cards-container {
+  .genre-page-container .genre-cards-container {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     padding: 300px 8%;
@@ -19,12 +27,12 @@
 }
 
 @media (max-width: 1200px) {
-  .genre-cards-container {
+  .genre-page-container .genre-cards-container {
     padding: 300px 4%;
   }
 }
 
-.genre-cards-container .genre-card {
+.genre-page-container .genre-cards-container .genre-card {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,15 +51,15 @@
   text-decoration: none;
 }
 
-.genre-cards-container .genre-card:hover .images-container {
+.genre-page-container .genre-cards-container .genre-card:hover .images-container {
   border-color: #6fe6f6;
 }
 
-.genre-cards-container .genre-card:hover .genre-name {
+.genre-page-container .genre-cards-container .genre-card:hover .genre-name {
   color: #6fe6f6;
 }
 
-.genre-cards-container .genre-card .images-container {
+.genre-page-container .genre-cards-container .genre-card .images-container {
   position: relative;
   overflow: hidden;
   border: solid 2px #ef8555;
@@ -62,7 +70,7 @@
   transition: all 0.4s ease-out;
 }
 
-.genre-cards-container .genre-card .images-container .poster {
+.genre-page-container .genre-cards-container .genre-card .images-container .poster {
   position: absolute;
   opacity: 100%;
   height: 300px;
@@ -71,32 +79,32 @@
   transition: all 0.4s ease-out;
 }
 
-.genre-cards-container .genre-card .images-container .poster.middle {
+.genre-page-container .genre-cards-container .genre-card .images-container .poster.middle {
   top: 0;
   left: 0;
 }
 
-.genre-cards-container .genre-card .images-container .poster.left {
+.genre-page-container .genre-cards-container .genre-card .images-container .poster.left {
   top: 0;
   left: 200px;
 }
 
-.genre-cards-container .genre-card .images-container .poster.right {
+.genre-page-container .genre-cards-container .genre-card .images-container .poster.right {
   top: 0;
   left: -200px;
 }
 
-.genre-cards-container .genre-card .images-container .poster.top {
+.genre-page-container .genre-cards-container .genre-card .images-container .poster.top {
   top: -300px;
   left: 0;
 }
 
-.genre-cards-container .genre-card .images-container .poster.bottom {
+.genre-page-container .genre-cards-container .genre-card .images-container .poster.bottom {
   top: 300px;
   left: 0;
 }
 
-.genre-cards-container .genre-card .genre-name {
+.genre-page-container .genre-cards-container .genre-card .genre-name {
   font-size: 1.2em;
   font-weight: 600;
   color: white;
