@@ -3,6 +3,12 @@
 .movie-list-container {
   padding-top: 5%;
 
+  .list-title {
+    color: white;
+    margin: 1em auto;
+    text-align: center;
+  }
+
   @include desktop-mid {
     padding-top: 10%;
   }

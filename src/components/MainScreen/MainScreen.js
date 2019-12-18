@@ -17,11 +17,6 @@ import "./main-screen.css";
 import SearchPage from "../SearchPage/SearchPage";
 import SearchResultsPage from "../SearchPage/SearchResultsPage";
 
-
-const goBack = () => {
-  console.log(history);
-}
-
 const MainScreen = () => {
   const [pageStatus, setPageStatus] = useState(`${history.location.pathname}`);
   const [logoSize, setLogoSize] = useState(
@@ -38,33 +33,34 @@ const MainScreen = () => {
       history.location.pathname.includes("/movie") ? "back-arrow" : "logotype"
     }`
   );
+  const [lastLocation, setLastLocation] = useState("/");
 
   useEffect(() => {
-    history.listen((location, action) => {
+    history.listen((location, _) => {
       setPageStatus(location.pathname);
-      setLogoSize(
-        location.pathname.includes("/movie")
-          ? "extra-small"
-          : location.pathname === "/"
-          ? "large"
-          : "small"
-      );
-      setLogoContent(
-        location.pathname.includes("/movie") ? "back-arrow" : "logotype"
-      );
     });
-  }, []);
 
-  
+    if (!history.location.pathname.includes("movie"))
+      setLastLocation(history.location.pathname);
+
+    setLogoSize(
+      history.location.pathname.includes("/movie")
+        ? "extra-small"
+        : history.location.pathname === "/"
+        ? "large"
+        : "small"
+    );
+
+    setLogoContent(
+      history.location.pathname.includes("/movie") ? "back-arrow" : "logotype"
+    );
+  });
 
   return (
     <div className="main-screen">
       <Router history={history}>
         <NavBar pageStatus={pageStatus} />
-        <Link
-          to={logoContent === "back-arrow" ? history.location.pathname : "/"}
-          onClick={logoContent === "back-arrow" ? goBack : null}
-        >
+        <Link to={logoContent === "back-arrow" ? lastLocation : "/"}>
           <Logo contentShape={logoContent} size={logoSize} />
         </Link>
         <Route path="/" exact component={LandingPage} />

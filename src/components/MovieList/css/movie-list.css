@@ -2,6 +2,12 @@
   padding-top: 5%;
 }
 
+.movie-list-container .list-title {
+  color: white;
+  margin: 1em auto;
+  text-align: center;
+}
+
 @media (max-width: 1500px) {
   .movie-list-container {
     padding-top: 10%;
