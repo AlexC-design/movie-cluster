@@ -27,7 +27,6 @@ const PageList = ({
     });
 
     if (numberOfPages > 11) {
-      
       //for pages in the beginning hide the beginning dots and show the buttons
       if (currentPageNumber < 6) {
         document

@@ -21,6 +21,10 @@ export const renderPageNumbers = (numberOfPages, fetchPage, searchMovies) => {
         history.location.pathname.replace("/search/", "")
       );
     } else fetchPage(index + 1, historyToPageType[history.location.pathname]);
+
+    document
+      .querySelector(".simplebar-component .simplebar-content-wrapper")
+      .scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return new Array(numberOfPages).fill(0).map((_, index) => {
