@@ -39,4 +39,10 @@
   border-color: #ef8555;
   opacity: 100%;
 }
+
+.search-page-container .search-section-container .not-found {
+  font-size: 1.2em;
+  padding: 2em;
+  color: #6fe6f6;
+}
 /*# sourceMappingURL=search-page.css.map */

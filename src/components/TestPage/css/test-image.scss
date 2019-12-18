@@ -53,7 +53,7 @@
 //   }
 // }
 
-// Test Component 2
+// ====================== TEST COMPONENT 2 ============================
 
 // $imageWidth: 256px;
 // $imageHeight: 216px;
@@ -145,131 +145,270 @@
 //   }
 // }
 
-//Test Component 3
+// ===================================== TEST COMPONENT 3 ======================================
 
-@mixin lineProps($lineLength, $lineThikness, $lineRotation) {
-  position: absolute;
-  right: -$lineLength;
-  width: $lineLength;
-  height: $lineThickness;
-  background-color: white;
-  border-radius: 50px;
+// @mixin lineProps($lineLength, $lineThikness, $lineRotation) {
+//   position: absolute;
+//   right: -$lineLength;
+//   width: $lineLength;
+//   height: $lineThickness;
+//   background-color: white;
+//   border-radius: 50px;
 
-  transform-origin: left bottom;
+//   transform-origin: left bottom;
 
-  transition: all 2s ease-in-out;
+//   transition: all 2s ease-in-out;
 
-  animation-name: wiggle;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+//   transform: rotate(#{$lineRotation}deg);
+// }
 
-  @keyframes wiggle {
-    from {
-      transform: rotate(#{$lineRotation}deg);
-    }
+// @mixin posterProps($index, $lineRotation, $branchRotationSum) {
+//   z-index: 2;
+//   position: absolute;
+//   top: calc(-#{$imageHeight/2});
+//   right: calc(-#{$imageWidth/2});
 
-    to {
-      transform: rotate(-#{$lineRotation}deg);
-    }
-  }
-}
+//   transition: all 2s ease-in-out;
 
-@mixin posterProps($index, $lineRotation, $branchRotationSum) {
-  z-index: 2;
-  position: absolute;
-  top: calc(-#{$imageHeight/2});
-  right: calc(-#{$imageWidth/2});
+//   transform: rotate(#{-$lineRotation * $index - $branchRotationSum}deg) scale(1)
+//     scale(1 - $index/10 + 0.1);
+// }
 
-  transition: all 2s ease-in-out;
+// @mixin rootProps($branchRotation1) {
+//   position: relative;
+//   width: 0;
+//   height: 0;
 
-  animation-name: wiggle;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+//   transform: rotate($branchRotation1 + deg);
 
-  @keyframes wiggle {
-    from {
-      transform: rotate(#{-$lineRotation * $index * 100 - $branchRotationSum}deg)
-        scale(0.1);
-    }
+//   transition: all 2s ease-in-out;
+// }
 
-    to {
-      transform: rotate(#{$lineRotation * $index - $branchRotationSum}deg)
-        scale(1);
-        // scale(1 - $index/10 + 0.1);
-    }
-  }
-}
+// $imageWidth: 256px;
+// $imageHeight: 216px;
+// $lineLength: 400px;
+// $lineThickness: 10px;
 
-@mixin rootProps($branchRotation1) {
-  position: relative;
-  width: 0;
-  height: 0;
+// .test-page-container {
+//   position: relative;
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   $lineRotation: 20 - random(40);
+//   $branchRotation1: 0;
+//   $branchRotation2: -45;
+//   $branchRotation3: 40;
 
-  transform: rotate($branchRotation1 + deg);
+//   .branch-root-first {
+//     @include rootProps($branchRotation1);
 
-  transition: all 2s ease-in-out;
-}
+//     @for $i from 1 through 3 {
+//       .poster#{$i} {
+//         @include posterProps($i, $lineRotation, $branchRotation1);
+//       }
+//     }
+//   }
 
-$imageWidth: 256px;
-$imageHeight: 216px;
-$lineLength: 400px;
-$lineThickness: 10px;
+//   .branch-root-second {
+//     @include rootProps($branchRotation2);
+
+//     @for $i from 2 through 3 {
+//       .poster#{$i} {
+//         @include posterProps(
+//           $i,
+//           $lineRotation,
+//           $branchRotation1 + $branchRotation2
+//         );
+//       }
+//     }
+//   }
+
+//   .branch-root-third {
+//     @include rootProps($branchRotation3);
+
+//     @for $i from 3 through 4 {
+//       .poster#{$i} {
+//         @include posterProps(
+//           $i,
+//           $lineRotation,
+//           $branchRotation1 + $branchRotation3 + $branchRotation2
+//         );
+//       }
+//     }
+//   }
+
+//   .line {
+//     @include lineProps($lineLength, $lineThickness, $lineRotation);
+//   }
+// }
+
+// ===================================== TEST COMPONENT 4 ======================================
+
+// @mixin lineProps($lineLength, $lineThikness, $lineRotation) {
+//   position: absolute;
+//   right: -$lineLength;
+//   width: $lineLength;
+//   height: $lineThickness;
+//   background-color: white;
+//   border-radius: 50px;
+
+//   transform-origin: left bottom;
+
+//   transition: all 2s ease-in-out;
+
+//   animation-name: wiggle;
+//   animation-duration: 3s;
+//   animation-iteration-count: infinite;
+//   animation-direction: alternate;
+//   animation-timing-function: ease-in-out;
+
+//   @keyframes wiggle {
+//     from {
+//       transform: rotate(#{$lineRotation}deg);
+//     }
+
+//     to {
+//       transform: rotate(-#{$lineRotation}deg);
+//     }
+//   }
+// }
+
+// @mixin posterProps($index, $lineRotation, $branchRotationSum) {
+//   z-index: 2;
+//   position: absolute;
+//   top: calc(-#{$imageHeight/2});
+//   right: calc(-#{$imageWidth/2});
+
+//   transition: all 2s ease-in-out;
+
+//   animation-name: wiggle;
+//   animation-duration: 3s;
+//   animation-iteration-count: infinite;
+//   animation-direction: alternate;
+//   animation-timing-function: ease-in-out;
+
+//   @keyframes wiggle {
+//     from {
+//       transform: rotate(#{-$lineRotation * $index * 100 - $branchRotationSum}deg)
+//         scale(0.1);
+//     }
+
+//     to {
+//       transform: rotate(#{$lineRotation * $index - $branchRotationSum}deg)
+//         scale(1);
+//         // scale(1 - $index/10 + 0.1);
+//     }
+//   }
+// }
+
+// @mixin rootProps($branchRotation1) {
+//   position: relative;
+//   width: 0;
+//   height: 0;
+
+//   transform: rotate($branchRotation1 + deg);
+
+//   transition: all 2s ease-in-out;
+// }
+
+// $imageWidth: 256px;
+// $imageHeight: 216px;
+// $lineLength: 400px;
+// $lineThickness: 10px;
+
+// .test-page-container {
+//   position: relative;
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   $lineRotation: 5;
+//   $branchRotation1: 0;
+//   $branchRotation2: -45;
+//   $branchRotation3: 40;
+
+//   .branch-root-first {
+//     @include rootProps($branchRotation1);
+
+//     @for $i from 1 through 3 {
+//       .poster#{$i} {
+//         @include posterProps($i, $lineRotation, $branchRotation1);
+//       }
+//     }
+//   }
+
+//   .branch-root-second {
+//     @include rootProps($branchRotation2);
+
+//     @for $i from 4 through 5 {
+//       .poster#{$i} {
+//         @include posterProps(
+//           $i,
+//           $lineRotation,
+//           $branchRotation1 + $branchRotation2
+//         );
+//       }
+//     }
+//   }
+
+//   .branch-root-third {
+//     @include rootProps($branchRotation3);
+
+//     @for $i from 4 through 5 {
+//       .poster#{$i} {
+//         @include posterProps(
+//           $i,
+//           $lineRotation,
+//           $branchRotation1 + $branchRotation3 + $branchRotation2
+//         );
+//       }
+//     }
+//   }
+
+//   .line {
+//     @include lineProps($lineLength, $lineThickness, $lineRotation);
+//   }
+// }
+
+// ===================================== TEST COMPONENT 5 ======================================
 
 .test-page-container {
-  position: relative;
-  height: 100vh;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  $lineRotation: 5;
-  $branchRotation1: 0;
-  $branchRotation2: -45;
-  $branchRotation3: 40;
+  height: 100vh;
 
-  .branch-root-first {
-    @include rootProps($branchRotation1);
+  .div {
+    z-index: 1;
+  }
 
-    @for $i from 1 through 3 {
-      .poster#{$i} {
-        @include posterProps($i, $lineRotation, $branchRotation1);
-      }
+  svg {
+    z-index: 2;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    line {
+      stroke: white;
+      stroke-width: 5px;
     }
   }
 
-  .branch-root-second {
-    @include rootProps($branchRotation2);
+  .div1 {
+    width: 200px;
+    height: 200px;
 
-    @for $i from 4 through 5 {
-      .poster#{$i} {
-        @include posterProps(
-          $i,
-          $lineRotation,
-          $branchRotation1 + $branchRotation2
-        );
-      }
-    }
+    background: rgb(255, 17, 17);
   }
 
-  .branch-root-third {
-    @include rootProps($branchRotation3);
+  .div2 {
+    width: 200px;
+    height: 200px;
 
-    @for $i from 4 through 5 {
-      .poster#{$i} {
-        @include posterProps(
-          $i,
-          $lineRotation,
-          $branchRotation1 + $branchRotation3 + $branchRotation2
-        );
-      }
-    }
-  }
-
-  .line {
-    @include lineProps($lineLength, $lineThickness, $lineRotation);
+    background: rgb(224, 255, 45);
   }
 }

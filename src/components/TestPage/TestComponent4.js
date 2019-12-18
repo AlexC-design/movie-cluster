@@ -10,14 +10,14 @@ const TestComponent3 = () => {
           <img className="poster2" src={testImage} />
           <div className="branch-root-second">
             <div className="line">
-              <img className="poster2" src={testImage} />
+              <img className="poster4" src={testImage} />
               <div className="line">
-                <img className="poster3" src={testImage} />
+                <img className="poster5" src={testImage} />
                 <div className="branch-root-third">
                   <div className="line">
-                    <img className="poster3" src={testImage} />
+                    <img className="poster4" src={testImage} />
                     <div className="line">
-                      <img className="poster4" src={testImage} />
+                      <img className="poster5" src={testImage} />
                     </div>
                   </div>
                 </div>

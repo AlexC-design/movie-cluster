@@ -14,8 +14,10 @@ import SimilarMoviesSection from "./MoviePageSections/SimilarMoviesSection/Simil
 const MoviePage = ({ match, fetchMovieDetails }) => {
   const { id } = match.params;
   
+  console.log(' x now running componentDidMount in MoviePage');
 
   useEffect(() => {
+    console.log('now running componentDidMount in MoviePage');
     fetchMovieDetails(id);
   }, []);
 

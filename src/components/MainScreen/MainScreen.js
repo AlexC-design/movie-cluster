@@ -17,6 +17,11 @@ import "./main-screen.css";
 import SearchPage from "../SearchPage/SearchPage";
 import SearchResultsPage from "../SearchPage/SearchResultsPage";
 
+
+const goBack = () => {
+  console.log(history);
+}
+
 const MainScreen = () => {
   const [pageStatus, setPageStatus] = useState(`${history.location.pathname}`);
   const [logoSize, setLogoSize] = useState(
@@ -50,13 +55,15 @@ const MainScreen = () => {
     });
   }, []);
 
+  
+
   return (
     <div className="main-screen">
       <Router history={history}>
         <NavBar pageStatus={pageStatus} />
         <Link
           to={logoContent === "back-arrow" ? history.location.pathname : "/"}
-          onClick={logoContent === "back-arrow" ? history.goBack : null}
+          onClick={logoContent === "back-arrow" ? goBack : null}
         >
           <Logo contentShape={logoContent} size={logoSize} />
         </Link>

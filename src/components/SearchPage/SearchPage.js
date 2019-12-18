@@ -5,20 +5,23 @@ import "./css/search-page.css";
 import { searchMovies } from "../../actions";
 import history from "../../history";
 
-const SearchPage = ({ searchMovies }) => {
+const SearchPage = ({ searchMovies, movieList }) => {
   const [term, setTerm] = useState("");
+  const [searched, setSearched] = useState(false);
 
   useEffect(() => {});
 
   const submitFunction = event => {
     event.preventDefault();
-    searchMovies(1, term);
-    history.push(`/search/${term}`);
+    setSearched(true);
+    searchMovies(1, term, movies => {
+      movies.length && history.push(`/search/${term}`);
+    });
   };
 
   return (
     <div className="search-page-container">
-      <div className={`search-section-container`}>
+      <div className="search-section-container">
         <img className="search-logo" src={searchLogo} alt="search logo" />
         <div className="search-bar-container">
           <form onSubmit={submitFunction}>
@@ -28,9 +31,16 @@ const SearchPage = ({ searchMovies }) => {
             />
           </form>
         </div>
+        {searched && movieList && !movieList.length && (
+          <div className="not-found">No movies found, try a different term</div>
+        )}
       </div>
     </div>
   );
 };
 
-export default connect(null, { searchMovies })(SearchPage);
+const mapStateToProps = ({ currentPage }) => {
+  return { movieList: currentPage.results };
+};
+
+export default connect(mapStateToProps, { searchMovies })(SearchPage);

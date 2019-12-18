@@ -8,12 +8,9 @@ import { renderMovieCards } from "./renderMovieCards";
 import "./css/movie-list.css";
 
 const MovieList = ({ listOfMovies }) => {
-  if (listOfMovies) {
+  if (listOfMovies && listOfMovies.length) {
     return (
-      <SimpleBar
-        className="simplebar-component"
-        style={{ autoHide: false }}
-      >
+      <SimpleBar className="simplebar-component" style={{ autoHide: false }}>
         <div className="movie-list-container">
           {renderMovieCards(listOfMovies)}
         </div>

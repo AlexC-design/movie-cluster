@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchSimilarMovies } from "../../../../actions";
+import { fetchSimilarMovies, fetchMovieDetails } from "../../../../actions";
 import { Link } from "react-router-dom";
 import get from "get-value";
+import history from "../../../../history";
 
 const SimilarMoviesSection = ({
   fetchSimilarMovies,
+  fetchMovieDetails,
   similarMoviesList,
   backdropSizes,
   baseUrl,
@@ -40,7 +42,12 @@ const SimilarMoviesSection = ({
           <div className="similar-movies-section">
             {similarMoviesList.map((movie, _) => {
               return (
-                <Link to={`/movie/${movie.id}`}>
+                <div
+                  onClick={() => {
+                    history.push(`/movie/${movie.id}`);
+                    window.location.reload();
+                  }}
+                >
                   <div className="similar-movie-container">
                     <h1 className="similar-movie-title">
                       {movie.original_title}
@@ -52,7 +59,7 @@ const SimilarMoviesSection = ({
                       />
                     </div>
                   </div>
-                </Link>
+                </div>
               );
             })}
           </div>
@@ -71,6 +78,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchSimilarMovies })(
-  SimilarMoviesSection
-);
+export default connect(mapStateToProps, {
+  fetchSimilarMovies,
+  fetchMovieDetails
+})(SimilarMoviesSection);

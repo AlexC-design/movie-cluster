@@ -16,18 +16,8 @@ const GenrePage = ({
     console.log("mount", genres.length);
 
     fetchGenreList();
+    fetchImagesFromGenre();
   }, []);
-
-  useEffect(() => {
-    console.log("update", genres.length);
-    if (genres.length) {
-      fetchImagesFromGenre(genres.map(genre => genre.id));
-    }
-
-    console.log("genres images", genresImages);
-    console.log(genresImages[12]);
-    console.log("lengths", Object.keys(genresImages).length, genres.length);
-  }, [genres.length, Object.keys(genresImages).length]);
 
   if (genres) {
     return (

@@ -31,7 +31,7 @@ export const fetchPage = (page, listType, id) => async dispatch => {
   });
 };
 
-export const searchMovies = (page, query) => async dispatch => {
+export const searchMovies = (page, query, callback) => async dispatch => {
   const response = await axios.get(`/search/movie`, {
     params: { page, query }
   });
@@ -41,6 +41,10 @@ export const searchMovies = (page, query) => async dispatch => {
     type: "FETCH_PAGE",
     payload: response.data
   });
+
+  if (callback) {
+    callback(response.data.results);
+  }
 };
 
 export const fetchGenreMovies = id => async dispatch => {
@@ -129,24 +133,34 @@ export const fetchMovieCredits = id => async dispatch => {
   });
 };
 
-export const fetchImagesFromGenre = idList => dispatch => {
+export const fetchImagesFromGenre = () => async dispatch => {
+
+  const genreResponse = await axios.get(`/genre/movie/list`);
+  const idList= genreResponse.data.genres.map(genre => genre.id)
+
   var genresImages = {};
 
-  idList.map(async (id, index) => {
+  await Promise.all(idList.map(async id => {
     const response = await axios.get(`/discover/movie`, {
       params: { with_genres: `${id}` }
     });
     console.log(`fetching images from genre id-${id}`);
 
     const movies = response.data.results;
-    var movieImages = [];
 
-    for (let i = 0; i < 5; i++) {
-      movieImages.push(movies[i].poster_path);
-    }
+    genresImages[id] = movies.map(movie => movie.poster_path);
+  }));
 
-    genresImages[id] = movieImages;
-  });
+  // idList.map(async (id, _) => {
+  //   const response = await axios.get(`/discover/movie`, {
+  //     params: { with_genres: `${id}` }
+  //   });
+  //   console.log(`fetching images from genre id-${id}`);
+
+  //   const movies = response.data.results;
+
+  //   genresImages[id] = movies.slice(0, 5).map(movie => movie.poster_path);
+  // });
 
   dispatch({
     type: "FETCH_GENRE_IMAGES",
