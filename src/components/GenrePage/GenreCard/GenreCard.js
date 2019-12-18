@@ -2,18 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const GenreCard = ({ images, genre }) => {
-  const [middleImage, setMiddleImage] = useState(
-    Math.floor(Math.random() * 20)
-  );
-  const [nextImage, setNextImage] = useState(Math.floor(Math.random() * 20));
-  const [position, setPosition] = useState([
-    "middle",
-    "top",
-    "right",
-    "bottom",
-    "left"
-  ]);
-
   const indexToPosition = {
     0: "middle",
     1: "top",
@@ -22,49 +10,53 @@ const GenreCard = ({ images, genre }) => {
     4: "left"
   };
 
-  let switchArray = [];
+  const [image1, setImage1] = useState(Math.floor(Math.random() * 20));
+  const [image2, setImage2] = useState(Math.floor(Math.random() * 20));
+  const [position, setPosition] = useState([
+    "middle",
+    indexToPosition[Math.floor(Math.random() * 4) + 1]
+  ]);
 
-  // useEffect(() => {
-  //   switchArray = [0, 1, 2, 3, 4];
+  useEffect(() => {
+    var direction = Math.floor(Math.random() * 4) + 1;
 
-  //   const direction = Math.floor(Math.random() * 4) + 1;
+    var timeout = Math.floor(Math.random() * 10000) + 1000;
+    
+    setTimeout(() => {
+      setPosition([indexToPosition[0], indexToPosition[0]]);
+    }, timeout);
+    
+    setTimeout(() => {
+      setImage1(Math.floor(Math.random() * 20));
+      direction = Math.floor(Math.random() * 4) + 1;
+      timeout = Math.floor(Math.random() * 10000) + 1000;
+    }, timeout * 1.5);
 
-  //   setTimeout(() => {
-  //     switchArray[direction] = 0;
-  //     setPosition(
-  //       switchArray.map(position => {
-  //         return indexToPosition[position];
-  //       })
-  //     );
-  //   }, 1000);
+    setTimeout(() => {
+      setPosition([indexToPosition[0], indexToPosition[direction]]);
+    }, timeout * 2);
 
-  //   setTimeout(() => {
-  //     switchArray[0] = direction;
-  //     setPosition(
-  //       switchArray.map(position => {
-  //         return indexToPosition[position];
-  //       })
-  //     );
-  //   }, 2000);
-  // }, [middleImage]);
+    setTimeout(() => {
+      setImage2(Math.floor(Math.random() * 20));
+      direction = Math.floor(Math.random() * 4) + 1;
+    }, timeout * 2.5);
+  }, [image2]);
 
   return (
     <Link className="genre-card" to={`/genres/${genre.id}`}>
       <div className="images-container">
         <img
-          className={`poster ${position}`}
+          className={`poster ${position[0]}`}
           src={`http://image.tmdb.org/t/p/w342${
-            images ? images[middleImage] : "UNDEF"
+            images ? images[image1] : "UNDEF"
           }`}
         />
-        {position.slice(1, 5).map(position => (
-          <img
-            className={`poster ${position}`}
-            src={`http://image.tmdb.org/t/p/w342${
-              images ? images[nextImage] : "UNDEF"
-            }`}
-          />
-        ))}
+        <img
+          className={`poster ${position[1]}`}
+          src={`http://image.tmdb.org/t/p/w342${
+            images ? images[image2] : "UNDEF"
+          }`}
+        />
       </div>
       <div className="genre-name">{genre.name}</div>
     </Link>

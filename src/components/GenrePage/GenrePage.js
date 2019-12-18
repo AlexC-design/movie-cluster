@@ -27,10 +27,7 @@ const GenrePage = ({
       >
         <div className="genre-cards-container">
           {genres.map((genre, _) => {
-            if (genre.id === 12)
-              return (
-                <GenreCard images={genresImages[genre.id]} genre={genre} />
-              );
+            return <GenreCard images={genresImages[genre.id]} genre={genre} />;
           })}
         </div>
       </SimpleBar>

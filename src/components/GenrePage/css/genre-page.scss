@@ -42,7 +42,7 @@
 
     .images-container {
       position: relative;
-      // overflow: hidden;
+      overflow: hidden;
       border: solid 2px color(accent1);
       border-radius: 10px;
       min-height: 300px;
@@ -58,7 +58,7 @@
         height: 300px;
         width: 200px;
 
-        transition: all 0.2s ease-out;
+        transition: all 0.4s ease-out;
 
         &.middle {
           top: 0;
