@@ -15,17 +15,27 @@ const MovieImage = ({
     backdropSizes[backdropSizes.length - 3]
   }${backdropPath}`;
 
-  const imageStyling = {
-    background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${imageUrl})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover"
-  };
+  var imageStyling = {};
+
+  if (backdropPath !== null) {
+    imageStyling = {
+      background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${imageUrl})`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover"
+    };
+  } else {
+    imageStyling = {
+      background: `black`,
+      backgroundSize: "cover"
+    };
+  }
 
   return (
     <Link to={`/movie/${id}`}>
       <div className="movie-image-container">
         <h1 className="movie-card-title">{movieTitle}</h1>
         <div className="movie-card-image-container">
+          {!backdropPath && <p>No Images Available :(</p>}
           <div className="movie-card-image" style={imageStyling} />
         </div>
       </div>

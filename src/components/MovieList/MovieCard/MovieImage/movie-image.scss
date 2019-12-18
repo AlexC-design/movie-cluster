@@ -19,6 +19,13 @@
     justify-items: center;
     justify-self: center;
 
+    p {
+      color: white;
+      position: absolute;
+      font-size: 1.2em;
+      opacity: 80%;
+    }
+
     .movie-card-image {
       width: $imageWidth;
       height: $imageHeight;

@@ -23,6 +23,13 @@
   justify-self: center;
 }
 
+.movie-image-container .movie-card-image-container p {
+  color: white;
+  position: absolute;
+  font-size: 1.2em;
+  opacity: 80%;
+}
+
 .movie-image-container .movie-card-image-container .movie-card-image {
   width: 780px;
   height: 439px;
