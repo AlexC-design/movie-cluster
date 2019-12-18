@@ -134,22 +134,33 @@ export const fetchMovieCredits = id => async dispatch => {
 };
 
 export const fetchImagesFromGenre = () => async dispatch => {
-
   const genreResponse = await axios.get(`/genre/movie/list`);
-  const idList= genreResponse.data.genres.map(genre => genre.id)
+  const idList = genreResponse.data.genres.map(genre => genre.id);
 
   var genresImages = {};
 
-  await Promise.all(idList.map(async id => {
-    const response = await axios.get(`/discover/movie`, {
-      params: { with_genres: `${id}` }
-    });
-    console.log(`fetching images from genre id-${id}`);
+  await Promise.all(
+    idList.map(async id => {
+      const response = await axios.get(`/discover/movie`, {
+        params: { with_genres: `${id}` }
+      });
+      console.log(`fetching images from genre id-${id}`);
 
-    const movies = response.data.results;
+      const movies = response.data.results;
 
-    genresImages[id] = movies.map(movie => movie.poster_path);
-  }));
+      id == 99 ? console.log(response.data.results) : console.log("");
+
+      genresImages[id] = movies.map((movie, index) => {
+        if (movie.poster_path) {
+          return movie.poster_path;
+        } else {
+          return movies[index - 1].poster_path;
+        }
+      });
+
+      id == 99 ? console.log(genresImages[id]) : console.log("");
+    })
+  );
 
   // idList.map(async (id, _) => {
   //   const response = await axios.get(`/discover/movie`, {
