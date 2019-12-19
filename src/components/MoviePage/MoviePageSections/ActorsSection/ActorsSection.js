@@ -25,10 +25,15 @@ const ActorsSection = ({
       );
     } else {
       setSectionState("contracted");
+
       setSectionHeight(
         48 +
           document.getElementById("actors-text").offsetHeight +
-          document.querySelector(".actor-card").offsetHeight * 2
+          document.querySelector(".actor-card").offsetHeight *
+            Math.min(
+              Math.ceil(document.querySelectorAll(".actor-card").length / 4),
+              2
+            )
       );
     }
   };
@@ -40,7 +45,11 @@ const ActorsSection = ({
       setSectionHeight(
         48 +
           document.getElementById("actors-text").offsetHeight +
-          document.querySelector(".actor-card").offsetHeight * 2
+          document.querySelector(".actor-card").offsetHeight *
+            Math.min(
+              Math.ceil(document.querySelectorAll(".actor-card").length / 4),
+              2
+            )
       );
     }
   }, [movieCast.length, id]);

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { fetchMovieVideos, clearMovieVideos } from "../../../../actions";
 import TrailerCard from "./TrailerCard";
-import get from "get-value";
 
 import backArrow from "../../../../assets/images/Logo/back-arrow.svg";
 import backArrowInverted from "../../../../assets/images/Logo/back-arrow-inverted-blue.svg";
@@ -52,26 +51,31 @@ const TrailersSection = ({
   if (videoList.length) {
     return (
       <div className="trailers-section-container">
-        <h1 className="title">Trailers</h1>
+        {videoList.length && <h1 className="title">Trailers</h1>}
 
-        <div className="buttons">
-          <div className="arrow-button" onClick={() => prev(trailers)}>
-            <img className="back-arrow" src={backArrow} alt="back arrow" />
-            <img
-              className="back-arrow-inverted"
-              src={backArrowInverted}
-              alt="back arrow"
-            />
+        {videoList.length && (
+          <div className="buttons">
+            <div className="arrow-button" onClick={() => prev(trailers)}>
+              <img className="back-arrow" src={backArrow} alt="back arrow" />
+              <img
+                className="back-arrow-inverted"
+                src={backArrowInverted}
+                alt="back arrow"
+              />
+            </div>
+            <div
+              className="arrow-button reversed"
+              onClick={() => next(trailers)}
+            >
+              <img className="back-arrow" src={backArrow} alt="back arrow" />
+              <img
+                className="back-arrow-inverted"
+                src={backArrowInverted}
+                alt="back arrow"
+              />
+            </div>
           </div>
-          <div className="arrow-button reversed" onClick={() => next(trailers)}>
-            <img className="back-arrow" src={backArrow} alt="back arrow" />
-            <img
-              className="back-arrow-inverted"
-              src={backArrowInverted}
-              alt="back arrow"
-            />
-          </div>
-        </div>
+        )}
 
         <div className="trailers-slider">
           <div
@@ -83,9 +87,10 @@ const TrailersSection = ({
                   : 504)}px)`
             }}
           >
-            {videoList.map((video, _) => {
-              return <TrailerCard key={video.key} videoId={video.key} />;
-            })}
+            {videoList.length &&
+              videoList.map((video, _) => {
+                return <TrailerCard key={video.key} videoId={video.key} />;
+              })}
           </div>
         </div>
       </div>
