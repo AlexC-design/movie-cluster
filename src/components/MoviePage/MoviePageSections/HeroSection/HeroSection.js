@@ -25,12 +25,14 @@ const HeroSection = ({
       var index = 0;
 
       const slide = () => {
-        if (index === images.length) index = 0;
+        if (images.length) {
+          if (index === images.length) index = 0;
 
-        images[index === 0 ? images.length - 1 : index - 1].style.opacity =
-          "0%";
-        images[index].style.opacity = "100%";
-        index++;
+          images[index === 0 ? images.length - 1 : index - 1].style.opacity =
+            "0%";
+          images[index].style.opacity = "100%";
+          index++;
+        }
         setTimeoutId = setTimeout(slide, 3000);
       };
       slide();
