@@ -53,7 +53,7 @@ const TrailersSection = ({
       <div className="trailers-section-container">
         {videoList.length && <h1 className="title">Trailers</h1>}
 
-        {videoList.length && (
+        {videoList.length && trailers.length > 1 && (
           <div className="buttons">
             <div className="arrow-button" onClick={() => prev(trailers)}>
               <img className="back-arrow" src={backArrow} alt="back arrow" />
