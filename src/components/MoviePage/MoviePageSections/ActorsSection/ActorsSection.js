@@ -85,20 +85,22 @@ const ActorsSection = ({
           </div>
         </div>
 
-        <div onClick={expandSection} className="see-more-section-wrapper">
-          <p>{sectionState === "contracted" ? "See More" : "See Less"}</p>
-          <div className="see-more-section">
-            <img
-              src={downArrow}
-              alt="arrow"
-              style={
-                sectionState === "expanded"
-                  ? { transform: "scaleY(-1)" }
-                  : { transform: "scaleY(1)" }
-              }
-            />
+        {movieCast.length > 7 && (
+          <div onClick={expandSection} className="see-more-section-wrapper">
+            <p>{sectionState === "contracted" ? "See More" : "See Less"}</p>
+            <div className="see-more-section">
+              <img
+                src={downArrow}
+                alt="arrow"
+                style={
+                  sectionState === "expanded"
+                    ? { transform: "scaleY(-1)" }
+                    : { transform: "scaleY(1)" }
+                }
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
   } else {
