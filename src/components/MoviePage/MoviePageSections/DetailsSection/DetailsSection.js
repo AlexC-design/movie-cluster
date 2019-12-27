@@ -6,7 +6,7 @@ const DetailsSection = ({ description, genres, id }) => {
   const [value, setValue] = useState(0); // forceUpdate
 
   useEffect(() => {
-    console.log("======= USE EFFECT ========", id);
+    
     setValue(value => ++value); // update the state to force render
   }, [id]);
 

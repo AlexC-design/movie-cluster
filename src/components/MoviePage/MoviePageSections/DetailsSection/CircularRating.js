@@ -16,7 +16,7 @@ const CircularRating = ({ rating }) => {
             cy={`${ratingSize / 2}`}
             r={`${(ratingSize / 2) * 0.8}`}
             strokeDasharray={strokeDasharray}
-            strokeDashoffset={strokeDasharray - rating * 5}
+            strokeDashoffset={rating ? strokeDasharray - rating * 5 : 0}
           />
         </svg>
       </div>

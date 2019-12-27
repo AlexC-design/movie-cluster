@@ -51,6 +51,7 @@ const SimilarMoviesSection = ({
             {similarMoviesList.map((movie, _) => {
               return (
                 <div
+                  key={movie.id}
                   onClick={() => {
                     history.push(`/movie/${movie.id}`);
                     scrollToTop();

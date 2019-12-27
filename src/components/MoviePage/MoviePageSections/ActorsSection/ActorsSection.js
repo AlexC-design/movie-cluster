@@ -74,6 +74,7 @@ const ActorsSection = ({
                 if (actor.profile_path) {
                   return (
                     <ActorCard
+                      key={actor.credit_id}
                       name={actor.name}
                       character={actor.character}
                       imagePath={actor.profile_path}
