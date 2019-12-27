@@ -16,11 +16,13 @@ const TrailersSection = ({
   const trailers = document.querySelectorAll(".trailer-video");
 
   useEffect(() => {
-    const trailers = document.querySelectorAll(".trailer-video");
     fetchMovieVideos(id);
+  }, [videoList.length, id]);
 
+  useEffect(() => {
+    const trailers = document.querySelectorAll(".trailer-video");
     if (trailers.length) trailers[selectedTrailer].classList += " selected";
-  }, [videoList.length, selectedTrailer, fetchMovieVideos, id]);
+  }, [selectedTrailer]);
 
   useEffect(() => {
     return () => {
