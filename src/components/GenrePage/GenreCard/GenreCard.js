@@ -36,7 +36,11 @@ const GenreCard = ({ images, genre }) => {
     }, timeout * 2);
 
     setTimeout(() => {
-      setImage2(Math.floor(Math.random() * 20));
+      let newImage2 = Math.floor(Math.random() * 20);
+      while (newImage2 === image2) {
+        newImage2 = Math.floor(Math.random() * 20);
+      }
+      setImage2(newImage2);
       direction = Math.floor(Math.random() * 4) + 1;
     }, timeout * 2.5);
   }, [image2]);
