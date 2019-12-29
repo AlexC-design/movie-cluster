@@ -13,7 +13,17 @@ const TrailersSection = ({
   videoList
 }) => {
   const [selectedTrailer, setSelectedTrailer] = useState(0);
+  // const trailers = document.querySelectorAll(".trailer-video");
   const trailers = document.querySelectorAll(".trailer-video");
+
+  useEffect(() => {
+    const trailers = document.querySelectorAll(".trailer-video");
+    if (trailers.length) trailers[selectedTrailer].classList += " selected";
+
+    return () => {
+      clearMovieVideos();
+    };
+  }, []);
 
   useEffect(() => {
     fetchMovieVideos(id);
@@ -23,12 +33,6 @@ const TrailersSection = ({
     const trailers = document.querySelectorAll(".trailer-video");
     if (trailers.length) trailers[selectedTrailer].classList += " selected";
   }, [selectedTrailer]);
-
-  useEffect(() => {
-    return () => {
-      clearMovieVideos();
-    };
-  }, []);
 
   const next = trailers => {
     if (selectedTrailer < trailers.length - 1) {
@@ -90,8 +94,14 @@ const TrailersSection = ({
             }}
           >
             {videoList.length &&
-              videoList.map((video, _) => {
-                return <TrailerCard key={video.key} videoId={video.key} />;
+              videoList.map((video, index) => {
+                return (
+                  <TrailerCard
+                    index={index}
+                    key={video.key}
+                    videoId={video.key}
+                  />
+                );
               })}
           </div>
         </div>
