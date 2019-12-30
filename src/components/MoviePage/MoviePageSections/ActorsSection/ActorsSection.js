@@ -42,6 +42,7 @@ const ActorsSection = ({
     fetchMovieCredits(id);
 
     if (movieCast.length) {
+      setSectionState("contracted");
       setSectionHeight(
         48 +
           document.getElementById("actors-text").offsetHeight +
