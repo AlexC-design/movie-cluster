@@ -291,10 +291,22 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
       text-align: center;
 
       .actor-image {
+        width: 0px;
         border: 2px solid color(accent1);
         border-radius: 20px;
         min-height: 282px;
         max-width: 189px;
+
+        animation: popin 0.6s ease-out 0.2s forwards;
+
+        @keyframes popin {
+          from {
+            width: 0px;
+          }
+          to {
+            width: 189px;
+          }
+        }
       }
 
       .actor-name {

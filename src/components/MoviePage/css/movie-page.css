@@ -332,10 +332,31 @@ html {
 }
 
 .actors-section .actors-cards .actor-card .actor-image {
+  width: 0px;
   border: 2px solid #ef8555;
   border-radius: 20px;
   min-height: 282px;
   max-width: 189px;
+  -webkit-animation: popin 0.6s ease-out 0.2s forwards;
+          animation: popin 0.6s ease-out 0.2s forwards;
+}
+
+@-webkit-keyframes popin {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 189px;
+  }
+}
+
+@keyframes popin {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 189px;
+  }
 }
 
 .actors-section .actors-cards .actor-card .actor-name {
