@@ -26,3 +26,21 @@
     @content;
   }
 }
+
+@mixin tablet-portrait {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin mobile-landscape {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin mobile-portrait {
+  @media (max-width: 300px) {
+    @content;
+  }
+}

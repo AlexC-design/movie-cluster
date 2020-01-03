@@ -50,4 +50,10 @@
     font-size: 1.2em;
   }
 }
+
+@media (max-width: 900px) {
+  .rating-container .rating-percentage {
+    font-size: 0.9em;
+  }
+}
 /*# sourceMappingURL=rating-bar.css.map */

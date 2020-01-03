@@ -30,11 +30,27 @@
       padding: 1em 1.2em;
     }
 
-    .movie-details {
+    @include tablet-portrait {
+      width: calc(#{$imageWidth} * 0.7);
+      border-radius: 15px;
+      
+    }
+    
+    @include mobile-landscape {
+      width: calc(#{$imageWidth} * 0.4);
+      border-radius: 10px;
+    }
 
-      .no-rating{
+    .movie-details {
+      .no-rating {
         margin: 10px 0;
         opacity: 80%;
+      }
+
+      .overview {
+        @include tablet-portrait {
+          font-size: 0.8em;
+        }
       }
 
       .release-date {
@@ -44,12 +60,20 @@
         @include desktop-mid {
           font-size: 1.2em;
         }
+
+        @include tablet-portrait {
+          font-size: 0.8em;
+        }
       }
     }
 
     .button-link {
       align-self: flex-start;
       cursor: default;
+
+      @include mobile-landscape {
+        align-self: center;
+      }
 
       .see-more-button {
         cursor: pointer;

@@ -16,6 +16,14 @@
     bottom: 0;
     left: 1em;
     color: white;
+
+    @include tablet-portrait {
+      font-size: 1.5em;
+    }
+
+    @include mobile-landscape {
+      font-size: 1em;
+    }
   }
 
   .movie-card-image-container {
@@ -39,6 +47,10 @@
       box-shadow: inset 0 0 20px rgba(63, 44, 4, 0.534);
       border-radius: 20px;
 
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
       transition: all 0.2s ease-in-out;
 
       @include desktop-mid {
@@ -48,6 +60,21 @@
       }
       @include tablet-landscape {
         border-radius: 20px;
+      }
+
+      @include tablet-portrait {
+        flex-direction: column;
+        border-radius: 15px;
+
+        width: calc(#{$imageWidth} * 0.7);
+        height: calc(#{$imageHeight} * 0.7);
+      }
+
+      @include mobile-landscape {
+        border-radius: 10px;
+
+        width: calc(#{$imageWidth} * 0.4);
+        height: calc(#{$imageHeight} * 0.4);
       }
     }
   }

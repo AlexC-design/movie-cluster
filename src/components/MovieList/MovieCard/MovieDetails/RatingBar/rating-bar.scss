@@ -42,5 +42,9 @@
     @include desktop-mid {
       font-size: 1.2em;
     }
+
+    @include tablet-portrait {
+      font-size: 0.9em;
+    }
   }
 }

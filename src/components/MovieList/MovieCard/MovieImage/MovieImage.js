@@ -19,9 +19,7 @@ const MovieImage = ({
 
   if (backdropPath !== null) {
     imageStyling = {
-      background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${imageUrl})`,
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover"
+      background: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url(${imageUrl}) center center/cover no-repeat`
     };
   } else {
     imageStyling = {
