@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "./navbar.css";
+import { MobileMenu } from "./MobileMenu/MobileMenu";
 
 const NavBar = props => {
+  const [mobileMenuState, setMobileMenuState] = useState("closed");
+
+  const showHideMenu = () => {
+    console.log("ENTERED");
+    mobileMenuState === "closed"
+      ? setMobileMenuState("open")
+      : setMobileMenuState("closed");
+  };
+
+  useEffect(() => {
+    setMobileMenuState("closed");
+  }, [props.pageStatus]);
+
   const navBarStatus =
     props.pageStatus === "/" || props.pageStatus.includes("/movie")
       ? "hidden"
@@ -13,7 +27,8 @@ const NavBar = props => {
 
   return (
     <div className={`navbar-container ${navBarStatus}`}>
-      <ul>
+      <ul className={`${mobileMenuState}`}>
+        <MobileMenu menuState={mobileMenuState} showHideMenu={showHideMenu} />
         <Link
           to="/now-playing"
           className={`navbar-link ${pathCheck("/now-playing")}`}

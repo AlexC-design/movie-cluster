@@ -1,3 +1,5 @@
+@import "../../scss/mixins/mixins.scss";
+
 .navbar-container {
   ul {
     z-index: 9;
@@ -15,22 +17,65 @@
     display: flex;
     justify-content: flex-end;
 
+    @include tablet-landscape {
+      justify-content: center;
+    }
+
+    @include tablet-portrait {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 95vh;
+
+      &.closed {
+        height: 40px;
+
+        .navbar-link {
+          visibility: hidden;
+        }
+      }
+
+      & :first-child {
+        align-self: flex-end;
+      }
+    }
+
     .navbar-link {
       color: white;
       text-decoration: none;
       padding: 0.5em 2em;
       margin: 0 0.5em;
       text-shadow: none;
-      
-      &:hover{
-        text-shadow: 0 0 5px #ffe195;
+      visibility: visible;
+
+      @include tablet-landscape {
+        padding: 0.5em 1em;
+      }
+
+      @include tablet-portrait {
+        margin: 1em 0;
+        padding: 2em 10%;
+        border-radius: 20px;
+        width: 400px;
+        text-align: center;
+
+        &:hover {
+          background-color: rgba(37, 0, 31, 0.486);
         }
+
+        &:active {
+          background-color: rgba(211, 155, 65, 0.486);
+        }
+      }
+
+      &:hover {
+        text-shadow: 0 0 5px #ffe195;
+      }
 
       &.active {
         font-weight: bolder;
         text-shadow: 0 0 5px #ffe195, 0 0 10px #ffb800;
-        }
-      
+      }
     }
   }
 

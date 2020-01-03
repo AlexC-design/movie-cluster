@@ -1,0 +1,21 @@
+.menu-button {
+  height: 40px;
+  width: auto;
+  display: none;
+  -webkit-transition: -webkit-transform 0.4s ease-out;
+  transition: -webkit-transform 0.4s ease-out;
+  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out;
+}
+
+.menu-button.open {
+  -webkit-transform: rotate(360deg) scaleY(-1);
+          transform: rotate(360deg) scaleY(-1);
+}
+
+@media (max-width: 900px) {
+  .menu-button {
+    display: block;
+  }
+}
+/*# sourceMappingURL=mobile-menu.css.map */

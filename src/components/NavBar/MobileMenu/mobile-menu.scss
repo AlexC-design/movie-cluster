@@ -1,0 +1,17 @@
+@import "../../../scss/mixins/mixins.scss";
+
+.menu-button {
+  height: 40px;
+  width: auto;
+  display: none;
+
+  &.open {
+    transform: rotate(360deg) scaleY(-1);
+  }
+
+  transition: transform 0.4s ease-out;
+
+  @include tablet-portrait {
+    display: block;
+  }
+}
