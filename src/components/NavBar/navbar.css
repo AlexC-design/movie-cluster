@@ -43,9 +43,6 @@
   .navbar-container ul.closed {
     height: 40px;
   }
-  .navbar-container ul.closed .navbar-link {
-    visibility: hidden;
-  }
   .navbar-container ul :first-child {
     -ms-flex-item-align: end;
         align-self: flex-end;
@@ -58,7 +55,6 @@
   padding: 0.5em 2em;
   margin: 0 0.5em;
   text-shadow: none;
-  visibility: visible;
 }
 
 @media (max-width: 1200px) {
@@ -103,8 +99,21 @@
 
 .navbar-container.revealed ul .navbar-link {
   opacity: 100%;
-  -webkit-transition: opacity 0.5s 0.4s ease-in-out;
-  transition: opacity 0.5s 0.4s ease-in-out;
+  -webkit-transition: all 0.5s 0.4s ease-in-out;
+  transition: all 0.5s 0.4s ease-in-out;
+}
+
+@media (max-width: 900px) {
+  .navbar-container.revealed ul .navbar-link.open {
+    visibility: visible;
+    opacity: 1;
+  }
+  .navbar-container.revealed ul .navbar-link.closed {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0.3s linear, opacity 0.3s linear;
+    transition: visibility 0.3s linear, opacity 0.3s linear;
+  }
 }
 
 .navbar-container.hidden ul {

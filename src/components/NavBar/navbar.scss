@@ -29,10 +29,6 @@
 
       &.closed {
         height: 40px;
-
-        .navbar-link {
-          visibility: hidden;
-        }
       }
 
       & :first-child {
@@ -46,7 +42,6 @@
       padding: 0.5em 2em;
       margin: 0 0.5em;
       text-shadow: none;
-      visibility: visible;
 
       @include tablet-landscape {
         padding: 0.5em 1em;
@@ -87,7 +82,21 @@
 
       .navbar-link {
         opacity: 100%;
-        transition: opacity 0.5s 0.4s ease-in-out;
+        transition: all 0.5s 0.4s ease-in-out;
+
+        @include tablet-portrait {
+          &.open {
+            visibility: visible;
+            opacity: 1;
+          }
+
+          &.closed {
+            visibility: hidden;
+            opacity: 0;
+
+            transition: visibility 0.3s linear, opacity 0.3s linear;
+          }
+        }
       }
     }
   }

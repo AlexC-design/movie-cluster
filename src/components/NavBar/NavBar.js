@@ -28,27 +28,44 @@ const NavBar = props => {
   return (
     <div className={`navbar-container ${navBarStatus}`}>
       <ul className={`${mobileMenuState}`}>
-        <MobileMenu menuState={mobileMenuState} showHideMenu={showHideMenu} />
+        <MobileMenu
+          menuState={mobileMenuState}
+          showHideMenu={showHideMenu}
+          menuButtonState={navBarStatus}
+        />
         <Link
           to="/now-playing"
-          className={`navbar-link ${pathCheck("/now-playing")}`}
+          className={`navbar-link ${pathCheck(
+            "/now-playing"
+          )} ${mobileMenuState}`}
         >
           Now Playing
         </Link>
         <Link
           to="/top-rated"
-          className={`navbar-link ${pathCheck("/top-rated")}`}
+          className={`navbar-link ${pathCheck(
+            "/top-rated"
+          )} ${mobileMenuState}`}
         >
           Top Rated
         </Link>
 
-        <Link to="/popular" className={`navbar-link ${pathCheck("/popular")}`}>
+        <Link
+          to="/popular"
+          className={`navbar-link ${pathCheck("/popular")} ${mobileMenuState}`}
+        >
           Popular
         </Link>
-        <Link to="/genres" className={`navbar-link ${pathCheck("/genres")}`}>
+        <Link
+          to="/genres"
+          className={`navbar-link ${pathCheck("/genres")} ${mobileMenuState}`}
+        >
           Genres
         </Link>
-        <Link to="/search" className={`navbar-link ${pathCheck("/search")}`}>
+        <Link
+          to="/search"
+          className={`navbar-link ${pathCheck("/search")} ${mobileMenuState}`}
+        >
           Search
         </Link>
       </ul>
