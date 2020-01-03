@@ -4,7 +4,7 @@ import "./slogan.css";
 const Slogan = () => {
   return (
     <p className="slogan">
-      Discover latest movies and reviews, browse your favorite movies
+      Discover latest movies or browse your favourite ones
     </p>
   );
 };

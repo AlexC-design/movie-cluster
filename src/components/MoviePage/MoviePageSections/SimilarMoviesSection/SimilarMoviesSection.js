@@ -48,6 +48,11 @@ const SimilarMoviesSection = ({
         <h1 className="similar-movies-title">Similar Movies </h1>
         <div className="similar-movies-container">
           <div className="similar-movies-section">
+            {!similarMoviesList.length && (
+              <h1 className="no-similar-movies-text">
+                No similar movies found
+              </h1>
+            )}
             {similarMoviesList.map((movie, _) => {
               return (
                 <div

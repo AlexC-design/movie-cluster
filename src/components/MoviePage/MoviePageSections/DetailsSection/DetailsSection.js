@@ -6,7 +6,6 @@ const DetailsSection = ({ description, genres, id }) => {
   const [value, setValue] = useState(0); // forceUpdate
 
   useEffect(() => {
-    
     setValue(value => ++value); // update the state to force render
   }, [id]);
 
@@ -23,7 +22,7 @@ const DetailsSection = ({ description, genres, id }) => {
             <p className="just-genre-names">
               {genres
                 ? genres.map(genre => (
-                    <span key={genre.name}>&emsp;{genre.name}</span>
+                    <span key={genre.name}>{genre.name}&emsp;</span>
                   ))
                 : "loading"}
             </p>

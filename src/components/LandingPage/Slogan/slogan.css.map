@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,OAAO,CAAC;EACN,KAAK,EAAE,KAAK;ECFZ,SAAS,EAAE,KAAK;EAChB,WAAW,EAAE,GAAG;CDIjB",
+    "mappings": "AAEA,AAAA,OAAO,CAAC;EACN,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,MAAM;ECHlB,SAAS,EAAE,KAAK;EAChB,WAAW,EAAE,GAAG;CDKjB",
     "sources": [
         "slogan.scss",
         "../../../scss/mixins/mixins.scss"

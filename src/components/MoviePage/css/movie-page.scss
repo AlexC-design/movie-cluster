@@ -89,6 +89,10 @@ html {
     opacity: 0%;
     animation: fadein 1s 1.2s ease-in-out forwards;
 
+    @include tablet-portrait {
+      flex-direction: column;
+    }
+
     @keyframes fadein {
       from {
         opacity: 0%;
@@ -110,6 +114,7 @@ html {
 
         .just-genre-names {
           font-weight: 200;
+          padding-left: 20px;
         }
       }
 
@@ -166,6 +171,14 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
 
   opacity: 0%;
   animation: fadein 1s 1s ease-out forwards;
+
+  @include tablet-portrait {
+    margin-bottom: -100px;
+  }
+
+  @include mobile-landscape {
+    margin-bottom: -150px;
+  }
 
   @keyframes fadein {
     from {
@@ -230,6 +243,16 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
     max-width: $videoWidth;
     margin: 0 auto;
 
+    @include tablet-portrait {
+      transform: scale(0.8);
+      margin-left: -40px;
+    }
+
+    @include mobile-landscape {
+      transform: scale(0.6);
+      margin-left: -100px;
+    }
+
     .trailers-wrapper {
       display: flex;
       flex: 1;
@@ -283,9 +306,24 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
     padding-bottom: 2em;
   }
 
+  @include tablet-landscape {
+    max-width: 90%;
+  }
+
   .actors-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
+    @include tablet-landscape {
+    }
+
+    @include tablet-portrait {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mobile-landscape {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     .actor-card {
       text-align: center;
@@ -296,6 +334,14 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
         border-radius: 20px;
         min-height: 282px;
         max-width: 189px;
+
+        @include tablet-portrait {
+          min-height: calc(282px * 0.9);
+          max-width: calc(189px * 0.9);
+        }
+
+        @include mobile-landscape {
+        }
 
         animation: popin 0.6s ease-out 0.2s forwards;
 
@@ -380,6 +426,17 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
     //Safari/Chrome
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    .no-similar-movies-text {
+      transform: rotate(90deg);
+      transform-origin: left bottom;
+      float: right;
+      color: white;
+      font-weight: 400;
+      font-size: 1.5em;
+      padding-left: 50px;
+      padding-bottom: 100px;
     }
 
     .similar-movie-container {
