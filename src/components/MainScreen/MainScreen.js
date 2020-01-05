@@ -11,7 +11,6 @@ import NowPlayingPage from "../NowPlayingPage/NowPlayingPage";
 import TopRatedPage from "../TopRatedPage/TopRatedPage";
 import PopularPage from "../PopularPage/PopularPage";
 import GenrePage from "../GenrePage/GenrePage";
-import TestPage from "../TestPage/TestPage";
 import GenreMoviesPage from "../GenrePage/GenreMoviesPage/GenreMoviesPage";
 import MoviePage from "../MoviePage/MoviePage";
 import MainScreenBg from "./MainScreenBg";
@@ -73,7 +72,6 @@ const MainScreen = ({ lastLocation, saveLastLocation }) => {
         <Route path="/movie/:id" exact component={MoviePage} />
         <Route path="/search" exact component={SearchPage} />
         <Route path="/search/:id" exact component={SearchResultsPage} />
-        <Route path="/test" exact component={TestPage} />
       </Router>
       <MainScreenBg pageStatus={pageStatus} />
     </div>

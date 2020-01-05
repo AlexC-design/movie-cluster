@@ -13,8 +13,6 @@ const GenrePage = ({
   genresImages
 }) => {
   useEffect(() => {
-    
-
     fetchGenreList();
     fetchImagesFromGenre();
   }, []);
@@ -30,7 +28,11 @@ const GenrePage = ({
           <div className="genre-cards-container">
             {genres.map((genre, _) => {
               return (
-                <GenreCard images={genresImages[genre.id]} genre={genre} />
+                <GenreCard
+                  images={genresImages[genre.id]}
+                  genre={genre}
+                  key={genres.id}
+                />
               );
             })}
           </div>

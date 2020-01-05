@@ -1,15 +1,11 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import MovieList from "../MovieList/MovieList";
-import { fetchPage, clearPage } from "../../actions";
+import { fetchPage } from "../../actions";
 
-const NowPlayingPage = ({ fetchPage, clearPage }) => {
+const NowPlayingPage = ({ fetchPage }) => {
   useEffect(() => {
     fetchPage(1, "now_playing");
-
-    // return () => {
-    //   clearPage();
-    // };
   }, []);
 
   return (
@@ -19,4 +15,4 @@ const NowPlayingPage = ({ fetchPage, clearPage }) => {
   );
 };
 
-export default connect(null, { fetchPage, clearPage })(NowPlayingPage);
+export default connect(null, { fetchPage })(NowPlayingPage);

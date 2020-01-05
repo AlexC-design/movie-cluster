@@ -2,7 +2,6 @@ import axios from "../axios";
 
 export const fetchConfig = () => async dispatch => {
   const response = await axios.get(`/configuration`);
-  console.log("fetching config");
 
   dispatch({
     type: "FETCH_CONFIG",
@@ -16,13 +15,10 @@ export const fetchPage = (page, listType, id) => async dispatch => {
     response = await axios.get(`/movie/${listType}`, {
       params: { page }
     });
-
-    console.log(`fetching page ${page} from ${listType}`);
   } else {
     response = await axios.get(`/discover/movie`, {
       params: { page, with_genres: `${id}` }
     });
-    console.log(`fetching page ${page} from genre id-${id}`);
   }
 
   dispatch({
@@ -32,7 +28,6 @@ export const fetchPage = (page, listType, id) => async dispatch => {
 };
 
 export const saveLastLocation = path => dispatch => {
-  console.log("saving last locaction -", path, "-");
   dispatch({
     type: "SAVE_LAST_LOCATION",
     payload: path
@@ -43,7 +38,6 @@ export const searchMovies = (page, query, callback) => async dispatch => {
   const response = await axios.get(`/search/movie`, {
     params: { page, query }
   });
-  console.log(`searching movies for ${query}`);
 
   dispatch({
     type: "FETCH_PAGE",
@@ -59,7 +53,6 @@ export const fetchGenreMovies = id => async dispatch => {
   const response = await axios.get(`/discover/movie`, {
     params: { with_genres: `${id}` }
   });
-  console.log(`fetching genre movies - id=${id}`);
 
   dispatch({
     type: "FETCH_GENRE_MOVIES",
@@ -69,7 +62,6 @@ export const fetchGenreMovies = id => async dispatch => {
 
 export const fetchGenreList = () => async dispatch => {
   const response = await axios.get(`/genre/movie/list`);
-  console.log("fetching genre list");
 
   dispatch({
     type: "FETCH_GENRE_LIST",
@@ -79,7 +71,6 @@ export const fetchGenreList = () => async dispatch => {
 
 export const fetchMovieDetails = id => async dispatch => {
   const response = await axios.get(`/movie/${id}`);
-  console.log(`fetching details for movie id-${id}`);
 
   dispatch({
     type: "FETCH_MOVIE_DETAILS",
@@ -89,7 +80,6 @@ export const fetchMovieDetails = id => async dispatch => {
 
 export const fetchMovieImages = id => async dispatch => {
   const response = await axios.get(`/movie/${id}/images`);
-  console.log(`fetching images for movie id-${id}`);
 
   dispatch({
     type: "FETCH_MOVIE_IMAGES",
@@ -99,7 +89,6 @@ export const fetchMovieImages = id => async dispatch => {
 
 export const fetchSimilarMovies = id => async dispatch => {
   const response = await axios.get(`/movie/${id}/similar`);
-  console.log(`fetching similar movies for movie id-${id}`);
 
   dispatch({
     type: "FETCH_SIMILAR_MOVIES",
@@ -122,8 +111,6 @@ export const clearPage = () => dispatch => {
 };
 
 export const clearMovieCredits = () => dispatch => {
-  console.log("clearing movie credits");
-
   dispatch({
     type: "FETCH_MOVIE_CREDITS",
     payload: {}
@@ -131,8 +118,6 @@ export const clearMovieCredits = () => dispatch => {
 };
 
 export const clearMovieVideos = () => dispatch => {
-  console.log("clearing movie videos");
-
   dispatch({
     type: "FETCH_MOVIE_VIDEOS",
     payload: []
@@ -141,11 +126,10 @@ export const clearMovieVideos = () => dispatch => {
 
 export const fetchMovieVideos = id => async dispatch => {
   const response = await axios.get(`/movie/${id}/videos`);
-  console.log(`fetching movies for movie id-${id}`);
 
   var results = [];
 
-  response.data.results.map(video => {
+  response.data.results.forEach(video => {
     if (
       video.site === "YouTube" &&
       (video.type === "Trailer" || video.type === "Teaser")
@@ -162,7 +146,6 @@ export const fetchMovieVideos = id => async dispatch => {
 
 export const fetchMovieCredits = id => async dispatch => {
   const response = await axios.get(`/movie/${id}/credits`);
-  console.log(`fetching credits for movie id-${id}`);
 
   dispatch({
     type: "FETCH_MOVIE_CREDITS",
@@ -181,7 +164,6 @@ export const fetchImagesFromGenre = () => async dispatch => {
       const response = await axios.get(`/discover/movie`, {
         params: { with_genres: `${id}` }
       });
-      console.log(`fetching images from genre id-${id}`);
 
       const movies = response.data.results;
 
@@ -199,7 +181,7 @@ export const fetchImagesFromGenre = () => async dispatch => {
   //   const response = await axios.get(`/discover/movie`, {
   //     params: { with_genres: `${id}` }
   //   });
-  //   console.log(`fetching images from genre id-${id}`);
+  //
 
   //   const movies = response.data.results;
 
