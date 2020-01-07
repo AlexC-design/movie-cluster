@@ -37,13 +37,13 @@ body {
     z-index: -9;
 
     &.home {
-      opacity: 20%;
+      opacity: 0.2;
     }
     &.movie{
-      opacity: 20%;
+      opacity: 0.2;
     }
     &.not-home {
-      opacity: 20%;
+      opacity: 0.2;
     }
   }
 }

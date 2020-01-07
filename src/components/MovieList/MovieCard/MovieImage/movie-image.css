@@ -43,7 +43,7 @@
   color: white;
   position: absolute;
   font-size: 1.2em;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 .movie-image-container .movie-card-image-container .movie-card-image {

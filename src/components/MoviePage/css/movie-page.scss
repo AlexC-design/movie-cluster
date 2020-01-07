@@ -17,15 +17,15 @@ html {
   position: relative;
   z-index: 2;
 
-  opacity: 0%;
+  opacity: 0;
   animation: fadein 1s 1s ease-in-out forwards;
 
   @keyframes fadein {
     from {
-      opacity: 0%;
+      opacity: 0;
     }
     to {
-      opacity: 100%;
+      opacity: 1;
     }
   }
 
@@ -86,7 +86,7 @@ html {
     width: 80%;
     margin: 0 auto;
 
-    opacity: 0%;
+    opacity: 0;
     animation: fadein 1s 1.2s ease-in-out forwards;
 
     @include tablet-portrait {
@@ -95,10 +95,10 @@ html {
 
     @keyframes fadein {
       from {
-        opacity: 0%;
+        opacity: 0;
       }
       to {
-        opacity: 100%;
+        opacity: 1;
       }
     }
 
@@ -169,7 +169,7 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
   height: calc(#{$videoHeight} * 1.7);
   color: white;
 
-  opacity: 0%;
+  opacity: 0;
   animation: fadein 1s 1s ease-out forwards;
 
   @include tablet-portrait {
@@ -182,10 +182,10 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
 
   @keyframes fadein {
     from {
-      opacity: 0%;
+      opacity: 0;
     }
     to {
-      opacity: 100%;
+      opacity: 1;
     }
   }
 
@@ -209,11 +209,11 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
       }
 
       &:hover .back-arrow-inverted {
-        opacity: 100%;
+        opacity: 1;
       }
 
       &:hover .back-arrow {
-        opacity: 0%;
+        opacity: 0;
       }
 
       &:active .back-arrow-inverted {
@@ -229,11 +229,11 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
       }
 
       .back-arrow {
-        opacity: 100%;
+        opacity: 1;
       }
 
       .back-arrow-inverted {
-        opacity: 0%;
+        opacity: 0;
       }
     }
   }
@@ -263,7 +263,7 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
       .trailer-video {
         width: $videoWidth;
         height: $videoHeight;
-        opacity: 20%;
+        opacity: 0.2;
         border: solid 2px color(accent1);
         border-radius: 20px;
 
@@ -271,7 +271,7 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
         transition: all 0.2s ease-out;
 
         &.selected {
-          opacity: 100%;
+          opacity: 1;
 
           transform: scale(1);
         }
@@ -290,15 +290,15 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
 
   transition: height 1s ease-out;
 
-  opacity: 0%;
+  opacity: 0;
   animation: fadein 1s 1s ease-out forwards;
 
   @keyframes fadein {
     from {
-      opacity: 0%;
+      opacity: 0;
     }
     to {
-      opacity: 100%;
+      opacity: 1;
     }
   }
 
@@ -360,7 +360,7 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
       }
 
       .character-name {
-        opacity: 50%;
+        opacity: 0.5;
         margin: 0.5em auto 3em;
       }
     }
@@ -373,11 +373,11 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
   cursor: pointer;
 
   &:hover p {
-    opacity: 100%;
+    opacity: 1;
   }
 
   p {
-    opacity: 50%;
+    opacity: 0.5;
     margin: 0;
     color: white;
     text-align: center;

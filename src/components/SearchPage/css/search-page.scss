@@ -4,15 +4,15 @@
 
 .search-page-container {
 
-  opacity: 0%;
+  opacity: 0;
   animation: fadein 1s 0.2s ease-in-out forwards;
 
   @keyframes fadein {
     from {
-      opacity: 0%;
+      opacity: 0;
     }
     to {
-      opacity: 100%;
+      opacity: 1;
     }
   }
 
@@ -36,7 +36,7 @@
       height: 70px;
       border-radius: 50px;
       border: 2px solid color(accent1);
-      opacity: 50%;
+      opacity: 0.5;
       background: transparent;
       padding-left: 50px;
       caret-color: color(accent1);
@@ -44,7 +44,7 @@
       &:focus {
         outline: none;
         border-color: color(accent1);
-        opacity: 100%;
+        opacity: 1;
       }
     }
 

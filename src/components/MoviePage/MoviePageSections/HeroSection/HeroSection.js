@@ -30,7 +30,7 @@ const HeroSection = ({
 
           images[index === 0 ? images.length - 1 : index - 1].style.opacity =
             "0%";
-          images[index].style.opacity = "100%";
+          images[index].style.opacity = "1";
           index++;
         }
         setTimeoutId = setTimeout(slide, 3000);

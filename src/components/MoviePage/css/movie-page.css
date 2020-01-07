@@ -10,26 +10,26 @@ html {
   height: 100%;
   position: relative;
   z-index: 2;
-  opacity: 0%;
+  opacity: 0;
   -webkit-animation: fadein 1s 1s ease-in-out forwards;
           animation: fadein 1s 1s ease-in-out forwards;
 }
 
 @-webkit-keyframes fadein {
   from {
-    opacity: 0%;
+    opacity: 0;
   }
   to {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
 @keyframes fadein {
   from {
-    opacity: 0%;
+    opacity: 0;
   }
   to {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
@@ -97,7 +97,7 @@ html {
   padding: 10em 0 1em;
   width: 80%;
   margin: 0 auto;
-  opacity: 0%;
+  opacity: 0;
   -webkit-animation: fadein 1s 1.2s ease-in-out forwards;
           animation: fadein 1s 1.2s ease-in-out forwards;
 }
@@ -113,10 +113,10 @@ html {
 
 @keyframes fadein {
   from {
-    opacity: 0%;
+    opacity: 0;
   }
   to {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
@@ -201,7 +201,7 @@ html {
   position: relative;
   height: calc(calc(750px * 0.6) * 1.7);
   color: white;
-  opacity: 0%;
+  opacity: 0;
   -webkit-animation: fadein 1s 1s ease-out forwards;
           animation: fadein 1s 1s ease-out forwards;
 }
@@ -220,10 +220,10 @@ html {
 
 @keyframes fadein {
   from {
-    opacity: 0%;
+    opacity: 0;
   }
   to {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
@@ -253,11 +253,11 @@ html {
 }
 
 .trailers-section-container .buttons .arrow-button:hover .back-arrow-inverted {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .trailers-section-container .buttons .arrow-button:hover .back-arrow {
-  opacity: 0%;
+  opacity: 0;
 }
 
 .trailers-section-container .buttons .arrow-button:active .back-arrow-inverted {
@@ -274,11 +274,11 @@ html {
 }
 
 .trailers-section-container .buttons .arrow-button .back-arrow {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .trailers-section-container .buttons .arrow-button .back-arrow-inverted {
-  opacity: 0%;
+  opacity: 0;
 }
 
 .trailers-section-container .trailers-slider {
@@ -318,7 +318,7 @@ html {
 .trailers-section-container .trailers-slider .trailers-wrapper .trailer-video {
   width: 750px;
   height: calc(750px * 0.6);
-  opacity: 20%;
+  opacity: 0.2;
   border: solid 2px #ef8555;
   border-radius: 20px;
   -webkit-transform: scale(0.8);
@@ -328,7 +328,7 @@ html {
 }
 
 .trailers-section-container .trailers-slider .trailers-wrapper .trailer-video.selected {
-  opacity: 100%;
+  opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
 }
@@ -340,17 +340,17 @@ html {
   overflow-y: hidden;
   -webkit-transition: height 1s ease-out;
   transition: height 1s ease-out;
-  opacity: 0%;
+  opacity: 0;
   -webkit-animation: fadein 1s 1s ease-out forwards;
           animation: fadein 1s 1s ease-out forwards;
 }
 
 @keyframes fadein {
   from {
-    opacity: 0%;
+    opacity: 0;
   }
   to {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
@@ -429,7 +429,7 @@ html {
 }
 
 .actors-section .actors-cards .actor-card .character-name {
-  opacity: 50%;
+  opacity: 0.5;
   margin: 0.5em auto 3em;
 }
 
@@ -440,11 +440,11 @@ html {
 }
 
 .see-more-section-wrapper:hover p {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .see-more-section-wrapper p {
-  opacity: 50%;
+  opacity: 0.5;
   margin: 0;
   color: white;
   text-align: center;

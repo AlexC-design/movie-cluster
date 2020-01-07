@@ -38,14 +38,14 @@ body {
 }
 
 .main-screen .gradient.home {
-  opacity: 20%;
+  opacity: 0.2;
 }
 
 .main-screen .gradient.movie {
-  opacity: 20%;
+  opacity: 0.2;
 }
 
 .main-screen .gradient.not-home {
-  opacity: 20%;
+  opacity: 0.2;
 }
 /*# sourceMappingURL=main-screen.css.map */

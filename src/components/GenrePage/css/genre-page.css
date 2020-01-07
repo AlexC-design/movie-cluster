@@ -94,7 +94,7 @@
 
 .genre-page-container .genre-cards-container .genre-card .images-container .poster {
   position: absolute;
-  opacity: 100%;
+  opacity: 1;
   height: 300px;
   width: 200px;
   -webkit-transition: all 0.4s ease-out;

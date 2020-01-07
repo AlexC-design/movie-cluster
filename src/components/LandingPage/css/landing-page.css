@@ -20,19 +20,19 @@
 
 @-webkit-keyframes fadein {
   from {
-    opacity: 0%;
+    opacity: 0;
   }
   to {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
 @keyframes fadein {
   from {
-    opacity: 0%;
+    opacity: 0;
   }
   to {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=landing-page.css.map */
