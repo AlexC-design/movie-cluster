@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/movie-cluster/static/css/main.b5adc5d2.chunk.css",
+    "main.css": "/movie-cluster/static/css/main.aee58a71.chunk.css",
     "main.js": "/movie-cluster/static/js/main.4df1e5bb.chunk.js",
     "main.js.map": "/movie-cluster/static/js/main.4df1e5bb.chunk.js.map",
     "runtime-main.js": "/movie-cluster/static/js/runtime-main.77ddd9a5.js",
@@ -8,9 +8,9 @@
     "static/js/2.b76d2179.chunk.js": "/movie-cluster/static/js/2.b76d2179.chunk.js",
     "static/js/2.b76d2179.chunk.js.map": "/movie-cluster/static/js/2.b76d2179.chunk.js.map",
     "index.html": "/movie-cluster/index.html",
-    "precache-manifest.a4c2d1103404a0ae8bbd57c0222dc934.js": "/movie-cluster/precache-manifest.a4c2d1103404a0ae8bbd57c0222dc934.js",
+    "precache-manifest.019e3688dce1afcaaf4bedcc33efce78.js": "/movie-cluster/precache-manifest.019e3688dce1afcaaf4bedcc33efce78.js",
     "service-worker.js": "/movie-cluster/service-worker.js",
-    "static/css/main.b5adc5d2.chunk.css.map": "/movie-cluster/static/css/main.b5adc5d2.chunk.css.map",
+    "static/css/main.aee58a71.chunk.css.map": "/movie-cluster/static/css/main.aee58a71.chunk.css.map",
     "static/media/back-arrow-inverted-blue.svg": "/movie-cluster/static/media/back-arrow-inverted-blue.4f62ed17.svg",
     "static/media/back-arrow.svg": "/movie-cluster/static/media/back-arrow.66599917.svg",
     "static/media/down-arrow.svg": "/movie-cluster/static/media/down-arrow.b083da19.svg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.77ddd9a5.js",
     "static/js/2.b76d2179.chunk.js",
-    "static/css/main.b5adc5d2.chunk.css",
+    "static/css/main.aee58a71.chunk.css",
     "static/js/main.4df1e5bb.chunk.js"
   ]
 }
