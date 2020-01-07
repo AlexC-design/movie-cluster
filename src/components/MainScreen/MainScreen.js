@@ -53,8 +53,6 @@ const MainScreen = ({ lastLocation, saveLastLocation }) => {
     });
   }, []);
 
-  console.log(lastLocation);
-
   return (
     <div className="main-screen">
       <HashRouter basename="/">
