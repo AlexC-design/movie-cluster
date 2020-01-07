@@ -33,7 +33,7 @@ const GenreCard = ({ images, genre }) => {
   let switchArray = [];
 
   useEffect(() => {
-    console.log(animationStatus);
+    
   }, [animationStatus]);
 
   useEffect(() => {

@@ -5,11 +5,9 @@ import "./navbar.css";
 import { MobileMenu } from "./MobileMenu/MobileMenu";
 
 const NavBar = props => {
-  console.log(props)
   const [mobileMenuState, setMobileMenuState] = useState("closed");
 
   const showHideMenu = () => {
-    console.log("ENTERED");
     mobileMenuState === "closed"
       ? setMobileMenuState("open")
       : setMobileMenuState("closed");

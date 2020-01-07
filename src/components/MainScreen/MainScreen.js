@@ -53,11 +53,19 @@ const MainScreen = ({ lastLocation, saveLastLocation }) => {
     });
   }, []);
 
+  console.log(lastLocation);
+
   return (
     <div className="main-screen">
       <HashRouter basename="/">
         <NavBar pageStatus={pageStatus} />
-        <Link to={logoContent === "back-arrow" ? lastLocation : "/"}>
+        <Link
+          to={
+            logoContent === "back-arrow"
+              ? `${lastLocation.replace("#", "")}`
+              : "/"
+          }
+        >
           <Logo contentShape={logoContent} size={logoSize} />
         </Link>
         <Route path="/" exact component={LandingPage} />

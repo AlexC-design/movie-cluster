@@ -8,7 +8,6 @@ export const renderPageNumbers = (numberOfPages, fetchPage, searchMovies) => {
   };
 
   const pageClick = index => {
-    console.log(window.location.hash.replace("#/genres/", ""));
     if (window.location.hash.includes("genres")) {
       fetchPage(
         index + 1,
