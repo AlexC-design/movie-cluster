@@ -7,11 +7,18 @@
     color: white;
     margin: 1em auto;
     text-align: center;
+
+    @include mobile-landscape {
+      margin-top: 60px;
+      font-size: 1.5em;
+    }
   }
 
   @include desktop-mid {
     padding-top: 10%;
   }
+
+  
 }
 
 .simplebar-component {

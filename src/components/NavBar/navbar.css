@@ -39,6 +39,7 @@
         -ms-flex-align: center;
             align-items: center;
     height: 95vh;
+    width: calc(96vw - 3em);
   }
   .navbar-container ul.closed {
     height: 40px;
@@ -46,6 +47,17 @@
   .navbar-container ul :first-child {
     -ms-flex-item-align: end;
         align-self: flex-end;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-container ul {
+    width: calc(100% - 1em);
+    padding: 0 1em 0 0;
+    right: 0;
+  }
+  .navbar-container ul.closed {
+    height: 40px;
   }
 }
 
@@ -66,7 +78,7 @@
 @media (max-width: 900px) {
   .navbar-container ul .navbar-link {
     margin: 1em 0;
-    padding: 2em 10%;
+    padding: 1em 10%;
     border-radius: 20px;
     width: 400px;
     text-align: center;

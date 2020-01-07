@@ -16,31 +16,31 @@
 // --- MEDIA QUERYS ---
 
 @mixin desktop-mid {
-  @media (max-width: 1500px) {
+  @media (max-width: 1600px) {
     @content;
   }
 }
 
 @mixin tablet-landscape {
-  @media (max-width: 1200px) {
+  @media (max-width: 1300px) {
     @content;
   }
 }
 
 @mixin tablet-portrait {
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     @content;
   }
 }
 
 @mixin mobile-landscape {
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     @content;
   }
 }
 
 @mixin mobile-portrait {
-  @media (max-width: 300px) {
+  @media (max-width: 400px) {
     @content;
   }
 }

@@ -26,6 +26,7 @@
       justify-content: flex-start;
       align-items: center;
       height: 95vh;
+      width: calc(96vw - 3em);
 
       &.closed {
         height: 40px;
@@ -33,6 +34,16 @@
 
       & :first-child {
         align-self: flex-end;
+      }
+    }
+
+    @include mobile-landscape {
+      width: calc(100% - 1em);
+      padding: 0 1em 0 0;
+      right: 0;
+
+      &.closed {
+        height: 40px;
       }
     }
 
@@ -49,7 +60,7 @@
 
       @include tablet-portrait {
         margin: 1em 0;
-        padding: 2em 10%;
+        padding: 1em 10%;
         border-radius: 20px;
         width: 400px;
         text-align: center;

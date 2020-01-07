@@ -36,6 +36,10 @@ html {
     top: 56.5vw;
     left: 5%;
     z-index: 1;
+
+    @include tablet-portrait {
+      font-size: 2em;
+    }
   }
 
   .slider {
@@ -91,6 +95,7 @@ html {
 
     @include tablet-portrait {
       flex-direction: column;
+      padding: 5em 0 1em;
     }
 
     @keyframes fadein {
@@ -107,23 +112,42 @@ html {
 
       .genre-names {
         display: flex;
+        flex-direction: row;
 
         align-items: center;
         color: white;
         font-size: 1.5em;
 
+        @include tablet-portrait {
+          flex-direction: column;
+        }
+
         .just-genre-names {
           font-weight: 200;
           padding-left: 20px;
+
+          @include tablet-portrait {
+            margin-top: 0;
+            font-size: 0.8em;
+            padding-left: 0;
+          }
         }
       }
 
       h1 {
         padding-bottom: 0.8em;
+
+        @include tablet-portrait {
+          font-size: 1.5em;
+        }
       }
 
       .description {
         padding-right: 100px;
+
+        @include tablet-portrait {
+          padding-right: 0;
+        }
       }
     }
 
@@ -177,7 +201,7 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
   }
 
   @include mobile-landscape {
-    margin-bottom: -150px;
+    margin-bottom: -300px;
   }
 
   @keyframes fadein {
@@ -199,6 +223,10 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
     width: 400px;
     height: 50px;
     margin: 2em auto;
+
+    @include tablet-portrait {
+      width: 200px;
+    }
 
     .arrow-button {
       position: relative;
@@ -249,8 +277,8 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
     }
 
     @include mobile-landscape {
-      transform: scale(0.6);
-      margin-left: -100px;
+      transform: scale(0.4);
+      margin-left: -130px;
     }
 
     .trailers-wrapper {
@@ -314,15 +342,16 @@ $videoHeight: calc(#{$videoWidth} * 0.6);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
-    @include tablet-landscape {
-    }
-
     @include tablet-portrait {
       grid-template-columns: repeat(3, 1fr);
     }
 
     @include mobile-landscape {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile-portrait {
+      grid-template-columns: repeat(1, 1fr);
     }
 
     .actor-card {
