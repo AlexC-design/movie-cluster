@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 import searchLogo from "../../assets/images/search-logo.svg";
 import "./css/search-page.css";
 import { searchMovies } from "../../actions";
-import history from "../../history";
 
-const SearchPage = ({ searchMovies, movieList }) => {
+const SearchPage = ({ history, searchMovies, movieList }) => {
   const [term, setTerm] = useState("");
   const [searched, setSearched] = useState(false);
 

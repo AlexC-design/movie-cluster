@@ -1,26 +1,23 @@
 import React from "react";
-import history from "../../history";
 
 export const renderPageNumbers = (numberOfPages, fetchPage, searchMovies) => {
   const historyToPageType = {
-    "/now-playing": "now_playing",
-    "/popular": "popular",
-    "/top-rated": "top_rated"
+    "#/now-playing": "now_playing",
+    "#/popular": "popular",
+    "#/top-rated": "top_rated"
   };
 
   const pageClick = index => {
-    if (history.location.pathname.includes("genres")) {
+    console.log(window.location.hash.replace("#/genres/", ""));
+    if (window.location.hash.includes("genres")) {
       fetchPage(
         index + 1,
         "genres",
-        history.location.pathname.replace("/genres/", "")
+        window.location.hash.replace("#/genres/", "")
       );
-    } else if (history.location.pathname.includes("search")) {
-      searchMovies(
-        index + 1,
-        history.location.pathname.replace("/search/", "")
-      );
-    } else fetchPage(index + 1, historyToPageType[history.location.pathname]);
+    } else if (window.location.hash.includes("search")) {
+      searchMovies(index + 1, window.location.hash.replace("#/search/", ""));
+    } else fetchPage(index + 1, historyToPageType[window.location.hash]);
 
     document
       .querySelector(".simplebar-component .simplebar-content-wrapper")

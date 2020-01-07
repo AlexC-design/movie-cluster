@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { Router, Route, Link } from "react-router-dom";
+import { HashRouter, Route, Link } from "react-router-dom";
 import history from "../../history";
 import { saveLastLocation } from "../../actions";
 
@@ -19,46 +19,43 @@ import SearchPage from "../SearchPage/SearchPage";
 import SearchResultsPage from "../SearchPage/SearchResultsPage";
 
 const MainScreen = ({ lastLocation, saveLastLocation }) => {
-  const [pageStatus, setPageStatus] = useState(`${history.location.pathname}`);
+  const [pageStatus, setPageStatus] = useState(`${window.location.hash}`);
   const [logoSize, setLogoSize] = useState(
     `${
-      history.location.pathname.includes("/movie")
+      window.location.hash.includes("#/movie")
         ? "extra-small"
-        : history.location.pathname === "/"
+        : window.location.hash === "#/"
         ? "large"
         : "small"
     }`
   );
   const [logoContent, setLogoContent] = useState(
-    `${
-      history.location.pathname.includes("/movie") ? "back-arrow" : "logotype"
-    }`
+    `${window.location.hash.includes("#/movie") ? "back-arrow" : "logotype"}`
   );
 
   useEffect(() => {
     history.listen((location, _) => {
-      if (!location.pathname.includes("/movie"))
-        saveLastLocation(location.pathname);
+      if (!location.hash.includes("#/movie")) saveLastLocation(location.hash);
 
-      setPageStatus(location.pathname);
+      setPageStatus(location.hash);
 
       setLogoSize(
-        location.pathname.includes("/movie")
+        location.hash.includes("#/movie")
           ? "extra-small"
-          : location.pathname === "/"
+          : location.hash === "#/"
           ? "large"
           : "small"
       );
 
       setLogoContent(
-        location.pathname.includes("/movie") ? "back-arrow" : "logotype"
+        location.hash.includes("#/movie") ? "back-arrow" : "logotype"
       );
     });
   }, []);
 
   return (
     <div className="main-screen">
-      <Router history={history}>
+      <HashRouter basename="/">
         <NavBar pageStatus={pageStatus} />
         <Link to={logoContent === "back-arrow" ? lastLocation : "/"}>
           <Logo contentShape={logoContent} size={logoSize} />
@@ -72,7 +69,7 @@ const MainScreen = ({ lastLocation, saveLastLocation }) => {
         <Route path="/movie/:id" exact component={MoviePage} />
         <Route path="/search" exact component={SearchPage} />
         <Route path="/search/:id" exact component={SearchResultsPage} />
-      </Router>
+      </HashRouter>
       <MainScreenBg pageStatus={pageStatus} />
     </div>
   );

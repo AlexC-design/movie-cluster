@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchSimilarMovies } from "../../../../actions";
 import get from "get-value";
-import history from "../../../../history";
+import { withRouter } from "react-router-dom";
 
 const scrollToTop = () => {
   document
@@ -20,7 +20,8 @@ const SimilarMoviesSection = ({
   backdropSizes,
   movieVideos,
   baseUrl,
-  id
+  id,
+  history
 }) => {
   useEffect(() => {
     fetchSimilarMovies(id);
@@ -92,6 +93,8 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {
+const wrappedComponent = connect(mapStateToProps, {
   fetchSimilarMovies
 })(SimilarMoviesSection);
+
+export default withRouter(wrappedComponent)

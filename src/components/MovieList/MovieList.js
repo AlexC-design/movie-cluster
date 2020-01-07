@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import history from "../../history";
 
 import SimpleBar from "simplebar-react";
 import PageList from "../PageList/PageList";
@@ -9,21 +8,18 @@ import { renderMovieCards } from "./renderMovieCards";
 import "./css/movie-list.css";
 
 const MovieList = ({ listOfMovies, genres }) => {
-  useEffect(() => {
-    
-  });
+  useEffect(() => {});
 
   const historyToPageTitle = {
-    "/now-playing": "New Movies in Theaters Now",
-    "/top-rated": "All Time Top Voted Movies",
-    "/popular": "Popular Movies Right Now"
+    "#/now-playing": "New Movies in Theaters Now",
+    "#/top-rated": "All Time Top Voted Movies",
+    "#/popular": "Popular Movies Right Now"
   };
 
   const renderPageTitle = path => {
-    if (path.includes("/genres")) {
+    if (path.includes("#/genres")) {
       return genres.map(genre => {
-        if (genre.id === parseInt(path.replace("/genres/", ""), 10)) {
-          
+        if (genre.id === parseInt(path.replace("#/genres/", ""), 10)) {
           return `${genre.name} Movies`;
         }
       });
@@ -37,7 +33,7 @@ const MovieList = ({ listOfMovies, genres }) => {
       <SimpleBar className="simplebar-component" style={{ autoHide: false }}>
         <div className="movie-list-container">
           <h1 className="list-title">
-            {renderPageTitle(history.location.pathname)}
+            {renderPageTitle(window.location.hash)}
           </h1>
           {renderMovieCards(listOfMovies)}
         </div>

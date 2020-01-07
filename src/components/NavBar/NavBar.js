@@ -5,6 +5,7 @@ import "./navbar.css";
 import { MobileMenu } from "./MobileMenu/MobileMenu";
 
 const NavBar = props => {
+  console.log(props)
   const [mobileMenuState, setMobileMenuState] = useState("closed");
 
   const showHideMenu = () => {
@@ -19,7 +20,7 @@ const NavBar = props => {
   }, [props.pageStatus]);
 
   const navBarStatus =
-    props.pageStatus === "/" || props.pageStatus.includes("/movie")
+    props.pageStatus === "#/" || props.pageStatus.includes("#/movie")
       ? "hidden"
       : "revealed";
 
@@ -36,7 +37,7 @@ const NavBar = props => {
         <Link
           to="/now-playing"
           className={`navbar-link ${pathCheck(
-            "/now-playing"
+            "#/now-playing"
           )} ${mobileMenuState}`}
         >
           Now Playing
@@ -44,7 +45,7 @@ const NavBar = props => {
         <Link
           to="/top-rated"
           className={`navbar-link ${pathCheck(
-            "/top-rated"
+            "#/top-rated"
           )} ${mobileMenuState}`}
         >
           Top Rated
@@ -52,19 +53,19 @@ const NavBar = props => {
 
         <Link
           to="/popular"
-          className={`navbar-link ${pathCheck("/popular")} ${mobileMenuState}`}
+          className={`navbar-link ${pathCheck("#/popular")} ${mobileMenuState}`}
         >
           Popular
         </Link>
         <Link
           to="/genres"
-          className={`navbar-link ${pathCheck("/genres")} ${mobileMenuState}`}
+          className={`navbar-link ${pathCheck("#/genres")} ${mobileMenuState}`}
         >
           Genres
         </Link>
         <Link
           to="/search"
-          className={`navbar-link ${pathCheck("/search")} ${mobileMenuState}`}
+          className={`navbar-link ${pathCheck("#/search")} ${mobileMenuState}`}
         >
           Search
         </Link>
