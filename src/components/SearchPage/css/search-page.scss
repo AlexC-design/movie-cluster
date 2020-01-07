@@ -41,6 +41,10 @@
       padding-left: 50px;
       caret-color: color(accent1);
 
+      @include tablet-portrait {
+        height: 40px;
+      }
+
       &:focus {
         outline: none;
         border-color: color(accent1);

@@ -58,6 +58,12 @@
   caret-color: #ef8555;
 }
 
+@media (max-width: 1000px) {
+  .search-page-container .search-section-container .search-bar {
+    height: 40px;
+  }
+}
+
 .search-page-container .search-section-container .search-bar:focus {
   outline: none;
   border-color: #ef8555;
