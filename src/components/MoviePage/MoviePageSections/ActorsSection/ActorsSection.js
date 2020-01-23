@@ -14,27 +14,50 @@ const ActorsSection = ({
   const [sectionHeight, setSectionHeight] = useState("0");
   const [sectionState, setSectionState] = useState("contracted");
 
-  const expandSection = () => {
+  const viewportToActorColumns = width => {
+    if (width > 1000) {
+      return 4;
+    } else if (width > 700) {
+      return 3;
+    } else if (width > 400) {
+      return 2;
+    } else {
+      return 1;
+    }
+  };
+
+  const getActorRows = () => {
+    return Math.ceil(
+      document.querySelectorAll(".actor-card").length /
+        viewportToActorColumns(window.innerWidth)
+    );
+  };
+
+  const getSectionHeight = currentSectionState => {
+    return (
+      Number(
+        window
+          .getComputedStyle(document.getElementById("actors-text"), null)
+          .getPropertyValue("margin")
+          .split("px")[0]
+      ) *
+        2 +
+      document.getElementById("actors-text").offsetHeight +
+      Math.ceil(document.querySelector(".actor-card").offsetHeight) *
+        (currentSectionState === "expanded"
+          ? getActorRows()
+          : Math.min(getActorRows(), 2)) -
+      5
+    );
+  };
+
+  const changeSectionSize = () => {
     if (sectionState === "contracted") {
       setSectionState("expanded");
-      setSectionHeight(
-        48 +
-          document.getElementById("actors-text").offsetHeight +
-          document.querySelector(".actor-card").offsetHeight *
-            Math.ceil(document.querySelectorAll(".actor-card").length / 4)
-      );
+      setSectionHeight(getSectionHeight("expanded"));
     } else {
       setSectionState("contracted");
-
-      setSectionHeight(
-        48 +
-          document.getElementById("actors-text").offsetHeight +
-          document.querySelector(".actor-card").offsetHeight *
-            Math.min(
-              Math.ceil(document.querySelectorAll(".actor-card").length / 4),
-              2
-            )
-      );
+      setSectionHeight(getSectionHeight("contracted"));
     }
   };
 
@@ -43,15 +66,7 @@ const ActorsSection = ({
 
     if (movieCast.length) {
       setSectionState("contracted");
-      setSectionHeight(
-        48 +
-          document.getElementById("actors-text").offsetHeight +
-          document.querySelector(".actor-card").offsetHeight *
-            Math.min(
-              Math.ceil(document.querySelectorAll(".actor-card").length / 4),
-              2
-            )
-      );
+      setSectionHeight(getSectionHeight("contracted"));
     }
   }, [movieCast.length, id]);
 
@@ -88,7 +103,7 @@ const ActorsSection = ({
         </div>
 
         {movieCast.length > 7 && (
-          <div onClick={expandSection} className="see-more-section-wrapper">
+          <div onClick={changeSectionSize} className="see-more-section-wrapper">
             <p>{sectionState === "contracted" ? "See More" : "See Less"}</p>
             <div className="see-more-section">
               <img
