@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/movie-cluster/static/css/main.aee58a71.chunk.css",
-    "main.js": "/movie-cluster/static/js/main.4df1e5bb.chunk.js",
-    "main.js.map": "/movie-cluster/static/js/main.4df1e5bb.chunk.js.map",
+    "main.js": "/movie-cluster/static/js/main.7fa40646.chunk.js",
+    "main.js.map": "/movie-cluster/static/js/main.7fa40646.chunk.js.map",
     "runtime-main.js": "/movie-cluster/static/js/runtime-main.77ddd9a5.js",
     "runtime-main.js.map": "/movie-cluster/static/js/runtime-main.77ddd9a5.js.map",
     "static/js/2.b76d2179.chunk.js": "/movie-cluster/static/js/2.b76d2179.chunk.js",
     "static/js/2.b76d2179.chunk.js.map": "/movie-cluster/static/js/2.b76d2179.chunk.js.map",
     "index.html": "/movie-cluster/index.html",
-    "precache-manifest.4284f1dae2f37aa647cd039051385bca.js": "/movie-cluster/precache-manifest.4284f1dae2f37aa647cd039051385bca.js",
+    "precache-manifest.a87479468d10510bd54a1333e4c44d69.js": "/movie-cluster/precache-manifest.a87479468d10510bd54a1333e4c44d69.js",
     "service-worker.js": "/movie-cluster/service-worker.js",
     "static/css/main.aee58a71.chunk.css.map": "/movie-cluster/static/css/main.aee58a71.chunk.css.map",
     "static/media/back-arrow-inverted-blue.svg": "/movie-cluster/static/media/back-arrow-inverted-blue.4f62ed17.svg",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.77ddd9a5.js",
     "static/js/2.b76d2179.chunk.js",
     "static/css/main.aee58a71.chunk.css",
-    "static/js/main.4df1e5bb.chunk.js"
+    "static/js/main.7fa40646.chunk.js"
   ]
 }
