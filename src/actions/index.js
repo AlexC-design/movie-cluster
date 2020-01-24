@@ -167,13 +167,13 @@ export const fetchImagesFromGenre = () => async dispatch => {
 
       const movies = response.data.results;
 
-      genresImages[id] = movies.map((movie, index) => {
-        if (movie.poster_path) {
-          return movie.poster_path;
-        } else {
-          return movies[index - 1].poster_path;
-        }
-      });
+      genresImages[id] = movies
+        .map((movie, _) => {
+          if (movie.poster_path) {
+            return movie.poster_path;
+          }
+        })
+        .filter((image, index) => image !== undefined);
     })
   );
 
