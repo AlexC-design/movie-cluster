@@ -8,14 +8,14 @@
   text-align: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .movie-list-container .list-title {
     margin-top: 60px;
     font-size: 1.5em;
   }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
   .movie-list-container {
     padding-top: 10%;
   }

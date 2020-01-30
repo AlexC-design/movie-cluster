@@ -16,7 +16,7 @@
   opacity: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .menu-button {
     display: block;
   }

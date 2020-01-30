@@ -7,7 +7,7 @@
   font-weight: 400;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .slogan {
     font-size: 1em;
   }
