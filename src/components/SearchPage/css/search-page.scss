@@ -25,6 +25,10 @@
 
     .search-logo {
       width: 200px;
+
+      @include mobile-landscape {
+        transform: scale(0.8);
+      }
     }
 
     .search-bar {
@@ -43,6 +47,13 @@
 
       @include tablet-portrait {
         height: 40px;
+        padding-left: 20px;
+        width: 80vw;
+        max-width: 60vw;
+      }
+
+      @include mobile-landscape {
+        max-width: 80vw;
       }
 
       &:focus {
